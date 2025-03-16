@@ -1,7 +1,8 @@
-# Algoritmos - Lista de exercícios 01 - TIII
+# Algoritmos - Lista de exercícios 01 - TIII - Sequenciais
 
 
 ---
+
 
 1) Faça um algoritmo que leia as 4 notas de um aluno e calcule a média aritmética simples
 deste aluno.
@@ -30,11 +31,10 @@ ele comprou.
 8) Construa um algoritmo que, tendo como dados de entrada dois pontos quaisquer no
 plano, P(x1,y1) e P(x2,y2), escreva a distância entre eles. A fórmula que efetua tal cálculo é:
 
-![alt text](image.png)
+![alt text](./imagens/formulaDistancia.jpg)
 
 9) Pedrinho tem um cofrinho com muitas moedas, e deseja saber quantos reais conseguiu
 poupar. Faça um algoritmo para ler a quantidade de cada tipo de moeda, e imprimir o valor
-
 total economizado, em reais. Considere que existam moedas de 1, 5, 10, 25 e 50 centavos,
 e ainda moedas de 1 real. Não havendo moeda de um tipo, a quantidade respectiva é zero.
 
