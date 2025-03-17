@@ -1,14 +1,19 @@
 # Notas de aulas - Algoritmos - 2025/1 - TIII - UTFPR/CM
 
 ## 21/03/2025 - Sexta-feira
-Apresentação da disciplina - Terminologia - sexta-feira
+Apresentação da disciplina - Terminologia 
+Dinâmica: o robô segue os comandos.
+
+Byte - Sistema computacional padrão.
 
 ## 24/03/2025 - Segunda
 Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Características: estado inicial, limite de resolução, condição e repetição.
 
 ## 28/03/2025 - Sexta
 Estruturação de raciocínio lógico.
-Estruturas sequenciais. Teste de mesa.
+Estruturas sequenciais. 
+Leitura de algoritmos
+Teste de mesa.
 
 ## 31/03/2025 - Segunda
 Leitura de algoritmos - Exercícios
