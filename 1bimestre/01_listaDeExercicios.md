@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="./imagens/cerebro.png" alt="Cérebro" width="200" height="200">
+</p>
+
 # Algoritmos - Lista de exercícios 01 - TIII - Sequenciais
 
 

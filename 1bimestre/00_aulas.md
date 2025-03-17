@@ -7,6 +7,12 @@ Dinâmica: o robô segue os comandos.
 Byte - Sistema computacional padrão.
 
 ## 24/03/2025 - Segunda
+
+1. Problema
+2. Algoritmo (para resolver o problema)
+3. Código fonte é o algoritmo escrito em uma linguagem de programação (humanos entendem)
+4. Programa (ou app) é o código fonte compilado (traduzido) para uma linguagem que o computador entende e executa.
+
 Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Características: estado inicial, limite de resolução, condição e repetição.
 
 ## 28/03/2025 - Sexta
