@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./imagens/cerebro.png" alt="Cérebro" width="200" height="200">
+</p>
+
 #  LA03 - Lista de Exercícios 03 - Sequenciais
 
 1) Troca de Valores: Escreva um algoritmo que troque os valores de duas variáveis.

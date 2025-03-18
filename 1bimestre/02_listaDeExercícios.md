@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./imagens/cerebro.png" alt="Cérebro" width="200" height="200">
+</p>
+
 # Algoritmos - Lista de exercícios 02 - TIII - Sequenciais
 
 1) Faça um algoritmo que leia o valor de x e calcule f(x)=x
