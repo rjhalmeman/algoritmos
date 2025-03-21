@@ -12,8 +12,7 @@
 1) Faça um algoritmo que leia as 4 notas de um aluno e calcule a média aritmética simples
 deste aluno.
 
-2) Escreva o algoritmo que é usado para fazer uma multiplicação manualmente. (exercício
-para ser feito apenas no papel).
+2) Faça um programa que leia um número e mostre como resposta esse número elevado ao cubo.
 
 3) Faça um algoritmo que calcule a hipotenusa. Usar fórmula de Pitágoras.
 

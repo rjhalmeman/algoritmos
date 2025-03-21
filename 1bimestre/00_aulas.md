@@ -1,10 +1,13 @@
 # Notas de aulas - Algoritmos - 2025/1 - TIII - UTFPR/CM
 
 ## 21/03/2025 - Sexta-feira
-Apresentação da disciplina - Terminologia 
+Apresentação da disciplina
+
 Dinâmica: o robô segue os comandos.
 
-Byte - Sistema computacional padrão.
+Linguagem: a importância da terminologia 
+
+Byte - Sistema computacional
 
 ## 24/03/2025 - Segunda
 

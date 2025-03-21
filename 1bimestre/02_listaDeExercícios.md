@@ -4,8 +4,7 @@
 
 # Algoritmos - Lista de exercícios 02 - TIII - Sequenciais
 
-1) Faça um algoritmo que leia o valor de x e calcule f(x)=x
-2
+1) Faça um algoritmo que leia o valor de x e calcule f(x)=x2 (x ao quadrado)
 
 2) Faça um algoritmo que leia um valor numérico, calcule o dobro desse valor e mostre a
 resposta.
