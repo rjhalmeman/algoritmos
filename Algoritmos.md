@@ -2,7 +2,7 @@
 
 Objetivo
 
-Desenvolver a capacidade de solucionar problemas por meio de algoritmos computacionais, utilizando técnicas de refinamentos sucessivos e modularização. Criar casos de testes e confrontar a solução desenvolvida com os casos de testes criados.
+Desenvolver a capacidade de solucionar problemas com escopo delimitado por meio de algoritmos computacionais, utilizando técnicas de refinamentos sucessivos e modularização. Criar casos de testes e confrontar a solução desenvolvida com os casos de testes criados.
 
 Ementa
 

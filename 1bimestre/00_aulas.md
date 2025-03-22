@@ -11,6 +11,8 @@ Byte - Sistema computacional
 
 ## 24/03/2025 - Segunda
 
+### recapitulação das aulas anteriores
+
 1. Problema
 2. Algoritmo (para resolver o problema)
 3. Código fonte é o algoritmo escrito em uma linguagem de programação (humanos entendem)
