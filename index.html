@@ -1,1 +1,76 @@
-Esta será minha página inicial
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links para exercícios e atividades de algoritmos</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            color: blue;
+        }
+
+        .container a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1>Algoritmos - 2025 - TIII</h1>
+
+        <h2>Professor Radames J. Halmeman</h2>
+        <br>
+
+        <h1 style="color:blue">Listas de exercícios e <br>
+            atividades autoavaliativas</h1>
+        <br>
+        <div id="links-container">
+            <!-- Os links serão inseridos aqui pelo JavaScript -->
+        </div>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+            fetch('links.csv')
+                .then(response => response.text())
+                .then(data => {
+                    const linksContainer = document.getElementById('links-container');
+                    const rows = data.split('\n').slice(1); // Ignora o cabeçalho
+                    rows.forEach(row => {
+                        const columns = row.split(';').map(col => col.trim());
+                        if (columns.length === 2) {
+                            const [nome, link] = columns;
+                            const anchor = document.createElement('a');
+                            anchor.href = link;
+                            anchor.textContent = nome;
+                            linksContainer.appendChild(anchor);
+                        } else if (columns.length === 1 && columns[0]) {
+                            const heading = document.createElement('h3');
+                            heading.textContent = columns[0];
+                            heading.style.fontWeight = 'bold';
+                            heading.style.color = 'red';
+                            linksContainer.appendChild(heading);
+                        }
+                    });
+                });
+        });
+    </script>
+</body>
+
+</html>
