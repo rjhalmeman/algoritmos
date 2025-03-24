@@ -4,29 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programa soma</title>
+    <title>Ai credo .... Programa soma</title>
 </head>
 
 <body>
     <!-- Programa em HTML e JavaScript para somar 2 números -->
-    <label for="inputN1">N1</label>
+    <label for="inputN1">X</label>
     <input type="number" name="inputN1" id="inputN1">
     <br>
-    <label for="inputN2">N2</label>
+    <label for="inputN2">Y</label>
     <input type="number" name="inputN2" id="inputN2">
     <br>
     <br>
     <input type="button" value="Somar" onclick="funcaoResponsavelPeloCalculo()">
     <br>
-    <label for="resposta">N1 + N2 = ?</label>
-    <span id="resposta"></span>
+    <label for="resposta">x+y = </label>
+    <span id="resposta">xxxxxxxxxxxx</span>
 
     <script>
         function funcaoResponsavelPeloCalculo() {
-            let n1 = parseFloat(document.getElementById("inputN1").value);
-            let n2 = parseFloat(document.getElementById("inputN2").value);
-            let soma = n1 + n2;
-            document.getElementById("resposta").innerHTML = "<br>" + n1 + "+" + n2 + " = " + soma;
+            let x = parseFloat(document.getElementById("inputN1").value);
+            let y = parseFloat(document.getElementById("inputN2").value);
+            let s = x + y;
+            document.getElementById("resposta").innerHTML = s;
         }
     </script>
 
