@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 02</title>
+</head>
+<body>
+
+    <h1>Calculadora de Troco</h1>
+    <label for="valorCompra">Valor da Compra: R$ </label>
+    <input type="number" id="valorCompra" >
+    <br><br>
+    <label for="valorPago">Valor Pago: R$ </label>
+    <input type="number" id="valorPago">
+    <br><br>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br><br>
+    <label for="resultado">Troco</label>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let valorCompra = parseFloat(document.getElementById("valorCompra").value);
+            let valorPago = parseFloat(document.getElementById("valorPago").value);
+
+            let troco = valorPago - valorCompra;
+
+            document.getElementById("resultado").innerHTML = troco.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

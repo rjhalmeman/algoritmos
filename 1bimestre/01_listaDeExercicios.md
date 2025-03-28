@@ -9,14 +9,17 @@
 ---
 
 
-1) Faça um algoritmo que leia as 4 notas de um aluno e calcule a média aritmética simples
-deste aluno.
+1) Faça um algoritmo que leia as 4 notas de um aluno e calcule a média aritmética simples deste aluno. 
+
+$$media = (nota1+nota2+nota3+nota4)/4$$
 
 2) Faça um programa que leia um número e mostre como resposta esse número elevado ao cubo.
 
 3) Faça um algoritmo que calcule a hipotenusa. Usar fórmula de Pitágoras.
+$$ h = \sqrt{b²+c²}$$
 
-4) Faça um programa de computador para calcular a área de um retângulo. Area = base * altura (a=b*h)
+4) Faça um programa de computador para calcular a área de um retângulo. Area = base * altura 
+$$a=b*h$$
 
 5) Faça um programa que calcule quantas peças de piso são necessárias para um determinado ambiente. Deve-se informar as dimensões do ambiente em metros e o tamanho dos pisos em centímetros. Considere que é necessário um acréscimo de 10% na quantidade de pisos para que haja sobra para recortes.
 

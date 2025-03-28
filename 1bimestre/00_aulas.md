@@ -20,11 +20,59 @@ Byte - Sistema computacional
 
 Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Características: estado inicial, limite de resolução, condição e repetição.
 
+Exercício/Exemplo
+https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-03-24%20-%20SomarDoisNumeros
+
+
 ## 28/03/2025 - Sexta
+Aulas em sala teórica: G101
+`Estruturas sequenciais. `
+
 Estruturação de raciocínio lógico.
-Estruturas sequenciais. 
-Leitura de algoritmos
-Teste de mesa.
+    - Entrada
+    - Processamento
+    - Saída
+
+
+Leitura de algoritmos e teste de mesa.
+
+``` HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 02</title>
+</head>
+<body>
+
+    <h1>Calculadora de Troco</h1>
+    <label for="valorCompra">Valor da Compra: R$ </label>
+    <input type="number" id="valorCompra" >
+    <br><br>
+    <label for="valorPago">Valor Pago: R$ </label>
+    <input type="number" id="valorPago">
+    <br><br>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <br><br>
+    <label for="resultado">Troco</label>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            let valorCompra = parseFloat(document.getElementById("valorCompra").value);
+            let valorPago = parseFloat(document.getElementById("valorPago").value);
+
+            let troco = valorPago - valorCompra;
+
+            document.getElementById("resultado").innerHTML = troco.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
+```
+
 
 ## 31/03/2025 - Segunda
 Leitura de algoritmos - Exercícios

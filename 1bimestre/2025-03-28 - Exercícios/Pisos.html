@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Pisos</title>
+</head>
+
+<body>
+    <h1>Calculadora de Peças de Piso</h1>
+
+    <label for="comprimentoAmbiente">Comprimento do ambiente (m):</label>
+    <input type="number" id="comprimentoAmbiente"><br><br>
+
+    <label for="larguraAmbiente">Largura do ambiente (m):</label>
+    <input type="number" id="larguraAmbiente"><br><br>
+
+    <label for="comprimentoPiso">Comprimento do piso (cm):</label>
+    <input type="number" id="comprimentoPiso"><br><br>
+
+    <label for="larguraPiso">Largura do piso (cm):</label>
+    <input type="number" id="larguraPiso"><br><br>
+
+    <input type="button" value="Calcular" onclick="calcularPisos()"><br><br>
+    <label for="resultado">Resultados: </label>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPisos() {
+            let comprimentoAmbiente = document.getElementById('comprimentoAmbiente').value;
+            let larguraAmbiente = document.getElementById('larguraAmbiente').value;
+            let comprimentoPiso = document.getElementById('comprimentoPiso').value;
+            let larguraPiso = document.getElementById('larguraPiso').value;
+
+            let areaAmbiente = (comprimentoAmbiente * 100) * (larguraAmbiente * 100);
+            let areaPiso = comprimentoPiso * larguraPiso;
+
+            let pecasNecessarias = Math.ceil(areaAmbiente / areaPiso);
+            let pecasComSobra = Math.ceil(pecasNecessarias * 1.1);
+
+            let resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML =
+                'Área do ambiente: ' + areaAmbiente.toFixed(2) + ' cm²<br>' +
+                'Área de cada piso: ' + areaPiso.toFixed(2) + ' cm²<br>' +
+                'Peças necessárias sem sobra: ' + pecasNecessarias + '<br>' +
+                'Peças necessárias com 10% de sobra: ' + pecasComSobra;
+        }
+    </script>
+</body>
+
+</html>
