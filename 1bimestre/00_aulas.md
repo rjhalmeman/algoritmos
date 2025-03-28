@@ -45,7 +45,7 @@ O cheiro é doce e refrescante, e quando você a morde, sente um gosto doce ou l
 
 Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da crocância é nítido. O sabor é uma mistura de frescor e doçura, com uma leve acidez que pode ser refrescante.
 
-### Desenhe a interface gráfica (tela), conforme a descrição abaixo:
+### Desenhe a interface gráfica (tela) conforme a descrição abaixo:
 
 ``` HTML
 <!DOCTYPE html>
@@ -83,7 +83,13 @@ Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da croc
 </body>
 </html>
 ```
+### Explique a dinâmica de funcionamento do programa (considerando a tela que você desenhou)
 
+### Teste de mesa. Considere diversos valores de compra e valores pagos. Mostre os resultados. 
+
+ <p style="text-align: center; font-weight: bold; font-family: 'Caveat', cursive; font-size: 22px; color:red">
+        Teste de mesa é feito manualmente (sem executar o programa em um computador) informando valores para as entradas de dados, fazendo o processamento manualmente e apresentando os resultados.
+    </p>
 
 ## 31/03/2025 - Segunda
 Leitura de algoritmos - Exercícios
