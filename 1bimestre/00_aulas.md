@@ -36,6 +36,17 @@ Estruturação de raciocínio lógico.
 
 Leitura de algoritmos e teste de mesa.
 
+
+### Desenhe a fruta conforme a descrição abaixo
+
+Uma fruta de formato redondo ou ligeiramente achatado. Sua casca é lisa e pode ter diferentes cores, como vermelho, verde ou amarelo. Quando você segura, ela tem uma textura firme, mas suave ao toque. Ao pressioná-la levemente, você sente que ela é um pouco dura, mas tem uma leve elasticidade.
+
+O cheiro é doce e refrescante, e quando você a morde, sente um gosto doce ou levemente ácido, dependendo da variedade. O interior é crocante e suculento, com pequenas sementes no centro, que ficam dentro de um pequeno núcleo, geralmente de cor marrom.
+
+Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da crocância é nítido. O sabor é uma mistura de frescor e doçura, com uma leve acidez que pode ser refrescante.
+
+### Desenhe a interface gráfica (tela), conforme a descrição abaixo:
+
 ``` HTML
 <!DOCTYPE html>
 <html lang="pt-br">
