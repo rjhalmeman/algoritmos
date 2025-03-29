@@ -94,6 +94,31 @@ Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da croc
 ## 31/03/2025 - Segunda
 Leitura de algoritmos - Exercícios
 
+Como usar o VSCode para fazer os exercícios.
+
+--- 
+
+Instalação do VSCode (Visual Studio Code) - Para instalar no computador pessoal
+
+Tutorial (canal Dev Point)
+https://www.youtube.com/watch?v=rNArHhYMn-s
+
+No vídeo ele instala a extensão Code Runner. 
+Instale também as extensões
+Live Server.
+![alt text](./imagens/liveServer.jpg)
+
+Português Brasil
+![alt text](./imagens/pt-br.jpg)
+
+
+vscode-icons
+![alt text](./imagens/vscodeIcons.jpg)
+
+Depois que instalar, clic no Menu Arquivo e ative a opção Salvamento automático.
+
+--- 
+
 ## 04/04/2025
 Formalização de passos para a resolução de problemas. Estruturas sequenciais. 
 Teste de mesa.
