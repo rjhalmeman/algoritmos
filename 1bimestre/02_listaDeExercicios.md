@@ -26,27 +26,13 @@ cúbicos para preencher completamente a piscina. Lembrando que cada metro cúbic
 10) Elabore um enunciado de um problema relacionado com seu dia-a-dia, que possa ser resolvido por meio de um algoritmo, e proponha uma solução.
 
 11) Elabore um algoritmo que leia 2 números (maiores que 0), e imprima os números informados, a soma, subtração do primeiro pelo segundo, multiplicação, considerando a seguinte saída: 
-<div style="margin-left: 320px;">
-Primeiro Número:____ 
+<p align="center" >
+  <img src="./imagens/respMultipla.jpg"> 
+</p>
 
-Segundo Número:____  
-Soma:____  
-Subtração: ____  
-Multiplicação: ____
-
-</div>
-
-12) Elabore um algoritmo que leia um número real e imprima a terça parte desse
-número.
+12) Elabore um algoritmo que leia um número real e imprima a terça parte desse número.
 
 13) Elabore um algoritmo que leia um número positivo maior que 0, calcule e mostre:
-<div style="margin-left: 320px;">
- 
- a. O número informado ao quadrado 
-
- b. O número informado ao cubo 
-
- c. A raiz quadrada do número informado
-
- d. A raiz cúbica do número informado
-</div>
+<p align="center">
+  <img src="./imagens/ex13.jpg">
+</p>
