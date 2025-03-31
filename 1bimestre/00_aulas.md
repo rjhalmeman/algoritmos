@@ -115,10 +115,10 @@ Português Brasil
 vscode-icons
 ![alt text](./imagens/vscodeIcons.jpg)
 
-Depois que instalar, clic no Menu Arquivo e ative a opção Salvamento automático.
+Depois que instalar, clic no Menu Arquivo (File...) e ative a opção Salvamento automático (Auto save).
 
 
-As listas de exercícios 2 e 3 devem ser feitas pelos alunos.
+As listas de exercícios 2 e 3 devem ser feitas.
 
 --- 
 
