@@ -117,6 +117,9 @@ vscode-icons
 
 Depois que instalar, clic no Menu Arquivo e ative a opção Salvamento automático.
 
+
+As listas de exercícios 2 e 3 devem ser feitas pelos alunos.
+
 --- 
 
 ## 04/04/2025
