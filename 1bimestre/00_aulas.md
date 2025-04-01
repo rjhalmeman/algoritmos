@@ -119,6 +119,10 @@ Depois que instalar, clic no Menu Arquivo (File...) e ative a opção Salvamento
 
 
 As listas de exercícios 2 e 3 devem ser feitas.
+https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/02_listaDeExercicios.md
+
+https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/03_listaDeExercicios.md
+
 
 --- 
 
