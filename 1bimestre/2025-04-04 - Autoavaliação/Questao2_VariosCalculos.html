@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vários cálculos</title>
+</head>
+
+<body>
+    <label for="inputX">Valor de X</label>
+    <input type="number" id="inputX">
+    <br>
+    <input type="button" value="Calcular" onclick="funcaoCalcular()">
+    <br>
+    <label for="spanRespostaX2">X² = </label>
+    <span id="spanRespostaX2"></span>
+
+    <br>
+    <label for="spanRespostaX3">X³ = </label>
+    <span id="spanRespostaX3"></span>
+
+    <br>
+    <label for="spanRespostaRaizQuadrada">Raiz quadrada = </label>
+    <span id="spanRespostaRaizQuadrada"></span>
+
+    <br>
+    <label for="spanRespostaRaizCubica">Raiz cúbica = </label>
+    <span id="spanRespostaRaizCubica"></span>
+
+    <script>
+        function funcaoCalcular() {
+            let x = parseFloat(document.getElementById("inputX").value);
+
+
+            let x2 = x ** 2;
+            let x3 = x ** 3;
+            let rq = Math.sqrt(x);
+            let rc = x ** (1 / 3)
+
+            document.getElementById("spanRespostaX2").innerHTML = x2;
+            document.getElementById("spanRespostaX3").innerHTML = x3;
+            document.getElementById("spanRespostaRaizQuadrada").innerHTML = rq;
+            document.getElementById("spanRespostaRaizCubica").innerHTML = rc;
+        }
+    </script>
+
+</body>
+
+</html>

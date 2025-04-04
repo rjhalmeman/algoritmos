@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar valores</title>
+</head>
+
+<body>
+    <label for="inputV1">Valor 1</label>
+    <input type="number" id="inputV1">
+    <br>
+    <label for="inputV2">Valor 2</label>
+    <input type="number" id="inputV2">
+    <br>
+    <input type="button" value="Trocar valores" onclick="funcaoTrocarValores()">
+<br>
+<label for="spanRespostaV1">Valor 1 = </label>
+<span id="spanRespostaV1"></span>
+
+<br>
+<label for="spanRespostaV2">Valor 2 = </label>
+<span id="spanRespostaV2"></span>
+
+
+<script>
+    function funcaoTrocarValores(){
+        let v1 = parseFloat(document.getElementById("inputV1").value);
+        let v2 = parseFloat(document.getElementById("inputV2").value);
+
+        let variavelAuxiliar = v1;
+        v1 = v2;
+        v2 = variavelAuxiliar;
+
+        document.getElementById("spanRespostaV1").innerHTML = v1;
+        document.getElementById("spanRespostaV2").innerHTML = v2;
+    }
+</script>
+
+</body>
+
+</html>
