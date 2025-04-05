@@ -1,6 +1,7 @@
 # Notas de aulas - Algoritmos - 2025/1 - TIII - UTFPR/CM
 
 ## 21/03/2025 - Sexta-feira
+
 Apresentação da disciplina
 
 Dinâmica: o robô segue os comandos.
@@ -11,7 +12,7 @@ Byte - Sistema computacional
 
 ## 24/03/2025 - Segunda
 
-### recapitulação das aulas anteriores
+### Recapitulação das aulas anteriores
 
 1. Problema
 2. Algoritmo (para resolver o problema)
@@ -23,8 +24,8 @@ Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Ca
 Exercício/Exemplo
 https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-03-24%20-%20SomarDoisNumeros
 
-
 ## 28/03/2025 - Sexta
+
 Aulas em sala teórica: G101
 `Estruturas sequenciais. `
 
@@ -33,9 +34,7 @@ Estruturação de raciocínio lógico.
     - Processamento
     - Saída
 
-
 Leitura de algoritmos e teste de mesa.
-
 
 ### Desenhe a fruta conforme a descrição abaixo
 
@@ -47,7 +46,7 @@ Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da croc
 
 ### Desenhe a interface gráfica (tela) conforme a descrição abaixo:
 
-``` HTML
+```HTML
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -83,15 +82,17 @@ Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da croc
 </body>
 </html>
 ```
+
 ### Explique a dinâmica de funcionamento do programa (considerando a tela que você desenhou)
 
-### Teste de mesa. Considere diversos valores de compra e valores pagos. Mostre os resultados. 
+### Teste de mesa. Considere diversos valores de compra e valores pagos. Mostre os resultados.
 
- <p style="text-align: center; font-weight: bold; font-family: 'Caveat', cursive; font-size: 22px; color:red">
+<p style="text-align: center; font-weight: bold; font-family: 'Caveat', cursive; font-size: 22px; color:red">
         Teste de mesa é feito manualmente (sem executar o programa em um computador) informando valores para as entradas de dados, fazendo o processamento manualmente e apresentando os resultados.
     </p>
 
 ## 31/03/2025 - Segunda
+
 Leitura de algoritmos - Exercícios
 
 Como usar o VSCode para fazer os exercícios.
@@ -111,46 +112,64 @@ Live Server.
 Português Brasil
 ![alt text](./imagens/pt-br.jpg)
 
-
 vscode-icons
 ![alt text](./imagens/vscodeIcons.jpg)
 
 Depois que instalar, clic no Menu Arquivo (File...) e ative a opção Salvamento automático (Auto save).
-
 
 As listas de exercícios 2 e 3 devem ser feitas.
 https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/02_listaDeExercicios.md
 
 https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/03_listaDeExercicios.md
 
-
 --- 
 
 ## 04/04/2025
+
+Aulas em sala teórica - realização de atividade autoavaliativa.
+
+https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/Autoavalia%C3%A7%C3%A3o%2001.pdf
+
+
+
+Programas em HTML e JavaScript
+
+[algoritmos/1bimestre/2025-04-04 - Autoavaliação at main · rjhalmeman/algoritmos · GitHub](https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-04-04%20-%20Autoavalia%C3%A7%C3%A3o)
+
+
+
+O objetivo da atividade é possibilitar que os alunos percebam onde estão as dificuldades e possam solicitar ajuda ao professor e discente de apoio.
+
+
+
 Formalização de passos para a resolução de problemas. Estruturas sequenciais. 
 Teste de mesa.
 
 ## 07/04/2025
+
 Variáveis. Tipos de dados. Ambiente de desenvolvimento
 Exercícios com expressões aritméticas, atribuição e saída simples.
 
 ## 11/04/2025
+
 Condicionais
 
 ## 14/04/2025
+
 Variáveis - exercícios
 
 ## 25/04/2025
+
 Funções
 
 ## 28/04/2025
+
 Exercícios com funções
 
 ## 05/05/2025
+
 Exercícios com funções
 
 ## 09/05/2025
+
 # Avaliação 1º bimestre
-
-
-
