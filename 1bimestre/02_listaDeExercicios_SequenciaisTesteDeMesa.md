@@ -27,9 +27,32 @@ Testes de mesa
    let x = (a**3*b+7)/2;    
    ```
 
-4. AAAA
+4. Qual o valor de s? 
+   
+   ```js
+   function soma(a,b){
+       let soma = a+b;
+       return soma;
+   }
+   
+   
+   let s = soma(6,7);
+   ```
+   
+   
 
-5. AAAA
+5. Qual o valor de x?
+   
+   ```js
+   function pitagoras(b,c){
+       return Math.sqrt(b**2+c**2)
+   }
+   
+   
+   let hipotenusa = pitagoras(3,4);
+   ```
+   
+   
 
 6. AAAA
 
@@ -38,8 +61,6 @@ Testes de mesa
 8. AAAA
 
 9. AAAA
-
-10. AAAA
 
 
 
