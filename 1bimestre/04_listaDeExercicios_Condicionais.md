@@ -2,7 +2,6 @@
   <img src="./imagens/treinarCerebro.jpg" alt="Cérebro" width="200" height="200">
 </p>
 
-
 # AL04 - Algoritmos - Lista de exercícios 04 - Condicionais
 
 1) Escreva um programa que resolva o seguinte problema: uma cópia “xerox” custa R$ 0,25 por folha, mas acima de 100 folhas esse valor cai para R$ 0,20 por unidade. Dado o total de cópias, informe o valor a ser pago.
@@ -22,8 +21,9 @@
 8) Faça um algoritmo que receba três números como entrada e informe qual deles é o maior.
 
 9) Escreva um algoritmo que verifique se um triângulo é equilátero, isósceles ou escaleno,
-com base em seus lados. A identificação de cada tipo de triângulo:
-<div style="margin-left: 120px;">
+   com base em seus lados. A identificação de cada tipo de triângulo:
+   
+   <div style="margin-left: 120px;">
 
 Equilátero: Um triângulo é equilátero se todos os seus lados têm o mesmo
 comprimento.
@@ -33,6 +33,7 @@ e um lado diferente.
 
 Escaleno: Um triângulo é escaleno se todos os seus lados têm comprimentos
 diferentes.
+
 </div>
 
 10) Escreva um algoritmo que receba a idade de uma pessoa e informe se ela é criança, adolescente, adulta ou idosa. Criança até 12 anos, adolescente até 18 anos, adulta até 60 anos e idosa acima de 60;

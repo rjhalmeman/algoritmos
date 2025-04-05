@@ -2,7 +2,7 @@
   <img src="./imagens/cerebro.png" alt="Cérebro" width="200" height="200">
 </p>
 
-#  LA03 - Lista de Exercícios 03 - Sequenciais
+# LA03 - Lista de Exercícios 03 - Sequenciais
 
 1) Escreva um algoritmo que troque os valores de duas variáveis. Por exemplo, se a = 5 e b = 3, após a execução do algoritmo, a deverá conter o valor 3 e b deverá conter o valor 5.
 
@@ -15,10 +15,9 @@
 5) Faça um algoritmo que calcule a área de um retângulo. O usuário deve inserir o comprimento e a largura do retângulo, e o algoritmo deve calcular e exibir a área.
 
 6) Crie um algoritmo que calcule a idade de uma pessoa em dias. O usuário deve inserir sua idade em anos, 
-meses e dias e o algoritmo deve calcular e exibir a idade em dias. Considere que os meses têm 30 dias.
+   meses e dias e o algoritmo deve calcular e exibir a idade em dias. Considere que os meses têm 30 dias.
 
 7) Considere como entrada de dados o nome completo de uma pessoa e sua nota final. Faça um programa que imprima o texto do certificado.
-
 
 <p align="center">
   <img src="./imagens/L3ex10.jpg">

@@ -21,18 +21,20 @@
 8) Dado um número de apartamento, escreva o andar e o número do apartamento. Por exemplo, 204. Resposta esperada, Andar 2, Apartamento 04.
 
 9) Kelvysmundo está projetando uma piscina retangular para seu quintal. Ele quer calcular quanto volume de água será necessário para encher a piscina até a borda. Escreva um algoritmo que, com base nas medidas de largura, comprimento e profundidade fornecidas em metros, calcule o volume de água necessário em litros
-cúbicos para preencher completamente a piscina. Lembrando que cada metro cúbico equivale a 1000 litros de água. Após calcular o volume necessário, exiba o resultado.
+   cúbicos para preencher completamente a piscina. Lembrando que cada metro cúbico equivale a 1000 litros de água. Após calcular o volume necessário, exiba o resultado.
 
 10) Elabore um enunciado de um problema relacionado com seu dia-a-dia, que possa ser resolvido por meio de um algoritmo, e proponha uma solução.
 
 11) Elabore um algoritmo que leia 2 números (maiores que 0), e imprima os números informados, a soma, subtração do primeiro pelo segundo, multiplicação, considerando a seguinte saída: 
-<p align="center" >
-  <img src="./imagens/respMultipla.jpg"> 
-</p>
+    
+    <p align="center" >
+    <img src="./imagens/respMultipla.jpg"> 
+    </p>
 
 12) Elabore um algoritmo que leia um número real e imprima a terça parte desse número.
 
 13) Elabore um algoritmo que leia um número positivo maior que 0, calcule e mostre:
-<p align="center">
-  <img src="./imagens/ex13.jpg">
-</p>
+    
+    <p align="center">
+    <img src="./imagens/ex13.jpg">
+    </p>
