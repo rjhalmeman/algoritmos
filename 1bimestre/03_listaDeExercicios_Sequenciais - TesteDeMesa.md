@@ -103,7 +103,11 @@
    // ax + b = 0
    let a = 4, b = -8;
    let x = -b / a;
-   console.log("Solução da equação 4x - 8 = 0 → x =", x);
+   console.log("Solução da equação");
+   console.log( a + "x - " + b + " = 0 ");
+   console.log(a+"x="+b*-1)
+   console.log("x = " + -b + "/" + a);
+   console.log("x = " + x);
 
    ```
 
