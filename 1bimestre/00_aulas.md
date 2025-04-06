@@ -132,16 +132,23 @@ https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/03_listaDeExercicio
 
 Aulas em sala teórica - realização de atividade autoavaliativa.
 
-### [Atividade autoavaliativa 01.pdf]([algoritmos/1bimestre/Autoavaliação 01.pdf at main · rjhalmeman/algoritmos · GitHub](https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/Autoavalia%C3%A7%C3%A3o%2001.pdf))
+### [Atividade autoavaliativa 01.pdf](https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/Autoavalia%C3%A7%C3%A3o%2001.pdf)
 
-[Programas em HTML e JavaScript - Github]([algoritmos/1bimestre/2025-04-04 - Autoavaliação at main · rjhalmeman/algoritmos · GitHub](https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-04-04%20-%20Autoavalia%C3%A7%C3%A3o))
+[Programas em HTML e JavaScript - Github](https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-04-04%20-%20Autoavalia%C3%A7%C3%A3o)
 
 O objetivo da atividade é possibilitar que os alunos percebam onde estão as dificuldades e possam solicitar ajuda ao professor e/ou discente de apoio.
 
 Formalização de passos para a resolução de problemas. Estruturas sequenciais. 
 Teste de mesa.
 
+
+
 ## 07/04/2025
+
+Recapitulação
+
+Lista de exercícios com teste de mesa
+
 
 Variáveis. Tipos de dados. Ambiente de desenvolvimento
 Exercícios com expressões aritméticas, atribuição e saída simples.
