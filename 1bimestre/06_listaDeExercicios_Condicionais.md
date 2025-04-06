@@ -1,67 +1,38 @@
-<p align="center">
-  <img src="./imagens/treinarCerebro.jpg" alt="Cérebro" width="200" height="200">
-</p>
+## Algoritmos - Lista de exercícios 05 - Condicionais
 
-# AL06 - Lista de algoritmos 06 - Condicionais
+1) Escreva um algoritmo que leia 3 números inteiros e mostre o menor deles.
 
-1) O IMC (Índice de Massa Corporal) é um critério da Organização Mundial de Saúde para dar uma indicação sobre a condição de peso de uma pessoa adulta. A fórmula é:
+2) Escrever um algoritmo que lê um conjunto de 4 valores i, a, b, c, onde i é um valor inteiro e positivo e  a, b, c, são quaisquer valores reais. A seguir:
+- Se i=1 escrever os três valores a, b, c em ordem crescente.
 
-<p align="center">
-  <img src="./imagens/imc.jpg" alt="Cérebro" width="100" height="100">
-</p>
+- Se i=2 escrever os três valores a, b, c em ordem decrescente.
 
-- Com o valor do IMC calculado o programa deve informar a condição . Conforme a tabela abaixo
+- Se i=3 escrever os três valores a, b, c de forma que o maior entre a, b,c fique dentre os dois.
+3) Ler o nome de dois times e o número de gols marcados na partida. Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
 
-<p align="center">
-  <img src="./imagens/imcTabela.jpg" alt="Cérebro" width="500" height="200">
-</p>
+4) Escreva um algoritmo que leia as idades de 2 homens e 2 mulheres (considere que as idades dos homens serão sempre diferentes, bem como as das mulheres). Calcule e escreva a soma das idades do homem mais velho com a mulher mais nova, e o produto das idades do homem mais novo com a mulher mais velha.
 
-2) Elabore um algoritmo (e programa em JS) que calcule o que deve ser pago por um
-   produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento.
-   Utilize os códigos da tabela a seguir para ler qual a condição de pagamento escolhida e
-   efetuar o cálculo adequado.
-   Código - Condição de pagamento
-
-<div style="margin-left: 320px;">
-
-1 - À vista em dinheiro ou cheque, recebe 15% de desconto
-
-2 - À vista no cartão de crédito, recebe 10% de desconto
-
-3 - Em duas vezes, preço normal de etiqueta sem juros
-
-4 - Em 3 vezes, preço normal de etiqueta mais juros de 5%
-
-</div>
-
-3) Escreva um algoritmo que leia o RA, as 3 notas obtidas por um aluno nas 3 verificações e
-   a média dos exercícios que fazem parte da avaliação, e calcule a média de aproveitamento,
-   usando a fórmula:
-   
-   <div style="margin-left: 320px;">
-
-MA = (nota1 + nota 2 * 2 + nota 3 * 3 + ME)/7
-
-</div>
-
-<div style="margin-left: 40px;">
-
-A atribuição dos conceitos obedece a tabela abaixo. O algoritmo deve escrever o RA do
-aluno, suas notas, a média dos exercícios, a média de aproveitamento, o conceito
-correspondente e a mensagem 'Aprovado' se o conceito for A, B ou C, e 'Reprovado' se o
-conceito for D ou E.
-Média de aproveitamento Conceito
-
-</div>
+5) Escrever um algoritmo que lê o número de identificação, as 4 notas obtidas por um aluno nas 4 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11. A atribuição de conceitos obedece a tabela abaixo:
 
 <p align="center">
-  <img src="./imagens/l06_tabelaNumeros.jpg" alt="Cérebro" width="300" height="200">
+  <img src="./imagens/tabelaConceitos.jpg" alt="" width="300" height="200">
 </p>
 
-4) ) Faça um algoritmo que leia o nome, o sexo e o estado civil de uma pessoa. Caso sexo seja “F” e estado civil seja “CASADA”, solicitar o tempo de casada (anos). (Este exercício vai misturar coisas da entrada de dados com o processamento. Preste atenção nisso, pois algumas vezes temos que adaptar a solução ao problema).
+* O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, conceito correspondente e a mensagem: APROVADO se o conceito for A,B ou C e REPROVADO se o
+  conceito for D ou E.
+6) São dados graus para as notas de um exame como se segue:
 
-5) Você viajou para os Estados Unidos e descobriu que lá a unidade de medida de temperatura é diferente da do Brasil. Para não ter que acessar um serviço na internet a todo o momento, nem fazer os cálculos manualmente, faça um algoritmo, e programa em JS, que converte a temperatura informada para a temperatura na outra unidade de medida. Ou seja, se a temperatura for informada em Celsius o algoritmo deve fornecer a temperatura em Fahrenheit, já se a temperatura for fornecida em Fahrenheit, o resultado deve ser em
-   graus Celsius. As fórmulas de conversão devem ser pesquisadas na internet.
+<p align="center">
+  <img src="./imagens/tabelaGraus.jpg" alt="" width="200" height="200">
+</p>
 
-6) De acordo com o calendário Gregoriano (implantado em 1582), um ano é bissexto se ele é múltiplo de 400 ou é múltiplo de 4 mas não de 100. Desenvolva um programa que receba um ano e imprima SIM se ele for bissexto e NAO caso contrário. Na entrada o ano deve ser maior que>1582. Mais detalhes aqui:
-   https://escolakids.uol.com.br/matematica/calculo-do-ano-bissexto.htm
+Codifique o algoritmo para que imprima o grau de qualquer nota dada, para os alunos que fizeram o exame.
+
+7) Ler 3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores.
+
+8) Elaborar um algoritmo que lê 3 valores a, b, c e verifica se eles formam ou não um triângulo. Supor que os valores lidos são inteiros e positivos. Caso os valores formem um triângulo, calcular e escrever a área deste triângulo. Se não formam triângulo escrever os valores lidos. (lembre-se que a soma de
+   dois lados não pode ser menor que o terceiro).
+
+9) Problemas simples do cotidiano podem representar desafios para o mundo computacional. Faça um algoritmo que, dados três números inteiros representando dia, mês e ano de uma data, imprima qual o dia seguinte.
+
+10) Faça um algoritmo que, dado o valor total em reais e o número de prestações desejadas, calcule o valor de cada prestação. O número mínimo de prestações deve ser 12. Se o número de prestações for maior ou igual a 24, adicione 10% de juros ao valor total, se for maior ou igual a 36, adicione 15% de juros ao valor total.

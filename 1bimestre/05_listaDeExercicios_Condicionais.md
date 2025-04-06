@@ -1,38 +1,41 @@
-## Algoritmos - Lista de exercícios 05 - Condicionais
-
-1) Escreva um algoritmo que leia 3 números inteiros e mostre o menor deles.
-
-2) Escrever um algoritmo que lê um conjunto de 4 valores i, a, b, c, onde i é um valor inteiro e positivo e  a, b, c, são quaisquer valores reais. A seguir:
-- Se i=1 escrever os três valores a, b, c em ordem crescente.
-
-- Se i=2 escrever os três valores a, b, c em ordem decrescente.
-
-- Se i=3 escrever os três valores a, b, c de forma que o maior entre a, b,c fique dentre os dois.
-3) Ler o nome de dois times e o número de gols marcados na partida. Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
-
-4) Escreva um algoritmo que leia as idades de 2 homens e 2 mulheres (considere que as idades dos homens serão sempre diferentes, bem como as das mulheres). Calcule e escreva a soma das idades do homem mais velho com a mulher mais nova, e o produto das idades do homem mais novo com a mulher mais velha.
-
-5) Escrever um algoritmo que lê o número de identificação, as 4 notas obtidas por um aluno nas 4 verificações e a média dos exercícios que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: MA = (Nota1 + Nota2 x 2 + Nota3 x 3 + Nota4 x 4+ ME )/11. A atribuição de conceitos obedece a tabela abaixo:
-
 <p align="center">
-  <img src="./imagens/tabelaConceitos.jpg" alt="" width="300" height="200">
+  <img src="./imagens/treinarCerebro.jpg" alt="Cérebro" width="200" height="200">
 </p>
 
-* O algoritmo deve escrever o número do aluno, suas notas, a média dos exercícios, a média de aproveitamento, conceito correspondente e a mensagem: APROVADO se o conceito for A,B ou C e REPROVADO se o
-  conceito for D ou E.
-6) São dados graus para as notas de um exame como se segue:
+# AL04 - Algoritmos - Lista de exercícios 04 - Condicionais
 
-<p align="center">
-  <img src="./imagens/tabelaGraus.jpg" alt="" width="200" height="200">
-</p>
+1) Escreva um programa que resolva o seguinte problema: uma cópia “xerox” custa R$ 0,25 por folha, mas acima de 100 folhas esse valor cai para R$ 0,20 por unidade. Dado o total de cópias, informe o valor a ser pago.
 
-Codifique o algoritmo para que imprima o grau de qualquer nota dada, para os alunos que fizeram o exame.
+2) Escreva um programa que calcule as raízes da equação do 2o grau; os valores de a, b e c são fornecidos pelo usuário. Use a fórmula de Bháskara.
 
-7) Ler 3 valores (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores.
+3) Não é possível dividir um número qualquer por 0 (zero). Deste modo, faça um programa de computador que divida um número por outro (dividendo e divisor), informados pelo usuário. Tomando o cuidado de verificar se o divisor não é igual a zero.
 
-8) Elaborar um algoritmo que lê 3 valores a, b, c e verifica se eles formam ou não um triângulo. Supor que os valores lidos são inteiros e positivos. Caso os valores formem um triângulo, calcular e escrever a área deste triângulo. Se não formam triângulo escrever os valores lidos. (lembre-se que a soma de
-   dois lados não pode ser menor que o terceiro).
+4) Encontre o dobro de um número inteiro caso ele seja negativo, seu triplo caso seja positivo. Caso for zero, informe o usuário que é um número neutro ou nulo. 
 
-9) Problemas simples do cotidiano podem representar desafios para o mundo computacional. Faça um algoritmo que, dados três números inteiros representando dia, mês e ano de uma data, imprima qual o dia seguinte.
+5) Escreva um algoritmo que verifica se um número é positivo, negativo ou zero.
 
-10) Faça um algoritmo que, dado o valor total em reais e o número de prestações desejadas, calcule o valor de cada prestação. O número mínimo de prestações deve ser 12. Se o número de prestações for maior ou igual a 24, adicione 10% de juros ao valor total, se for maior ou igual a 36, adicione 15% de juros ao valor total.
+6) Crie um algoritmo que determine se um número é par ou ímpar.
+
+7) Desenvolva um algoritmo que determine se um ano é bissexto ou não.
+
+8) Faça um algoritmo que receba três números como entrada e informe qual deles é o maior.
+
+9) Escreva um algoritmo que verifique se um triângulo é equilátero, isósceles ou escaleno,
+   com base em seus lados. A identificação de cada tipo de triângulo:
+   
+   <div style="margin-left: 120px;">
+
+Equilátero: Um triângulo é equilátero se todos os seus lados têm o mesmo
+comprimento.
+
+Isósceles: Um triângulo é isósceles se possui dois lados com o mesmo comprimento
+e um lado diferente.
+
+Escaleno: Um triângulo é escaleno se todos os seus lados têm comprimentos
+diferentes.
+
+</div>
+
+10) Escreva um algoritmo que receba a idade de uma pessoa e informe se ela é criança, adolescente, adulta ou idosa. Criança até 12 anos, adolescente até 18 anos, adulta até 60 anos e idosa acima de 60;
+
+11) Crie um algoritmo que determine se um número é divisível por 3 e por 5 ao mesmo tempo.

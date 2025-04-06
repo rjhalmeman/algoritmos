@@ -93,13 +93,17 @@ Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da croc
 
 ## 31/03/2025 - Segunda
 
-Leitura de algoritmos - Exercícios
+### Leitura de algoritmos - Exercícios
 
-Como usar o VSCode para fazer os exercícios.
+### Como usar o VSCode para fazer os exercícios.
+
+- atividade prática desenvolvida em sala de aulas
 
 --- 
 
-Instalação do VSCode (Visual Studio Code) - Para instalar no computador pessoal
+### Instalação do VSCode (Visual Studio Code)
+
+Para instalar no computador pessoal
 
 Tutorial (canal Dev Point)
 https://www.youtube.com/watch?v=rNArHhYMn-s
@@ -128,19 +132,11 @@ https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/03_listaDeExercicio
 
 Aulas em sala teórica - realização de atividade autoavaliativa.
 
-https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/Autoavalia%C3%A7%C3%A3o%2001.pdf
+### [Atividade autoavaliativa 01.pdf]([algoritmos/1bimestre/Autoavaliação 01.pdf at main · rjhalmeman/algoritmos · GitHub](https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/Autoavalia%C3%A7%C3%A3o%2001.pdf))
 
+[Programas em HTML e JavaScript - Github]([algoritmos/1bimestre/2025-04-04 - Autoavaliação at main · rjhalmeman/algoritmos · GitHub](https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-04-04%20-%20Autoavalia%C3%A7%C3%A3o))
 
-
-Programas em HTML e JavaScript
-
-[algoritmos/1bimestre/2025-04-04 - Autoavaliação at main · rjhalmeman/algoritmos · GitHub](https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-04-04%20-%20Autoavalia%C3%A7%C3%A3o)
-
-
-
-O objetivo da atividade é possibilitar que os alunos percebam onde estão as dificuldades e possam solicitar ajuda ao professor e discente de apoio.
-
-
+O objetivo da atividade é possibilitar que os alunos percebam onde estão as dificuldades e possam solicitar ajuda ao professor e/ou discente de apoio.
 
 Formalização de passos para a resolução de problemas. Estruturas sequenciais. 
 Teste de mesa.
