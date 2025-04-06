@@ -145,10 +145,14 @@ Teste de mesa.
 
 ## 07/04/2025
 
-Recapitulação
+Recapitulação (RAM e variáveis)
 
-Lista de exercícios com teste de mesa
+Concatenação de string + variável
 
+Console.log()
+
+
+[Lista de exercícios 03 - foco nos testes de mesa](https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/03_listaDeExercicios_Sequenciais%20-%20TesteDeMesa.md)
 
 Variáveis. Tipos de dados. Ambiente de desenvolvimento
 Exercícios com expressões aritméticas, atribuição e saída simples.

@@ -1,6 +1,6 @@
-Lista de exercícios complementar
+# Lista de exercícios 03 - Sequenciais - testes de mesa
 
-Testes de mesa
+
 #### Considerando que uma variável é um local (na memória RAM) que guarda alguma coisa.
 #### Para todos os exercícios, calcule e mostre o valor que estará na variável ou variáveis da pergunta após realizar os cálculos (processamento).
 
@@ -13,8 +13,10 @@ Testes de mesa
    let soma = x + y;
    console.log("O resultado da soma é " + soma);
    ```
-      Neste caso, 
-      soma = 3 + 4  // soma recebe 3 + 4. Ou seja, o local chamado soma vai receber 7.
+      Neste caso, para resolver pode ser feito assim:
+      ####
+      soma = 3 + 4  // soma recebe 3 + 4. Ou seja, o local chamado ***soma*** vai receber o resultado da conta que é 7.
+      o console.log, vai literalmente escrever na tela o que está entre aspas e na sequência colocar o conteúdo da variável soma.
       O resultado da soma é 7 //mostra o valor contido em ***soma***, que é 7.
 
 
