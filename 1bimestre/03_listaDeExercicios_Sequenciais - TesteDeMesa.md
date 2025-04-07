@@ -122,3 +122,10 @@
       let precoFinal = preco * (1 - desconto / 100);
       console.log("6. Preço com 10% de desconto =", precoFinal);
       ```
+12. Média ponderada
+
+      ```js
+      let n1 = 7, n2 = 9, peso1 = 2, peso2 = 3;
+      let mediaPond = (n1*peso1 + n2*peso2) / (peso1 + peso2);
+      console.log("Média ponderada = "+ mediaPond);
+      ```
