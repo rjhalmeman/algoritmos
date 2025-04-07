@@ -148,6 +148,7 @@ Teste de mesa.
 Recapitulação (RAM e variáveis)
 
 Concatenação de string + variável
+criação de funções
 
 Console.log()
 

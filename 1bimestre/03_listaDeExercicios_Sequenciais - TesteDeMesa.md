@@ -15,9 +15,7 @@
    ```
       Neste caso, para resolver pode ser feito assim:
       ####
-      soma = 3 + 4  // soma recebe 3 + 4. Ou seja, o local chamado ***soma*** vai receber o resultado da conta que é 7.
-      o console.log, vai literalmente escrever na tela o que está entre aspas e na sequência colocar o conteúdo da variável soma.
-      O resultado da soma é 7 //mostra o valor contido em ***soma***, que é 7.
+      soma = 3 + 4  // soma recebe 3 + 4. Ou seja, a variável (um local na RAM) chamado ***soma*** vai receber e guardar o resultado da conta que é 7. O console.log, vai literalmente escrever na tela o que está entre aspas (**"O resultado da soma é "**) e na sequência colocar o conteúdo da variável ***soma***. O resultado da soma é 7 //mostra o valor contido em ***soma***, que é 7.
 
 
 2. Qual o valor de z?
@@ -87,7 +85,6 @@
    console.log("Média 3 = " + m3);
    console.log("Média 4 = " + m4);
    console.log("Média 5 = " + m5);
-
    ```
 8. Quais os valores de x1 e x2?
 
@@ -95,7 +92,6 @@
    let x1=4,  x2=6 , y1=5 , y2=7;
    let distancia = ((x2-x1)**2+(y2-y1)**2)**(1/2);
    console.log("Distância = "+ distancia);
-
    ```
 9. Qual o valor de x?
 
@@ -108,7 +104,6 @@
    console.log(a+"x="+b*-1)
    console.log("x = " + -b + "/" + a);
    console.log("x = " + x);
-
    ```
 
 10. Qual a área do triângulo?
