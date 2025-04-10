@@ -8,11 +8,15 @@
 
 1) Faça um algoritmo que leia as 4 notas de um aluno e calcule a média aritmética simples deste aluno. 
 
-​		media = (nota1+nota2+nota3+nota4)/4
+​        media = (nota1+nota2+nota3+nota4)/4
 
 2) Faça um programa que leia um número e mostre como resposta esse número elevado ao cubo.
+   
    1) Faça um algoritmo que calcule a hipotenusa. Usar fórmula de Pitágoras.
-             	h = sqrt(b* * *2+c* * * 2)
+      
+      ```js
+      h = sqrt(b**2+c**2)
+      ```
 
 3) Faça um programa de computador para calcular a área de um retângulo. Area = base * altura 
    a=b*h
