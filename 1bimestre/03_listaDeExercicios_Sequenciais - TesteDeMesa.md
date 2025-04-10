@@ -14,8 +14,8 @@
    console.log("O resultado da soma é " + soma);
    ```
       Neste caso, para resolver pode ser feito assim:
-      ####
-      soma = 3 + 4  // soma recebe 3 + 4. Ou seja, a variável (um local na RAM) chamado ***soma*** vai receber e guardar o resultado da conta que é 7. O console.log, vai literalmente escrever na tela o que está entre aspas (**"O resultado da soma é "**) e na sequência colocar o conteúdo da variável ***soma***. O resultado da soma é 7 //mostra o valor contido em ***soma***, que é 7.
+      #### 
+   soma = 3 + 4  // soma recebe 3 + 4. Ou seja, a variável (um local na RAM) chamado ***soma*** vai receber e guardar o resultado da conta que é 7. O console.log, vai literalmente escrever na tela o que está entre aspas (**"O resultado da soma é "**) e na sequência colocar o conteúdo da variável ***soma***. O resultado da soma é 7 //mostra o valor contido em ***soma***, que é 7.
 
 
 2. Qual o valor de z?
@@ -25,7 +25,7 @@
    let y=2;
    let z = x**2-5+y;
    console.log("Na variável z tem o valor " + z);
-   ```
+```
 
 3. Qual o valor de k?
 
@@ -38,12 +38,12 @@
 4. Qual o valor de x?
 
    ```js
-
+   
    let a=6;
    let b=4-a;
    let x = (a**3*b+7)/2;    
    console.log("O valor de x é " + x)
-
+   
    ```
 5. Qual o valor de s?
 
@@ -70,7 +70,7 @@
    function media(n1,n2,n3,n4){
       return (n1+n2+n3+n4)/4;
    }
-
+   
    let m1 = media(8,8,8,8);
    let m2 = media(5,6,7,8);
    let m3 = media(4,4,4,4);
