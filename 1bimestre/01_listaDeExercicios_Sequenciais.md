@@ -18,8 +18,13 @@
       h = sqrt(b**2+c**2)
       ```
 
-3) Faça um programa de computador para calcular a área de um retângulo. Area = base * altura 
-   a=b*h
+3) Faça um programa de computador para calcular a área de um retângulo. 
+   
+   ``` js 
+   area = base * altura
+   ```
+   
+   
 
 4) Faça um programa que calcule quantas peças de piso são necessárias para um determinado ambiente. Deve-se informar as dimensões do ambiente em metros e o tamanho dos pisos em centímetros. Considere que é necessário um acréscimo de 10% na quantidade de pisos para que haja sobra para recortes.
 
