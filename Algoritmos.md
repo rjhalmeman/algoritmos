@@ -62,9 +62,39 @@ São instruções executadas na ordem em que aparecem no código. É a base de t
 
 ---
 
-## 2. Variáveis e Tipos de Variáveis
+## 2. Variáveis 
  
 Variáveis são espaços (locais) na memória (normalmente memória RAM) que são usados para armazenar valores. Em JavaScript, elas podem conter diferentes tipos de dados como números, textos, booleanos, listas e objetos.
+
+
+
+**Exemplo:**
+```html
+<script>
+  let idade = 25;               // guarda o número 25 em um local da memória RAM chamado idade
+  let nome = "Ana";             // guarda o nome "Ana" em um local da memória RAM chamado nome  
+  let ativo = true;             // boolean
+  let lista = [10, 20, 30];     // array
+  let pessoa = {nome: "Leo", idade: 30}; // objeto
+</script>
+```
+
+## 3. Constantes
+
+Constantes são espaços (locais) na memória (normalmente memória RAM) que são usados para armazenar valores. Em JavaScript, elas podem conter diferentes tipos de dados como números, textos, booleanos, listas e objetos. Após ter sido feita a atribuição do valor este não pode mais ser modificado.
+
+
+```html
+   <script>
+     const pi = 3.14;    // guarda o valor em um local, depois de atribuído o valor não muda mais.
+     const velocidadeDoSom = 360; //360 metros por segundo
+   </script>
+```
+
+---
+## 4. Tipos de Variáveis
+
+Considerando que uma variável é um local onde algo será guardado, temos que considerar o tipo do que será guardado.
 
 **Tipos comuns:**
 - `string` → textos
@@ -73,7 +103,6 @@ Variáveis são espaços (locais) na memória (normalmente memória RAM) que sã
 - `array` → listas
 - `object` → estruturas com chave e valor
 
-**Exemplo:**
 ```html
 <script>
   let idade = 25;               // number
@@ -85,9 +114,7 @@ Variáveis são espaços (locais) na memória (normalmente memória RAM) que sã
 </script>
 ```
 
----
-
-## 3. Funções
+## 5. Funções
 
 São blocos de código que executam tarefas específicas. Podem receber parâmetros e retornar resultados.
 
@@ -104,7 +131,7 @@ São blocos de código que executam tarefas específicas. Podem receber parâmet
 
 ---
 
-## 4. Condicionais
+## 6. Condicionais
 **O que é:**  
 Permitem tomar decisões, executando diferentes blocos de código com base em condições lógicas.
 
@@ -114,16 +141,16 @@ Permitem tomar decisões, executando diferentes blocos de código com base em co
   let idade = 17;
 
   if (idade >= 18) {
-    alert("Você é maior de idade.");
+    console.log("Você é maior de idade.");
   } else {
-    alert("Você é menor de idade.");
+    console.log("Você é menor de idade.");
   }
 </script>
 ```
 
 ---
 
-## 5. Repetição
+## 7. Repetição
 **O que é:**  
 Permite executar um bloco de código várias vezes. Usamos `for`, `while`, entre outros.
 
@@ -138,7 +165,7 @@ Permite executar um bloco de código várias vezes. Usamos `for`, `while`, entre
 
 ---
 
-## 6. Conjuntos (Vetores e Matrizes)
+## 8. Conjuntos (Vetores e Matrizes)
 **O que é:**  
 São estruturas que armazenam vários valores. Vetores são listas simples; matrizes são tabelas com linhas e colunas.
 
@@ -146,7 +173,7 @@ São estruturas que armazenam vários valores. Vetores são listas simples; matr
 ```html
 <script>
   let frutas = ["maçã", "banana", "laranja"];
-  alert(frutas[1]); // banana
+  console.log(frutas[1]); // banana
 </script>
 ```
 
@@ -157,6 +184,6 @@ São estruturas que armazenam vários valores. Vetores são listas simples; matr
     [1, 2, 3],
     [4, 5, 6]
   ];
-  alert(matriz[1][0]); // 4
+  console.log(matriz[1][0]); // 4
 </script>
 ```
