@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Verificar Maioridade</title>
+</head>
+
+<body>
+
+  <h2>Informe sua idade:</h2>
+  <input type="number" id="idadeInput" placeholder="Digite sua idade">
+  <input type="button" value="Verifique" onclick="verificarIdade()">
+  <br><br>
+  <span id="resultado"></span>
+
+  <script>
+    function verificarIdade() {
+      const idade = parseInt(document.getElementById("idadeInput").value);
+      const resultado = document.getElementById("resultado");
+
+      if (idade >= 18) {
+        resultado.innerHTML = "A maioridade civil no Brasil é aos 18 anos completos, de acordo com o Código Civil. " +
+          "<br><br> A partir dessa idade, a pessoa pode exercer todos os atos " +
+          "<br>da vida civil sem precisar de representação legal." +
+          "<h3> Implicações da maioridade civil </h3>" +
+          "<br>Pode tirar a carteira de habilitação" + "<br>Pode fazer compra e venda de imóveis." +
+          "<br>Pode abrir uma empresa. " +
+          "<br>Pode casar. " +
+          "<br>Pode ser responsabilizada civilmente por ilícitos civis. " +
+          "<br>Pode responder por suas próprias dívidas. " +
+          "<br>É obrigada a votar nas eleições";
+      } else {
+        resultado.textContent = "Você é menor de idade.";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

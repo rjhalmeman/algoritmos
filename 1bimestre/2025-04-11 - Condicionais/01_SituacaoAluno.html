@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Situação do aluno</title>
+</head>
+
+<body>
+
+  <label for="inputMedia">Informe sua média:</label>
+  <input type="number" id="inputMedia" placeholder="Digite sua média final">
+  <input type="button" value="Verifique" onclick="verificarSituacao()">
+  <br><br>
+  <h1 id="resultado"></h1>
+
+  <script>
+    function verificarSituacao() {
+      const media = parseInt(document.getElementById("inputMedia").value);
+      const resultado = document.getElementById("resultado");
+
+      if (media < 6) {
+        resultado.innerHTML = "Deu ruim, reprovado..."
+      } else {
+        resultado.textContent = "Aprovado";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
