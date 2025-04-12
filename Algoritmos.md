@@ -225,7 +225,7 @@ if (media>=6){
 }
 ```
 
-O programa completo para determinar a situação do aluno conforme a média
+### Exemplo 01: O programa completo para determinar a situação do aluno conforme a média
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -261,7 +261,7 @@ O programa completo para determinar a situação do aluno conforme a média
 </html>
 ```
 
-
+### Exemplo 02 - Lê a idade de uma pessoa e se for maior de idade mostra o que ela pode fazer
 
 ```html
 <!DOCTYPE html>
