@@ -22,7 +22,7 @@ Byte - Sistema computacional
 Formalização de conceitos sobre algoritmos: entrada, processamento, saída. Características: estado inicial, limite de resolução, condição e repetição.
 
 Exercício/Exemplo
-https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-03-24%20-%20SomarDoisNumeros
+https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-03-24%20-%20Exerc%C3%ADcios
 
 ## 28/03/2025 - Sexta
 
@@ -121,10 +121,10 @@ vscode-icons
 
 Depois que instalar, clic no Menu Arquivo (File...) e ative a opção Salvamento automático (Auto save).
 
-As listas de exercícios 2 e 3 devem ser feitas.
-https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/02_listaDeExercicios.md
+As listas de exercícios 2 e 4 devem ser feitas.
+https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/02_listaDeExercicios_Sequenciais.md
 
-https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/03_listaDeExercicios.md
+https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/04_listaDeExercicios_Sequenciais.md
 
 --- 
 
@@ -161,6 +161,54 @@ Exercícios com expressões aritméticas, atribuição e saída simples.
 ## 11/04/2025
 
 Condicionais
+
+Exemplo 2 - Maioridade
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Verificar Maioridade</title>
+</head>
+<!-- Lê a idade de uma pessoa e se for maior de idade mostra o que ela pode fazer -->
+<body>
+
+  <h2>Informe sua idade:</h2>
+  
+  <input type="number" id="idadeInput" placeholder="Digite sua idade">
+  <input type="button" value="Verifique" onclick="verificarIdade()">
+  <br><br>
+  <span id="resultado"></span>
+
+  <script>
+    function verificarIdade() {
+      let idade = parseInt(document.getElementById("idadeInput").value);
+      let resultado = document.getElementById("resultado");
+
+      if (idade >= 18) {
+        resultado.innerHTML = "A maioridade civil no Brasil é aos 18 anos completos, de acordo com o Código Civil. " +
+          "<br><br> A partir dessa idade, a pessoa pode exercer todos os atos " +
+          "<br>da vida civil sem precisar de representação legal." +
+          "<h3> Implicações da maioridade civil </h3>" +
+          "<br>Pode tirar a carteira de habilitação" + "<br>Pode fazer compra e venda de imóveis." +
+          "<br>Pode abrir uma empresa. " +
+          "<br>Pode casar. " +
+          "<br>Pode ser responsabilizada civilmente por ilícitos civis. " +
+          "<br>Pode responder por suas próprias dívidas. " +
+          "<br>É obrigada a votar nas eleições";
+      } else {
+        resultado.textContent = "Você é menor de idade.";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
+
+```
+
 
 ## 14/04/2025
 
