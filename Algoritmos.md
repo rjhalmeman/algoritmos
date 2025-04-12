@@ -310,7 +310,7 @@ O programa completo para determinar a situação do aluno conforme a média
 
 ---
 
-# Daqui para frente é matéria dos próximos bimestres
+# <p style="color:red;">Daqui para frente são matérias dos próximos bimestres</p>
 
 ## 7. Repetição
 **O que é:**  
