@@ -63,5 +63,5 @@ Média de aproveitamento Conceito
 5) Você viajou para os Estados Unidos e descobriu que lá a unidade de medida de temperatura é diferente da do Brasil. Para não ter que acessar um serviço na internet a todo o momento, nem fazer os cálculos manualmente, faça um algoritmo, e programa em JS, que converte a temperatura informada para a temperatura na outra unidade de medida. Ou seja, se a temperatura for informada em Celsius o algoritmo deve fornecer a temperatura em Fahrenheit, já se a temperatura for fornecida em Fahrenheit, o resultado deve ser em
    graus Celsius. As fórmulas de conversão devem ser pesquisadas na internet.
 
-6) De acordo com o calendário Gregoriano (implantado em 1582), um ano é bissexto se ele é múltiplo de 400 ou é múltiplo de 4 mas não de 100. Desenvolva um programa que receba um ano e imprima SIM se ele for bissexto e NAO caso contrário. Na entrada o ano deve ser maior que>1582. Mais detalhes aqui:
+6)    bissexto e NAO caso contrário. Na entrada o ano deve ser maior que>1582. Mais detalhes aqui:
    https://escolakids.uol.com.br/matematica/calculo-do-ano-bissexto.htm
