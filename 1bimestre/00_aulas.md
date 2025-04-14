@@ -211,8 +211,19 @@ Exemplo 2 - Maioridade
 
 
 ## 14/04/2025
+Exercícios com condicionais
 
-Variáveis - exercícios
+01) Maçãs custam R\$0,30 cada se forem compradas menos de uma dúzia e	R\$0,25 se forem compradas pelo menos doze. Escreva um programa	com HTML e JavaScript que	leia o número de maçãs compradas, calcule e escreva o	valor	total	da	compra. Os pacotes acomodam no máximo 8 maças, considerando a quantidade comprada, informe a quantidade de pacotes mínima.
+
+02) Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que está na tabela a seguir:
+
+| Média Aritmética | Mensagem   |
+|------------------|------------|
+| 0,0 ≤ média < 4,0 | Reprovado  |
+| 4,0 ≤ média < 7,0 | Exame      |
+| 7,0 ≤ média ≤ 10,0 | Aprovado  |
+
+03) Escrever um algoritmo que lê um valor em Reais (R$) e calcule qual o menor número possível de notas de 200, 100, 50,20, 10, 5 e 1 em que o valor lido pode ser decomposto. Escrever o valor lido e a relação de notas necessárias. 
 
 ## 25/04/2025
 
