@@ -99,7 +99,7 @@ Tem um peso que é fácil de segurar com uma mão, e ao mordê-la, o som da croc
 
 - atividade prática desenvolvida em sala de aulas
 
---- 
+---
 
 ### Instalação do VSCode (Visual Studio Code)
 
@@ -126,7 +126,7 @@ https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/02_listaDeExercicio
 
 https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/04_listaDeExercicios_Sequenciais.md
 
---- 
+---
 
 ## 04/04/2025
 
@@ -211,7 +211,7 @@ Exemplo 2 - Maioridade
 ## 14/04/2025
 Exercícios com condicionais
 
-01) Maçãs custam R\$0,30 cada se forem compradas menos de uma dúzia e	R\$0,25 se forem compradas pelo menos doze. Escreva um programa	com HTML e JavaScript que	leia o número de maçãs compradas, calcule e escreva o	valor	total	da	compra. Os pacotes acomodam no máximo 8 maças, considerando a quantidade comprada, informe a quantidade de pacotes mínima.
+01) Maçãs custam R\$0,30 cada se forem compradas menos de uma dúzia e R\$0,25 se forem compradas pelo menos doze. Escreva um programa com HTML e JavaScript que leia o número de maçãs compradas, calcule e escreva o valor total da compra. Os pacotes acomodam no máximo 8 maças, considerando a quantidade comprada, informe a quantidade de pacotes mínima.
 
 02) Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que está na tabela a seguir:
 
