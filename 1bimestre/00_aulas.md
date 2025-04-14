@@ -213,7 +213,11 @@ Exercícios com condicionais
 
 01) Maçãs custam R\$0,30 cada se forem compradas menos de uma dúzia e R\$0,25 se forem compradas pelo menos doze. Escreva um programa com HTML e JavaScript que leia o número de maçãs compradas, calcule e escreva o valor total da compra. Os pacotes acomodam no máximo 8 maças, considerando a quantidade comprada, informe a quantidade de pacotes mínima.
 
-02) Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que está na tabela a seguir:
+Uma possível solução:
+https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/2025-04-14%20-%20Exercicios/macas.html  
+
+
+3)  Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que está na tabela a seguir:
 
 | Média Aritmética | Mensagem   |
 |------------------|------------|
