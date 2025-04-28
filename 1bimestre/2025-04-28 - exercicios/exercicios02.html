@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    
+<label for="inputNota1">Nota 1</label>
+<input type="number"  id="inputNota1">
+<label for="inputNota2">Nota 2</label>
+<input type="number"  id="inputNota2">
+<br>
+<input type="button" value="Calcular" onclick="funcaoCalcular()">
+<br><br>
+<label for="spanMedia">Média</label>
+<span id="spanMedia">...</span>
+<br>
+<label for="spanSituacao">Situação</label>
+<span id="spanSituacao">...</span>
+
+<script>
+    function funcaoCalcular(){
+        let n1 = parseFloat(document.getElementById("inputNota1").value);
+        let n2 = parseFloat(document.getElementById("inputNota2").value);
+        let mens="";
+        let media = (n1+n2)/2;
+        if(media<6){
+            mens = "Recuperação paralela obrigatória";
+        }else if( media<7.5){
+            mens = "Faça recupeação para melhorar a nota";
+        } else {
+            mens = "Você tem liberdade de escolha";
+        }
+
+        document.getElementById("spanMedia").innerHTML = media.toFixed(1);
+        document.getElementById("spanSituacao").innerHTML = mens;
+
+    }
+</script>
+
+</body>
+</html>
