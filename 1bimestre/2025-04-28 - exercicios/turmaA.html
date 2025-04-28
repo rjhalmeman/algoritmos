@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>turma A</title>
+</head>
+<body>
+        <label for="inputN1">Nota 1</label>
+        <input type="number"  id="inputN1">
+        <br>
+        <label for="inputN2">Nota 2</label>
+        <input type="number"  id="inputN2">
+        <br>
+        <input type="button" value="Calcular" onclick="funcaoCalcular()">
+        <br>
+
+        <label for="spanMedia">Média:</label>
+        <span id="spanMedia">.....</span>
+        <br>
+        <label for="spanSituacao">Situação:</label>
+        <span id="spanSituacao">.....</span>
+
+
+        <script>
+            function funcaoCalcular(){
+                let n1 =parseFloat(document.getElementById("inputN1").value);
+                let n2 =parseFloat(document.getElementById("inputN2").value);
+
+                let media = (n1+n2)/2;
+                let mens;
+                if (media<6) {
+                    mens = "Recuperação paralela obrigatória";
+                } else if (media<7.5) {
+                    mens="Recuperação paralela para melhorar a nota";
+                } else {
+                    mens= "Você escolhe se quer fazer recuperação";
+                }
+
+                document.getElementById("spanMedia").innerHTML = media.toFixed(1);
+                document.getElementById("spanSituacao").innerHTML = mens;
+
+
+            }
+
+
+        </script>
+</body>
+</html>

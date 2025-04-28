@@ -232,7 +232,7 @@ atividade autoavaliativa 02
 | 6,0 ≤ média < 7,5  | Faça a recuperação para melhorar sua nota |
 | 7,5 ≤ média ≤ 10,0 | Sua nota lhe garante liberdade de escolha |
 
-3) Escrever um algoritmo que lê um valor em Reais (R$) e calcule qual o menor número possível de notas de 200, 100, 50,20, 10, 5 e 1 em que o valor lido pode ser decomposto. Escrever o valor lido e apenas a relação de notas necessárias. 
+3) Escrever um algoritmo que lê um valor em Reais (R$) e calcule qual o menor número possível de notas de 200, 100, 50,20, 10, 5 e 2 em que o valor lido pode ser decomposto. Escrever o valor lido e apenas a relação de notas necessárias. 
 
 ## 05/05/2025
 
