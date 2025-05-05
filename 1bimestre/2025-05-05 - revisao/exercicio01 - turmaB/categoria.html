@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01</title>
+</head>
+
+<body>
+    <label for="inputNome">Nome: </label>
+    <input type="text" id="inputNome">
+    <br>
+    <label for="inputGenero">Gênero</label>
+    <input type="text" id="inputGenero">
+    <br>
+    <label for="inputModalidade">Modalidade</label>
+    <input type="text" id="inputModalidade">
+    <br>
+    <label for="inputIdade">Idade</label>
+    <input type="number" id="inputIdade">
+    <br><br>
+    <input type="button" value="Categorizar" onclick="funcaoCategorizar()">
+    <br>
+    <label for="spanResp">Resposta</label>
+    <span id="spanResp">...</span>
+
+
+    <script>
+        function funcaoCategorizar() {
+            //entrada
+            let nome = document.getElementById("inputNome").value;
+            let genero = document.getElementById("inputGenero").value;
+            let modalidade = document.getElementById("inputModalidade").value;
+            let idade = parseInt(document.getElementById("inputIdade").value);
+
+            //processamento
+            let respGenero ="";
+            let respCategoria="";
+            let respModalidade="";
+
+            if(genero == "m"||genero=="M"){
+                respGenero = "Masculino";
+                if (modalidade=="Futsal") {
+                    respModalidade = "Futsal";
+                    if(idade<=12){
+                        respCategoria = "sub 12";
+                    } else if (idade<=16) {
+                        respCategoria = "sub 16";
+                    } else {
+                        respCategoria = "Adulto"
+                    }
+                } else {//basquete
+                    respModalidade = "Basquete";
+                    if(idade<=12){
+                        respCategoria = "sub 12";
+                    }else if (idade<=16) {
+                        respCategoria = "sub 16";
+                    } else if(idade<=18){
+                        respCategoria="sub 18"
+                    } else if(idade<=40) {
+                        respCategoria = "Adulto"
+                    } else {
+                        respCategoria = "Veterano"
+                    }
+                }
+            } else {
+                
+            }
+
+            //saída
+
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
