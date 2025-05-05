@@ -16,7 +16,7 @@
   <img src="./imagens/imcTabela.jpg" alt="Cérebro" width="500" height="200">
 </p>
 
-2) Elabore um algoritmo (e programa em JS) que calcule o que deve ser pago por um
+2) Elabore um algoritmo (e programa com HTML e JS) que calcule o que deve ser pago por um
    produto, considerando o preço normal de etiqueta e a escolha da condição de pagamento.
    Utilize os códigos da tabela a seguir para ler qual a condição de pagamento escolhida e
    efetuar o cálculo adequado.

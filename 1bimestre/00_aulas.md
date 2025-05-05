@@ -219,8 +219,7 @@ https://github.com/rjhalmeman/algoritmos/blob/main/1bimestre/2025-04-14%20-%20Ex
 ## 25/04/2025
 Exercícios
 
-atividade autoavaliativa 02
-
+Atividade autoavaliativa 02
 
 ## 28/04/2025
 
@@ -236,7 +235,38 @@ atividade autoavaliativa 02
 
 ## 05/05/2025
 
-Exercícios com funções
+Exercícios 
+
+1) Faça um programa com HTML e Java Script que leia o nome do atleta, o gênero, a modalidade esportiva (Futsal ou Basquete) e a idade. Classifique-o em sua categoria, conforme o gênero, a modalidade e a idade. Como saída, deve exibir (printar) como nos exemplos abaixo:
+
+
+![alt text](./imagens/tabelaCategoriasEsportes.png)
+
+Exemplos de saída:
+
+Nome: João Pequeno Peralta Terrível
+Idade: 15
+Categoria: Futsal Masculino Sub16
+
+Nome: Leonilda Recla Menta
+Idade: 55
+Categoria:  Basquete Feminino Veteranas
+
+
+---
+
+![alt text](./imagens/homerSimpson.png)
+
+2)  Homer Simpson tem um hábito peculiar: ele só come rosquinhas em dias ímpares do mês. Além disso, ele segue um padrão: nos meses com 31 dias, ele come 8 rosquinhas por dia; nos meses com 30 dias, ele come 6 rosquinhas por dia; e em fevereiro, ele come 7 rosquinhas por dia em anos não bissextos e 9 rosquinhas por dia em anos bissextos. Dada uma variável que representa o número do mês (1 para janeiro, 2 para fevereiro, etc.) e uma variável que representa o ano, escreva um algoritmo para determinar quantas rosquinhas o Homer comeu até o final do mês especificado, considerando apenas os dias ímpares. Por exemplo, se o número do mês for 2 (fevereiro) e o ano for bissexto, o algoritmo deve calcular quantos dias ímpares houve até o final de fevereiro e multiplicar esse número por 9 (número de rosquinhas por dia em anos bissextos).
+
+Para saber quantos números ímpares tem em um intervalo  pode-se utilizar a fórmula da progressão aritmética. numeroDeElementos = (ultimoElementoDaSerie - primeiroElementoDaSerie)/razão + 1 (PA).
+
+
+Desenhe a GUI (tela), faça o pseudo-código (portugol) e o programa em HTML e JS para facilitar os cálculos das quantidades de rosquinhas que Homer tem que comprar em um determinado mês e ano.
+Espera-se uma saída parecida com essa: “Homer comeu 128 rosquinhas nos dias ímpares do mês 5 que têm 31 dias, ou seja, foram 8 rosquinhas por dia ímpar”
+
+3) O programa do exercício 1 deve ser modificado para calcular o quanto Homer gasta por mês para manter seu hábito de comer rosquinhas e para “printar” o nome do mês (não apenas o número do mês). Espera-se que a saída seja assim: “Homer comeu 128 rosquinhas nos dias ímpares do mês de MAIO que têm 31 dias, ou seja, foram 8 rosquinhas por dia ímpar. Considerando que cada rosquinha custa R$2,50, para manter seu hábito ele gastou R$320,00”. 
+
 
 ## 09/05/2025
 
