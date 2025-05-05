@@ -35,41 +35,68 @@
             let idade = parseInt(document.getElementById("inputIdade").value);
 
             //processamento
-            let respGenero ="";
-            let respCategoria="";
-            let respModalidade="";
+            let respGenero = "";
+            let respCategoria = "";
+            let respModalidade = "";
 
-            if(genero == "m"||genero=="M"){
+            if (genero == "m" || genero == "M") {
                 respGenero = "Masculino";
-                if (modalidade=="Futsal") {
+                if (modalidade == "Futsal") {
                     respModalidade = "Futsal";
-                    if(idade<=12){
+                    if (idade <= 12) {
                         respCategoria = "sub 12";
-                    } else if (idade<=16) {
+                    } else if (idade <= 16) {
                         respCategoria = "sub 16";
                     } else {
                         respCategoria = "Adulto"
                     }
                 } else {//basquete
                     respModalidade = "Basquete";
-                    if(idade<=12){
+                    if (idade <= 12) {
                         respCategoria = "sub 12";
-                    }else if (idade<=16) {
+                    } else if (idade <= 16) {
                         respCategoria = "sub 16";
-                    } else if(idade<=18){
-                        respCategoria="sub 18"
-                    } else if(idade<=40) {
+                    } else if (idade <= 18) {
+                        respCategoria = "sub 18"
+                    } else if (idade <= 40) {
                         respCategoria = "Adulto"
                     } else {
                         respCategoria = "Veterano"
                     }
                 }
-            } else {
-                
+            } else {//genero é feminino
+                respGenero = "Feminino";
+                if (modalidade == "Futsal") {
+                    respModalidade = "Futsal";
+                    if (idade <= 13) {
+                        respCategoria = "sub 13";
+                    } else if (idade <= 15) {
+                        respCategoria = "sub 15"
+                    } else if (idade > 18) {
+                        respCategoria = "Adulto"
+                    } else {
+                        respCategoria = "erro do enunciado"
+                    }
+                } else {//basquete
+                    respModalidade = "Basquete";
+                    if (idade <= 16) {
+                        respCategoria = "sub 16";
+                    } else if (idade <= 18) {
+                        respCategoria = "sub 18";
+                    } else if (idade < 40) {
+                        respCategoria = "Adulto"
+                    } else {
+                        respCategoria = "Veterana"
+                    }
+                }
             }
 
             //saída
-
+            let resposta = "Nome: "+ nome + "<br>" +
+                            "Idade: "+ idade+ "<br>" +
+                            "Categoria: "+ respModalidade+" "+
+                            respGenero+" "+respCategoria;
+             document.getElementById("spanResp").innerHTML = resposta;
 
 
         }
