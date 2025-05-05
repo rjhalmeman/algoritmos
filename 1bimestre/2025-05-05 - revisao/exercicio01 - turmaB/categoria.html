@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <label for="inputNome">Nome: </label>
-    <input type="text" id="inputNome">
+    <label for="inputNome" >Nome: </label>
+    <input type="text" id="inputNome" placeholder="Digite seu nome aqui">
     <br>
     <label for="inputGenero">Gênero</label>
     <input type="text" id="inputGenero">
@@ -33,12 +33,12 @@
             let genero = document.getElementById("inputGenero").value;
             let modalidade = document.getElementById("inputModalidade").value;
             let idade = parseInt(document.getElementById("inputIdade").value);
-
+            
             //processamento
             let respGenero = "";
             let respCategoria = "";
             let respModalidade = "";
-
+            
             if (genero == "m" || genero == "M") {
                 respGenero = "Masculino";
                 if (modalidade == "Futsal") {
@@ -97,10 +97,7 @@
                             "Categoria: "+ respModalidade+" "+
                             respGenero+" "+respCategoria;
              document.getElementById("spanResp").innerHTML = resposta;
-
-
         }
-
 
     </script>
 
