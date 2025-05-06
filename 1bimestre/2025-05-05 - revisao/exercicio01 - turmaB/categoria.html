@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <label for="inputNome" >Nome: </label>
-    <input type="text" id="inputNome" placeholder="Digite seu nome aqui">
+    <label for="inputNome">Nome: </label>
+    <input type="text" id="inputNome" placeholder="Digite seu nome aqui...">
     <br>
     <label for="inputGenero">Gênero</label>
     <input type="text" id="inputGenero">
@@ -33,12 +33,12 @@
             let genero = document.getElementById("inputGenero").value;
             let modalidade = document.getElementById("inputModalidade").value;
             let idade = parseInt(document.getElementById("inputIdade").value);
-            
+
             //processamento
             let respGenero = "";
             let respCategoria = "";
             let respModalidade = "";
-            
+
             if (genero == "m" || genero == "M") {
                 respGenero = "Masculino";
                 if (modalidade == "Futsal") {
@@ -72,10 +72,8 @@
                         respCategoria = "sub 13";
                     } else if (idade <= 15) {
                         respCategoria = "sub 15"
-                    } else if (idade > 18) {
-                        respCategoria = "Adulto"
                     } else {
-                        respCategoria = "erro do enunciado"
+                        respCategoria = "Adulto"
                     }
                 } else {//basquete
                     respModalidade = "Basquete";
@@ -92,11 +90,11 @@
             }
 
             //saída
-            let resposta = "Nome: "+ nome + "<br>" +
-                            "Idade: "+ idade+ "<br>" +
-                            "Categoria: "+ respModalidade+" "+
-                            respGenero+" "+respCategoria;
-             document.getElementById("spanResp").innerHTML = resposta;
+            let resposta = "Nome: " + nome + "<br>" +
+                "Idade: " + idade + "<br>" +
+                "Categoria: " + respModalidade + " " +
+                respGenero + " " + respCategoria;
+            document.getElementById("spanResp").innerHTML = resposta;
         }
 
     </script>
