@@ -9,15 +9,20 @@
 
 <body>
     <h1>Classificador de ovos - CEBOLA, ALHO, JILÓ</h1>
+    <!-- ENTRADA DE DADOS -->
     <label for="inputPeso">Peso do ovo</label>
     <input type="number" id="inputPeso">
     <br>
+    <!-- PROCESSAMENTO -->
     <input type="button" value="Classifique" onclick="classificar() ">
     <br>
+    <!-- SAÍDA -->
     <label for="respTamanho">O tamanho do ovo é: </label>
     <span id="respTamanho">..</span>
     <script>function classificar() {
+            //ENTRADA DE DADOS PARA O SCRIPT
             let peso = parseInt(document.getElementById("inputPeso").value);
+            //PROCESSAMENTO
             let resposta = "";
             if (peso <= 53) {
                 resposta = "Pequeno";
@@ -28,6 +33,7 @@
             } else {
                 resposta = "Extra grande";
             }
+            //SAÍDA
             document.getElementById("respTamanho").innerHTML = resposta;
         }
     </script>

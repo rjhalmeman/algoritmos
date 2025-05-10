@@ -6,6 +6,7 @@
     <title>Distância entre dois pontos</title>
 </head>
 <body>
+    <!-- ENTRADA DE DADOS -->
     <label for="x1">Coordenada X1:</label>
     <input type="number" name="x1" id="x1">
     <br>
@@ -18,19 +19,24 @@
     <label for="y2">Coordenada Y2:</label>
     <input type="number" name="y2" id="y2">
     <br>
+    <!-- PROCESSAMENTO -->
     <input type="button" value="Calcular Distância" onclick="calcularDistancia()">
     <br>
+    <!-- SAÍDA -->
     <label for="resultado">Distância entre A e B = </label>
     <span id="resultado">0</span>
     <script>
         function calcularDistancia() {
+            // ENTRADA DE DADOS
             let x1 = parseFloat(document.getElementById("x1").value);
             let y1 = parseFloat(document.getElementById("y1").value);
             let x2 = parseFloat(document.getElementById("x2").value);
             let y2 = parseFloat(document.getElementById("y2").value);
+            // PROCESSAMENTO
             let deltaX = x2 - x1;
             let deltaY = y2 - y1;
             let distancia = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+            // SAÍDA
             document.getElementById("resultado").innerHTML = distancia.toFixed(2);
         }
     </script>

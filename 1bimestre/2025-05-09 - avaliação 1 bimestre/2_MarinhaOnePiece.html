@@ -8,6 +8,7 @@
 
 <body>
     <h2>Captura de Pirata</h2>
+    <!-- ENTRADA DE DADOS -->
     <label>Nome do Marinheiro (Smoker, Tashigi, Koby, Garp):</label><br>
     <input type="text" id="inputMarinheiro"><br><br>
     <label>Nome do Pirata:</label><br>
@@ -16,18 +17,22 @@
     <input type="number" id="inputRecompensa" value="10000"><br><br>
     <label>Mês da Captura (1 a 12):</label><br>
     <input type="number" id="inputMes"><br><br>
+    <!-- PROCESSAMENTO -->
     <button onclick="calcular()">Calcular</button>
     <br><br>
+    <!-- SAÍDA -->
     <label for="resultado">Resultado:</label>
     <span id="resultado"></span>
 
     <script>
         function calcular() {
+            // ENTRADA DE DADOS PARA O SCRIPT
             let marinheiro = document.getElementById("inputMarinheiro").value;
             let pirata = document.getElementById("inputPirata").value;
             let recompensa = parseFloat(document.getElementById("inputRecompensa").value);
             let mes = parseInt(document.getElementById("inputMes").value);
 
+            // PROCESSAMENTO
             let percentual = 0;
             let valorRecebido = 0;
             let bonus = 0;
@@ -81,7 +86,8 @@
 
             valorRecebido = total * percentual;
             paraTesouro = total - valorRecebido;
-            // strong é para ficar bonito
+            // strong é para ficar destacado
+            // SAÍDA USANDO CONCATENAÇÃO
             document.getElementById("resultado").innerHTML =
                 "Marinheiro <strong>" + marinheiro + "</strong> capturou o pirata <strong>" + pirata + "</strong> cuja recompensa é de "
                 + recompensa + " berries.<br>" +
