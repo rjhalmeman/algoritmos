@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de ovos</title>
+</head>
+
+<body>
+    <h1>Classificador de ovos - ALHO</h1>
+    <label for="inputPeso">Peso do ovo</label>
+    <input type="number" id="inputPeso">
+    <br>
+    <input type="button" value="Classifique" onclick="classificar() ">
+    <br>
+    <label for="respTamanho">O tamanho do ovo é: </label>
+    <span id="respTamanho">..</span>
+    <script>function classificar() {
+            let peso = parseInt(document.getElementById("inputPeso").value);
+            let resposta = "";
+            if (peso > 75) {
+                resposta = "Extra grande";
+            } else if (peso > 63) {
+                resposta = "Grande"
+            } else if (peso >53) {
+                resposta = "Médio";
+            } else {
+                resposta = "Pequeno";
+            }
+            document.getElementById("respTamanho").innerHTML = resposta;
+        }
+    </script>
+</body>
+
+</html>
