@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recompensas da Marinha - One Piece </title>
+</head>
+
+<body>
+    <!-- resolução usando funções 
+     
+    No universo de *One Piece*, a Marinha paga marinheiros que capturam piratas, conforme o valor 
+    da recompensa oferecida por esses criminosos e as regras estabelecidas nos contratos de cada marinheiro. 
+    O valor restante da recompensa vai para o tesouro da Marinha, utilizado para a manutenção dos navios. 
+    O valor da recompensa é acrescido de um bônus conforme o mês da captura e a estação do ano. Isso precisa 
+    ser feito antes de calcular o valor que o marinheiro e a marinha vão receber.
+    
+    Bônus por estação do ano:
+        Verão (Janeiro, Fevereiro, Março): 0 berries
+        Outono (Abril, Maio, Junho): 2000 berries
+        Inverno (Julho, Agosto, Setembro): 3000 berries
+        Primavera (Outubro, Novembro, Dezembro): 1000 berries
+    Regras por Marinheiro:
+        Smoker: recebe 40% da recompensa acrescida do bônus. Se o valor for menor que 5000 berries, ele doa tudo para a Marinha (recebe 0).
+        Tashigi: recebe 35% recompensa acrescida do bônus.
+        Koby: recebe 30%, mas se a recompensa acrescida do bônus for superior a 50.000 berries, recebe 33%.
+        Garp: recebe 38%, mas se a recompensa acrescida do bônus for superior a 100.000 berries, recebe 41%.
+        Qualquer outro marinheiro: não possui contrato, portanto não recebe nada. Todo o valor da recompensa acrescida do bônus vai para o tesouro da Marinha.
+
+    -->
+    <h2>Captura de Pirata</h2>
+    <!-- ENTRADA DE DADOS -->
+    <label>Nome do Marinheiro (Smoker, Tashigi, Koby, Garp):</label><br>
+    <input type="text" id="inputMarinheiro"><br><br>
+    <label>Nome do Pirata:</label><br>
+    <input type="text" id="inputPirata"><br><br>
+    <label>Valor da Recompensa (em berries):</label><br>
+    <input type="number" id="inputRecompensa" value="100000"><br><br>
+    <label>Mês da Captura (1 a 12):</label><br>
+    <input type="number" id="inputMes"><br><br>
+    <!-- PROCESSAMENTO -->
+    <input type="button" value="Calcular" onclick="calcular()">    
+    <br><br>
+    <!-- SAÍDA -->
+    <label for="resultado">Resultado:</label>
+    <span id="resultado"></span>
+
+    <script>
+
+        function calcular() {
+            // ENTRADA DE DADOS PARA O SCRIPT
+            let marinheiro = document.getElementById("inputMarinheiro").value;
+            let pirata = document.getElementById("inputPirata").value;
+            let recompensa = parseFloat(document.getElementById("inputRecompensa").value);
+            let mes = parseInt(document.getElementById("inputMes").value);
+
+            // PROCESSAMENTO
+
+            let bonus = calcularBonusPorEstacao(mes);
+            let nomeEstacao = estacaoDoAno(mes);
+            let recompensaAcrescidaDoBonus = bonus + recompensa;
+            let parteDoMarinheiro = calcularValorQueOMarinheiroRecebe(marinheiro, recompensaAcrescidaDoBonus);
+
+            let parteDaMarinha = recompensaAcrescidaDoBonus - parteDoMarinheiro;
+
+            // strong é para ficar destacado
+            // SAÍDA USANDO CONCATENAÇÃO
+            document.getElementById("resultado").innerHTML =
+                "Marinheiro <strong>" + marinheiro +
+                "</strong> capturou o pirata <strong>" + pirata +
+                "</strong> cuja recompensa é de " + recompensaAcrescidaDoBonus + " berries.<br>" +
+                "Bônus da estação:<strong> " + nomeEstacao +
+                "</strong> é de " + bonus + " totalizando " + recompensaAcrescidaDoBonus + "<br>" +
+                marinheiro + " receberá: " + parteDoMarinheiro + " berries<br>" +
+                "Tesouro da Marinha: " + parteDaMarinha + " berries <br> ";
+        }
+
+
+        function calcularBonusPorEstacao(mes) {
+            // Bônus por estação
+            let bonus = 0;
+            if (mes >= 1 && mes <= 3) {
+                bonus = 0; // Verão                
+            } else if (mes >= 4 && mes <= 6) {
+                bonus = 2000; // Outono                
+            } else if (mes >= 7 && mes <= 9) {
+                bonus = 3000; // Inverno                
+            } else {
+                bonus = 1000; // Primavera                
+            }
+            return bonus;
+        }
+
+        function calcularValorQueOMarinheiroRecebe(marinheiro, total) {
+            let valorQueOMarinheiroDeveReceber = 0;
+            // Regras por marinheiro
+            if (marinheiro == "Smoker") {
+                if (total < 5000) {
+                    percentual = 0;
+                } else {
+                    percentual = 40/100;
+                }
+            } else if (marinheiro == "Tashigi") {
+                percentual = 35/100;
+            } else if (marinheiro == "Koby") {
+                if (total > 50000) {
+                    percentual = 33/100;
+                } else {
+                    percentual = 30/100;
+                }
+            } else if (marinheiro == "Garp") {
+                if (total > 100000) {
+                    percentual = 0.41;
+                } else {
+                    percentual = 0.38;
+                }
+            } else {
+                valorRecebido = 0;
+            }
+            return total * percentual;
+        }
+
+        function estacaoDoAno(mes) {
+            let nomeEstacao = "";
+            if (mes >= 1 && mes <= 3) {
+                nomeEstacao = "Verão";
+            } else if (mes >= 4 && mes <= 6) {
+                nomeEstacao = "Outono";
+            } else if (mes >= 7 && mes <= 9) {
+                nomeEstacao = "Inverno";
+            } else {
+                nomeEstacao = "Primavera";
+            }
+            return nomeEstacao;
+        }
+
+
+    </script>
+</body>
+
+</html>
