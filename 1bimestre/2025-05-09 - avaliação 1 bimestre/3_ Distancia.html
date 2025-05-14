@@ -20,7 +20,9 @@
     <input type="number" name="y2" id="y2">
     <br>
     <!-- PROCESSAMENTO -->
-    <input type="button" value="Calcular Distância" onclick="calcularDistancia()">
+    <input type="button" 
+    value="Calcular Distância" 
+    onclick="calcularDistancia()">
     <br>
     <!-- SAÍDA -->
     <label for="resultado">Distância entre A e B = </label>
@@ -35,9 +37,11 @@
             // PROCESSAMENTO
             let deltaX = x2 - x1;
             let deltaY = y2 - y1;
-            let distancia = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+            let distancia = Math.sqrt(deltaX ** 2 
+            + deltaY ** 2);
             // SAÍDA
-            document.getElementById("resultado").innerHTML = distancia.toFixed(2);
+            document.getElementById("resultado").
+            innerHTML = distancia.toFixed(2);
         }
     </script>
 </body>
