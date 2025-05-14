@@ -25,6 +25,6 @@ if [ $# -eq 0 ]; then
     git push "$default_remote"
 else
     # Faz o push para o repositório remoto fornecido no GitHub
-    git push "$1""$default_remote"
+    git push "$1" "$default_remote"
 fi
 
