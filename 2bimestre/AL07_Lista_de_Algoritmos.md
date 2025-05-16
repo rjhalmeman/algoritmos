@@ -1,6 +1,6 @@
 # AL07 - Lista de Algoritmos: Repetição e Strings
 
-> Para todos os exercícios, **faça o pseudocódigo** e o **programa em JavaScript**.
+> Para todos os exercícios o **programa em JavaScript**.
 
 
 01) Escreva um nome 10 vezes em linhas diferentes
