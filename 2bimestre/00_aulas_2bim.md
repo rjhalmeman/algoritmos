@@ -18,9 +18,7 @@ Conjuntos (string e vetor)
 
 26/05/2025		2	seg
 
-
 30/05/2025		3	sex
-
 
 02/06/2025		2	seg
 06/06/2025		3	sex
@@ -32,7 +30,7 @@ Recuperação Paralela
 27/06/2025		3	sex
 Avaliação do 2º bimestre
 30/06/2025		2	seg
-Revisão da avaliação
+    Revisão da avaliação
 04/07/2025		3	sex
 07/07/2025		2	seg
 11/07/2025		3	sex
