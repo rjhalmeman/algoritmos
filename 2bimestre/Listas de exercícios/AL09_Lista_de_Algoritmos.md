@@ -1,68 +1,59 @@
-# AL09 - Lista de Algoritmos: Repetição e Strings
+# AL07 - Algoritmos - Lista de Exercícios 07 - TIII - Repetição
 
-> Para todos os exercícios o faça o programa com HTML e JavaScript.
+## Nível fácil
 
+01) Escreva um programa que dado um valor numérico digitado pelo usuário (armazenado em uma variável inteira), imprima cada um dos seus dígitos por extenso. Exemplo: 4571 Resultado: quatro, cinco, sete, um.
 
-01) Escreva um nome 10 vezes em linhas diferentes. Faça um programa que leia um nome e escreva esse nome 10 vezes, em linhas diferentes.
+02) Faça um programa que receba do usuário uma string. O programa imprime a string sem suas vogais. (retire as vogais e imprima).
 
+03) Faça um programa que leia um vetor de caracteres, gere e imprima um outro vetor onde as vogais, do primeiro vetor, sejam substituídas pelo caractere ‘*’.
 
-02) Faça um programa que leia uma série de números inteiros e some esses números.
+04) Desenvolva um algoritmo que leia duas palavras e verifique se uma palavra é anagrama da outra, ou seja, se as duas palavras podem ser escritas com as mesmas letras. Desconsidere números e caracteres especiais.
 
+05) Desenvolva um algoritmo que leia uma frase e encontre a maior e a menor palavra, considerando o número de caracteres, nessa frase. Imprima as palavras encontradas.
 
-03) Soma de 1 até N
-Crie um programa que solicita ao usuário um número inteiro positivo e, em seguida, soma todos os números de 1 até esse número.
+06) Desenvolva um algoritmo que leia uma palavra e retire todos os caracteres repetidos da palavra.
 
+07) Crie uma função que recebe um vetor de números inteiros e retorna um novo vetor sem elementos duplicados. Faça o programa que possibilite o uso da função.
 
-04) Escreva um programa que solicita ao usuário um número inteiro e exibe a tabuada desse número de 1 a 10.
+## Nível moderado
 
+08) Faça um algoritmo e o respectivo programa em JS para ler um conjunto de números inteiros e colocá-los em ordem crescente.
 
-05) Faça um programa que leia um conjunto de números e retorne a soma total.
+09) Faça um algoritmo e o respectivo programa em JS que leia uma palavra (máximo de 50 letras) e some 10 no valor ASCII de cada caractere da palavra. Imprima a string resultante. (Criptografia)
 
+10) Faça um algoritmo e o respectivo programa em JS que leia a string resultante do exercício 09 e subtraia 10 no valor ASCII de cada caractere da palavra. (Descriptografia)
 
-06) Escreva um programa que conta o número de vogais em uma string.
+11) Desenvolva um algoritmo capaz de fazer a “criptografia” (codificação de dados visando a privacidade de acesso às informações) de uma palavra. Essa criptografia será feita através da codificação dos dados através de um processo de substituição de letras.
 
+Essa codificação é chamada Cifra de César. Uma letra deve ser lida e utilizada como chave. A chave representa o número de rotações no alfabeto que deve ser feito antes de encontrar a nova letra após a criptografia. A letra ‘A’ representa uma rotação de uma letra para a esquerda, ‘B’ uma rotação de duas letras e assim sucessivamente. Faça isso para todas as letras das palavras, ignore caracteres que não sejam letras. Lembre-se que ‘z’ + 1 é igual a ‘a’.
 
-07) Crie um programa que recebe uma string do usuário e a imprime invertida.
+Exemplo:  
+Entrada: D  
+Claudio  
+Saída: Gpeyhms
 
+Dicas:  
+Em JS, let str = "Hello";  
+let charCode = str.charCodeAt(1); // Obtém o código ASCII do segundo caractere  
+console.log(charCode); // Exibe 101, que é o código ASCII de 'e'  
+charCode++; // vai para a letra seguinte  
+console.log(charCode);  
+let char = String.fromCharCode(charCode);  
+console.log(char); // Exibe 'f'  
+Somar 1 ao código de uma letra, implica em transformar esta no caractere seguinte.
 
-08) Faça o programa que considere como entrada de dados o vetor:  
-`[5, 9, 6, 7, 4, 2, 6, 7, 9, 10, 2]`  
+Pré-requisitos:  
+https://pt.wikipedia.org/wiki/ASCII  
+https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar
 
-Crie um botão e uma função para cada item abaixo:
+12) Escreva um algoritmo que receba 2 strings (A e B) e retorne uma terceira string (C) formada pelos caracteres de A e B intercalados. Ex.: Se A='Quarta' e B='Segunda', a resposta deve ser 'QSueagrutnada'.
 
-        a) Some todos os números.  
-        b) Calcule a média aritmética.  
-        c) Conte quantas vezes um número específico, fornecido pelo usuário, aparece no vetor.
+13) Escreva um programa que, a partir de um nome informado pelo usuário, exiba suas iniciais. As iniciais são formadas pela primeira letra de cada nome, sendo que todas deverão aparecer em maiúsculas na saída do programa. Note que os conectores e, do, da, dos, das, de, di, du não são considerados nomes e, portanto, não devem ser considerados para a obtenção das iniciais. As iniciais devem ser impressas em maiúsculas, ainda que o nome seja entrado todo em minúsculas.
 
+Exemplos:  
+Maria das Graças Pimenta => MGP  
+João Carlos dos Santos => JCS  
+José da Silva => JS  
+Pedro Pereira Teixeira => PPT
 
-09) Faça um programa que leia um nome completo (nome e sobrenome). Escreva esse nome no formato inglês.
-
-        Para entrada `João Carlos da Silva` a saída será `Silva, João Carlos`  
-        Considere que o último nome é o sobrenome.
-
-
-10) Faça um programa para calcular a soma de todos os números pares de 0 até um número positivo informado pelo usuário.
-
-
-11) Faça um programa que leia uma palavra e verifique se ela é um palíndromo.
-
-> Um palíndromo é uma palavra que lida de trás para frente tem o mesmo significado.  
-> Exemplos: `arara`, `ana`, `ama`.
-
-
-12) Faça um programa que calcule a sequência de Fibonacci até um termo informado pelo usuário.
-
-> Exemplo: até o 8º termo → `0, 1, 1, 2, 3, 5, 8, 13`
-
-13) Faça um programa que calcule o valor das parcelas de um produto comprado a prazo.
-
-O usuário deve informar:
-- o valor do produto,
-- a taxa de juros mensal (em %),
-- e a quantidade de meses para o pagamento.
-
-O programa deve:
-- calcular o valor total a ser pago com os juros aplicados,  
-- e o valor de cada parcela (valor total / meses).
-
-> Use laço de repetição no cálculo.
