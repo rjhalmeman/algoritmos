@@ -14,6 +14,7 @@ https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-05-09%20-%20av
 Elabore um relato explicitando suas dúvidas.
 
 O relato da Oksane é um exemplo de como pode ser feito.
+https://github.com/rjhalmeman/algoritmos/blob/main/2bimestre/recupera%C3%A7%C3%A3o%20paralela%20-%201%C2%BA%20bimestre/relatoOksane2024.pdf
 
 
 O relato deverá ser entregue para o Rafael Augusto (monitor da disciplina) via e-mail.
