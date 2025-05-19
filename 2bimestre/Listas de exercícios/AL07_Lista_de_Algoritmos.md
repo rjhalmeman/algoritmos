@@ -1,4 +1,4 @@
-# AL07 - Algoritmos - Lista de Exercícios 08 - TIII - Repetição
+# AL07 - Algoritmos - Lista de Exercícios 07 - TIII - Repetição
 
 ## Nível fácil
 
