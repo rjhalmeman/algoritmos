@@ -13,7 +13,7 @@ Exiba o total de números pares e o valor da média.
    Por exemplo, o usuário informa como inicial o número 5 e final o número 12. 
 O programa deverá somar 6+8+10+12. Calcular a média (36/4 = 9) e exibir: são 4 números 
 pares. A média é 9. 
-
+(solução no github)
 
 2) Escreva um programa que calcule a soma de todos os números inteiros múltiplos de 3 entre 1 e 100.
 
