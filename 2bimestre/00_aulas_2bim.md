@@ -20,8 +20,11 @@ Conjuntos (string e vetor)
 
 
 30/05/2025		3	sex
+
+
 02/06/2025		2	seg
 06/06/2025		3	sex
+Recuperação Paralela
 09/06/2025		2	seg
 13/06/2025		3	sex
 16/06/2025		2	seg
