@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputNome">
+    <input type="button" value="Repetir" onclick="funcaoRepetir()">
+    <br>
+    <span id="resposta">...</span>
+
+    <script>
+        function funcaoRepetir(){
+            let nome = document.getElementById("inputNome").value;
+            let texto = "";
+            for (let cont = 1; cont <= 5; cont++) {
+                texto = texto + nome+"<br>";
+                console.log(cont+" -- "+ texto)
+                alert("pausa");
+            }
+            document.getElementById("resposta").innerHTML = texto;
+        }
+    </script>
+
+
+</body>
+</html>
