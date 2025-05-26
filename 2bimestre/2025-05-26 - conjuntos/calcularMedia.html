@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <title>Adicionar ao Vetor</title>
+    <title>Calcular média</title>
 </head>
 
 <body>
 
-    <h2>Adicionar Número ao Vetor</h2>
+    <h2>Adicionar Número ao Vetor e calcular a média</h2>
 
     <input type="number" id="inputNumero" placeholder="Digite um número">
     <button onclick="adicionarNumero()">Adicionar</button>
@@ -15,24 +15,38 @@
     <h3>Conjunto (vetor):</h3>
     <p id="saidaVetor">[]</p>
 
+    <br>
+    <input type="button" value="Calcular média" onclick="calcularMedia()">
+    <br>
+    <span id="spanMedia">....</span>
     <script>
         let conjunto = [];
 
         function adicionarNumero() {
-            let elementoInputNumero = 
-               document.getElementById("inputNumero");
-               
+            let elementoInputNumero =
+                document.getElementById("inputNumero");
+
             let numero = parseFloat(elementoInputNumero.value);
 
             if (!isNaN(numero)) { //se é um número
                 conjunto.push(numero);//adiciona no fim do vetor
-                document.getElementById("saidaVetor").innerText =conjunto;               
-               
+                document.getElementById("saidaVetor").innerText = conjunto;
+
                 elementoInputNumero.value = ""; // limpa o input
                 elementoInputNumero.focus();    // foca de novo para digitar o próximo            
             } else {
                 alert("Por favor, digite um número válido.");
             }
+        }
+        function calcularMedia() {
+            let soma = 0;
+            for (let i = 0; i < conjunto.length; i++) {
+                soma = soma + conjunto[i];
+            }
+            let media = soma / conjunto.length;
+
+            document.getElementById("spanMedia").innerHTML = media;
+
         }
     </script>
 
