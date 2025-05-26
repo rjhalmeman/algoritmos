@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adicionar ao Vetor</title>
+</head>
+
+<body>
+
+    <h2>Adicionar Número ao Vetor</h2>
+
+    <input type="number" id="inputNumero" placeholder="Digite um número">
+    <button onclick="adicionarNumero()">Adicionar</button>
+
+    <h3>Conjunto (vetor):</h3>
+    <p id="saidaVetor">[]</p>
+
+    <script>
+        let conjunto = [];
+
+        function adicionarNumero() {
+            let elementoInputNumero = document.getElementById("inputNumero");
+            let numero = parseFloat(elementoInputNumero.value);
+
+            if (!isNaN(numero)) { //se é um número
+                conjunto.push(numero);
+                document.getElementById("saidaVetor").innerText =conjunto;               
+               
+                elementoInputNumero.value = ""; // limpa o input
+                elementoInputNumero.focus();    // foca de novo para digitar o próximo
+            
+            } else {
+                alert("Por favor, digite um número válido.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
