@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome em formato inglês</title>
+</head>
+
+<body>
+    <label for="inputNomeCompleto">Digite o nome</label>
+    <input type="text" id="inputNomeCompleto">
+    <br>
+    <input type="button" value="Formatar" onclick="formatarNome()">
+    <br>
+    <label for="spanNomeFormatado">Nome formatado</label>
+    <span id="spanNomeFormatado">...</span>
+
+    <script>
+        function formatarNome() {
+            debugger;
+            let nome = document.getElementById("inputNomeCompleto").value;
+            let posicao = 0;
+            let quantidadeDeLetrasNoNomeDigitado = nome.length;
+            for (let i = quantidadeDeLetrasNoNomeDigitado; nome[i] != ' ' && i >= 0; i--) {
+                posicao = i;
+            }
+            let sobrenome = "";
+            for (let i = posicao; i < quantidadeDeLetrasNoNomeDigitado; i++) {
+                sobrenome += nome[i];
+            }
+            sobrenome = sobrenome + ", ";
+            for (let i = 0; i < posicao; i++) {
+                sobrenome += nome[i];
+            }
+            document.getElementById("spanNomeFormatado").innerHTML = sobrenome;
+        }
+
+    </script>
+
+
+</body>
+
+</html>

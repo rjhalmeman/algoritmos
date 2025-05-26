@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome em formato inglês</title>
+</head>
+
+<body>
+    <label for="inputNome">Digite o nome</label>
+    <input type="text" id="inputNome">
+    <br>
+    <input type="button" value="Contar" onclick="contarLetras()">
+    <br>
+    <label for="spanResposta">Quantidade de letras 'a'</label>
+    <span id="spanResposta">...</span>
+
+    <script>
+        function contarLetras() {
+            debugger;
+            let nome = document.getElementById("inputNome").value;
+            let contLetra = 0;
+            let quantidadeDeLetrasNoNomeDigitado = nome.length;
+
+            for (let i = 0; i < quantidadeDeLetrasNoNomeDigitado; i++) {
+                if (nome[i] == 'a') {
+                    contLetra = contLetra + 1;
+                }
+            }
+            document.getElementById("spanResposta").innerHTML = contLetra;
+        }
+    </script>
+</body>
+
+</html>
