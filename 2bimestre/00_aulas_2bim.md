@@ -23,8 +23,13 @@ pares. A média é 9.
 
 23/05/2025		3	sex
 Conjuntos (string e vetor)
+[Exercícios usados como exemplos](https://github.com/rjhalmeman/algoritmos/tree/main/2bimestre/2025-05-23%20-%20conjuntos)
+
+
 
 26/05/2025		2	seg
+Exercícios com conjuntos (strings e vetores)
+
 
 30/05/2025		3	sex
 

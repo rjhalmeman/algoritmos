@@ -14,7 +14,7 @@ e explique por que o seu não funcionou.
 
 [Gabarito da avaliação do 1º bimestre ](https://github.com/rjhalmeman/algoritmos/tree/main/1bimestre/2025-05-09%20-%20avalia%C3%A7%C3%A3o%201%20bimestre)
 
-O relato deverá ser entregue para o Rafael Augusto (monitor da disciplina) via ?????? até 30/05/2025. (para dar tempo de responder)
+O relato deverá estar em um documento pdf. Enviar o documento anexado para radames@professores.utfpr.edu.br até 30/05/2025. (para dar tempo de responder)
 
 ** APÓS ESSE PROCESSO DE ESCLARECIMENTO DE DÚVIDAS
 
