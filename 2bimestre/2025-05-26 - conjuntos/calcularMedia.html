@@ -19,10 +19,17 @@
     <input type="button" value="Calcular média" onclick="calcularMedia()">
     <br>
     <span id="spanMedia">....</span>
+
+     <br>
+    <input type="button" 
+        value="Calcular média dos pares" onclick="calcularMediaDosPares()">
+    <br>
+    <span id="spanMediaPares">....</span>
     <script>
         let conjunto = [];
 
         function adicionarNumero() {
+          
             let elementoInputNumero =
                 document.getElementById("inputNumero");
 
@@ -30,15 +37,17 @@
 
             if (!isNaN(numero)) { //se é um número
                 conjunto.push(numero);//adiciona no fim do vetor
-                document.getElementById("saidaVetor").innerText = conjunto;
+                document.getElementById("saidaVetor").
+                         innerHTML = conjunto;
 
                 elementoInputNumero.value = ""; // limpa o input
-                elementoInputNumero.focus();    // foca de novo para digitar o próximo            
+              elementoInputNumero.focus();    // foca de novo para digitar o próximo            
             } else {
                 alert("Por favor, digite um número válido.");
             }
         }
         function calcularMedia() {
+            debugger;
             let soma = 0;
             for (let i = 0; i < conjunto.length; i++) {
                 soma = soma + conjunto[i];
@@ -46,6 +55,21 @@
             let media = soma / conjunto.length;
 
             document.getElementById("spanMedia").innerHTML = media;
+
+        }
+
+          function calcularMediaDosPares() {
+            let soma = 0;
+            let contaPar = 0;
+            for (let i = 0; i < conjunto.length; i++) {
+                if (conjunto[i]%2==0) {
+                    soma = soma + conjunto[i];
+                    contaPar++;
+                }
+            }
+            let media = soma / contaPar;
+
+            document.getElementById("spanMediaPares").innerHTML = media;
 
         }
     </script>

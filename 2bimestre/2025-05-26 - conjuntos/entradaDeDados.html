@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <label for="inputConjunto">Digite o nome</label>
+    <label for="inputConjunto">Digite vários números separados por vírgula</label>
     <input type="text" id="inputConjunto">
     <br>
-    <input type="button" value="Converter" onclick="formatarNome()">
+    <input type="button" value="Converter" onclick="converterNumeros()">
     <br>
     <label for="spanResp">Conjunto convertido para números</label>
     <span id="spanResp">...</span>
@@ -20,7 +20,7 @@
     <span id="spanResp2">...</span>
 
     <script>
-        function formatarNome() {
+        function converterNumeros() {
            // debugger;
             let conjunto = document.getElementById("inputConjunto").value;
             let conjuntoTexto = conjunto.split(",");
