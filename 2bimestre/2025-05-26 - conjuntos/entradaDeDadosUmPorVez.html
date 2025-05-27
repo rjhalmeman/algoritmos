@@ -17,19 +17,18 @@
 
     <script>
         let conjunto = [];
-
         function adicionarNumero() {
-            let elementoInputNumero = 
-               document.getElementById("inputNumero");
-               
-            let numero = parseFloat(elementoInputNumero.value);
+            debugger;
+            let retangulo = document.getElementById("inputNumero");
+
+            let numero = parseFloat(retangulo.value);
 
             if (!isNaN(numero)) { //se é um número
                 conjunto.push(numero);//adiciona no fim do vetor
-                document.getElementById("saidaVetor").innerText =conjunto;               
-               
-                elementoInputNumero.value = ""; // limpa o input
-                elementoInputNumero.focus();    // foca de novo para digitar o próximo            
+                document.getElementById("saidaVetor").innerText = conjunto;
+
+                retangulo.value = ""; // limpa o input
+                retangulo.focus();    // foca de novo para digitar o próximo            
             } else {
                 alert("Por favor, digite um número válido.");
             }
