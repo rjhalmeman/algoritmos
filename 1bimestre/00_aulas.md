@@ -237,7 +237,7 @@ Atividade autoavaliativa 02
 
 Exercícios 
 
-1) Faça um programa com HTML e Java Script que leia o nome do atleta, o gênero, a modalidade esportiva (Futsal ou Basquete) e a idade. Classifique-o em sua categoria, conforme o gênero, a modalidade e a idade. Como saída, deve exibir (printar) como nos exemplos abaixo:
+1) Faça um programa com HTML e JavaScript que leia o nome do atleta, o gênero, a modalidade esportiva (Futsal ou Basquete) e a idade. Classifique-o em sua categoria, conforme o gênero, a modalidade e a idade. Como saída, deve exibir (printar) como nos exemplos abaixo:
 
 
 ![alt text](./imagens/tabelaCategoriasEsportes.png)
