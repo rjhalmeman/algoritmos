@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(203, 245, 211);
+        }
+    </style>
+</head>
+<body>
+    <img src="./cat.webp" alt="">
+    <input type="button" value="vai" onclick="mostrar()">
+    <br>
+    <span id="resposta"></span>
+
+<script>
+    function mostrar(){
+        semana = ["dom","seg","ter","qua","qui","sex","sab"]
+        let resp ="";
+        for (let i = semana.length-1; i>=0 ; i--) {
+           resp = resp+"<h3>"+ semana[i]+"</h3>"+"<br>";            
+        }
+        document.getElementById("resposta").innerHTML = resp;
+    }
+
+
+</script>
+
+</body>
+</html>

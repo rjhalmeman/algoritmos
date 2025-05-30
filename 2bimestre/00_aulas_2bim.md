@@ -33,6 +33,7 @@ Conjuntos (string e vetor)
 
 Exercícios com conjuntos (strings e vetores)
 
+Palíndromo
 
 
 30/05/2025		3	sex
