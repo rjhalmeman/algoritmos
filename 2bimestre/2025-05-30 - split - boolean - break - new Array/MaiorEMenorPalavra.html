@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="inputFrase">Frase</label>
+    <input type="text" id="inputFrase" placeholder="Digite uma frase">
+    <br>
+    <input type="button" value="Procurar palavras" onclick="procurarPalavras()">
+    <br>
+    <span id="spanResposta">...</span>
+
+    <script>
+        function procurarPalavras() { //ao clicar o botão, aciona esse função
+            debugger;
+            let frase = document.getElementById("inputFrase").value; //pega a frase que o usuário digitou no inputFrase e guarda na variável frase
+            let resposta = separar(frase); //chama a função separar(frase) passando a variável frase como parâmetro. Vai executar a função e receber o resultado da função separar(return)
+            document.getElementById("spanResposta").innerHTML = resposta; //vai mostrar na interface gráfica (tela) a resposta.
+        }
+
+        function separar(frase) {
+            let f = frase.split(" "); //divide a frase em palavras (usa o espaço como referência). guarda o resultado em um array.
+            let menorPalavra = 0; //vai guardar a posição (índice) da menor palavra
+            let maiorPalavra = 0; // vai guardar a posição (índice) da maior palavra
+            let me = f[0].length; //pega a quantidade de letras da primeira palavra
+            let ma = f[0].length; //pega a quantidade de letras da primeira palavra
+            for (let i = 1; i < f.length; i++) { //vai percorrer da segunda até a última palavra no array f (no vetor f)
+                if (f[i].length < me) { // se o tamanho da palavra da posição i é MENOR que me
+                    me = f[i].length; // me vai receber o tamanho da nova "menor palavra"
+                    menorPalavra = i; // guarda a posição da menor palavra do array f
+                }
+
+                if (f[i].length > ma) { // se o tamanho da palavra da posião i é MAIOR que ma
+                    ma = f[i].length; //ma passa a ter o tamanho da maior palavra encontrada até agora
+                    maiorPalavra = i; // guarda a posição da maior palavra do array f
+                }
+            }
+            //para devolver a resposta, concateinei em uma unica string chamada resp
+            let resp = "A menor palavra é => " + f[menorPalavra] + " <br> A maior palavra é => " + f[maiorPalavra];
+            return resp; //devolve o conteúdo da variável resp para quem chamou.
+            
+            // console.log("a menor palavra é ====> " + f[menorPalavra]);
+            // console.log("a maior palavra é ====> " + f[maiorPalavra]);
+        }
+
+    </script>
+</body>
+
+</html>
