@@ -15,18 +15,28 @@
     <br>
     <label for="spanResp">Conjunto convertido para números</label>
     <span id="spanResp">...</span>
-    
+
     <script>
         function obterDados() {
-
-           // debugger;
+            debugger;
             let conjunto = document.getElementById("inputConjunto").value;
             let conjuntoTexto = conjunto.split(",");
             let conjuntoNumerico = new Array(conjuntoTexto.length).fill(0);
+            let tudoCerto = true;
             for (let i = 0; i < conjuntoTexto.length; i++) {
-                conjuntoNumerico[i] = parseInt(conjuntoTexto[i])
+                if (!isNaN(conjuntoTexto[i])) {
+                    conjuntoNumerico[i] = parseInt(conjuntoTexto[i].trim())
+                } else {
+                    alert("Usuário querido, por favor, coloque apenas números separados por vírgulas no input");
+                    tudoCerto = false;
+                    break;
+                }
             }
-            document.getElementById("spanResp").innerHTML = conjuntoNumerico;           
+            if (tudoCerto) {
+                document.getElementById("spanResp").innerHTML = conjuntoNumerico;
+            } else {
+                document.getElementById("spanResp").innerHTML = "Algo está errado na entrada de dados";
+            }
         }
     </script>
 </body>
