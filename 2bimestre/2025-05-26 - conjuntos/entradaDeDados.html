@@ -8,19 +8,16 @@
 </head>
 
 <body>
-    <label for="inputConjunto">Digite o nome</label>
+    <label for="inputConjunto">Digite um conjunto de números separados por vírgulas</label>
     <input type="text" id="inputConjunto">
     <br>
-    <input type="button" value="Converter" onclick="formatarNome()">
+    <input type="button" value="Converter" onclick="obterDados()">
     <br>
     <label for="spanResp">Conjunto convertido para números</label>
     <span id="spanResp">...</span>
     
-    <label for="spanResp2">teste</label>
-    <span id="spanResp2">...</span>
-
     <script>
-        function formatarNome() {
+        function obterDados() {
            // debugger;
             let conjunto = document.getElementById("inputConjunto").value;
             let conjuntoTexto = conjunto.split(",");
@@ -28,14 +25,9 @@
             for (let i = 0; i < conjuntoTexto.length; i++) {
                 conjuntoNumerico[i] = parseInt(conjuntoTexto[i])
             }
-
-            document.getElementById("spanResp").innerHTML = conjuntoNumerico;
-            document.getElementById("spanResp2").innerHTML = conjuntoNumerico[0]+conjuntoNumerico[1];
+            document.getElementById("spanResp").innerHTML = conjuntoNumerico;           
         }
-
     </script>
-
-
 </body>
 
 </html>

@@ -37,6 +37,15 @@ Exercícios com conjuntos (strings e vetores)
 
 30/05/2025		3	sex
 
+split
+
+Exercícios
+
+1) Faça um programa que receba do usuário uma string. O programa imprime a
+string sem suas vogais. (retire as vogais e imprima). Comece no <body>.
+Mostre que funciona fazendo um teste de mesa no seu código.
+
+
 02/06/2025		2	seg
 06/06/2025		3	sex
 Recuperação Paralela
