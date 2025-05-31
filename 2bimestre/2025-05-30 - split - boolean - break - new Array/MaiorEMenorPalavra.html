@@ -9,7 +9,7 @@
 
 <body>
     <label for="inputFrase">Frase</label>
-    <input type="text" id="inputFrase" placeholder="Digite uma frase">
+    <input type="text" id="inputFrase" placeholder="Digite uma frase" style="width: 80%;">
     <br>
     <input type="button" value="Procurar palavras" onclick="procurarPalavras()">
     <br>
@@ -18,12 +18,14 @@
     <script>
         function procurarPalavras() { //ao clicar o botão, aciona esse função
             debugger;
-            let frase = document.getElementById("inputFrase").value; //pega a frase que o usuário digitou no inputFrase e guarda na variável frase
-            let resposta = separar(frase); //chama a função separar(frase) passando a variável frase como parâmetro. Vai executar a função e receber o resultado da função separar(return)
+            let frase = document.getElementById("inputFrase").value;    //pega a frase que o usuário digitou no inputFrase 
+                                                                        // e guarda na variável frase
+            let resposta = funcaoMenorMaior(frase);  //chama a função funcaoMenorMaior(frase) passando a variável frase como parâmetro. 
+                                            // Vai executar a função e receber o resultado da função funcaoMenorMaior(return)
             document.getElementById("spanResposta").innerHTML = resposta; //vai mostrar na interface gráfica (tela) a resposta.
         }
 
-        function separar(frase) {
+        function funcaoMenorMaior(frase) {
             let f = frase.split(" "); //divide a frase em palavras (usa o espaço como referência). guarda o resultado em um array.
             let menorPalavra = 0; //vai guardar a posição (índice) da menor palavra
             let maiorPalavra = 0; // vai guardar a posição (índice) da maior palavra
