@@ -24,8 +24,8 @@
             let conjuntoNumerico = new Array(conjuntoTexto.length).fill(0);
             let tudoCerto = true;
             for (let i = 0; i < conjuntoTexto.length; i++) {
-                if (!isNaN(conjuntoTexto[i])) {
-                    conjuntoNumerico[i] = parseInt(conjuntoTexto[i].trim())
+                if (!isNaN(conjuntoTexto[i].trim())) {
+                    conjuntoNumerico[i] = parseInt(conjuntoTexto[i])
                 } else {
                     alert("Usuário querido, por favor coloque apenas números separados por vírgulas no input");
                     tudoCerto = false;
