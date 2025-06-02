@@ -33,20 +33,14 @@ Conjuntos (string e vetor)
 
 Exercícios com conjuntos (strings e vetores)
 
-Palíndromo
-
 
 30/05/2025		3	sex
 
-split, 
+split, boolean - break - new Array
 
 Faça um programa que leia uma frase e considerando o número de caracteres de cada palavra, mostre a menor e a maior palavra da frase.
 
 [Vídeo explicando sobre o exercício que procura a menor e maior palavra em uma frase](https://youtu.be/chTN5MfZG74)
-
-Exercícios
-
-
 
 
 02/06/2025		2	seg
@@ -57,7 +51,9 @@ Exercícios
 
 1) Faça um programa que calcule a sequência de Fibonacci até um termo informado pelo usuário. (Lista 01 - Exercício 12)
 
-2) Faça um programa que receba do usuário uma string. O programa imprime a
+2) Faça um programa que leia uma palavra e verifique se é um palíndromo. Exemplo: arara, que lido de trás para frente também é arara, ou seja, é um palíndromo.
+
+3) Faça um programa que receba do usuário uma string. O programa imprime a
 string sem suas vogais. (retire as vogais e imprima). Comece no <body>.
 Mostre que funciona fazendo um teste de mesa no seu código.
 
