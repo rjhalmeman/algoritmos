@@ -38,16 +38,30 @@ Palíndromo
 
 30/05/2025		3	sex
 
-split
+split, 
+
+Faça um programa que leia uma frase e considerando o número de caracteres de cada palavra, mostre a menor e a maior palavra da frase.
+
+[Vídeo explicando sobre o exercício que procura a menor e maior palavra em uma frase](https://youtu.be/chTN5MfZG74)
 
 Exercícios
 
-1) Faça um programa que receba do usuário uma string. O programa imprime a
+
+
+
+02/06/2025		2	seg
+
+[Fibonacci](https://www.youtube.com/watch?v=MerxvuUjuzo)
+
+[Menino de 13 anos cria nova forma de tranformar luz do sol em energia](https://www.youtube.com/watch?v=WkOfLve-7_c)
+
+1) Faça um programa que calcule a sequência de Fibonacci até um termo informado pelo usuário. (Lista 01 - Exercício 12)
+
+2) Faça um programa que receba do usuário uma string. O programa imprime a
 string sem suas vogais. (retire as vogais e imprima). Comece no <body>.
 Mostre que funciona fazendo um teste de mesa no seu código.
 
 
-02/06/2025		2	seg
 06/06/2025		3	sex
 Recuperação Paralela
 09/06/2025		2	seg
