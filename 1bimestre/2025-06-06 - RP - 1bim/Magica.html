@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mágico</title>
+</head>
+<body>
+    <label for="inputA">A</label>
+    <input type="number" name="inputA" id="inputA"><br>
+    <label for="inputB">B</label>
+    <input type="number" name="inputB" id="inputB"><br>
+    <label for="inputC">C</label>
+    <input type="number" name="inputC" id="inputC"><br>
+    <input type="button" value="Faça" onclick="magica()"><br>
+    <label for="resposta">Resposta</label>
+    <span id="resposta"></span>
+    <script>
+        function magica() {            
+            let a = parseInt(document.getElementById("inputA").value);
+            let b = parseInt(document.getElementById("inputB").value);
+            let c = parseInt(document.getElementById("inputC").value);
+            if (a > b) {
+                aux = a;
+                a = b;
+                b = aux;
+            }
+            if (b > c) {
+                aux = b;
+                b = c;
+                c = aux;
+            }
+            if (a > b) {
+                aux = a;
+                a = b;
+                b = aux;
+            }
+            document.getElementById("resposta").textContent = a + "," + b + "," + c;
+        }
+    </script>
+</body>
+</html>
