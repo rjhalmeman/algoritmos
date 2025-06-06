@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Informações de Viagem</title>
+</head>
+
+<body>
+    <label>Origem (brasil, eua, canada, argentina):</label>
+    <input type="text" id="inputOrigem">
+    <br>
+    <label>Destino (brasil, eua, canada, argentina):</label>
+    <input type="text" id="inputDestino">
+    <br>
+    <label>Mês da viagem (1 a 12):</label>
+    <input type="number" id="inputMes">
+    <br>
+    <button onclick="verificarViagem()">Verificar</button>
+    <br>
+    <span id="spanResposta"></span>
+
+    <script>
+        function verificarViagem() {
+            let origem = document.getElementById("inputOrigem").value;
+            let destino = document.getElementById("inputDestino").value;
+            let mes = parseInt(document.getElementById("inputMes").value);
+
+            //descobrir o hemisferio da origem
+            let hemisferio = "";
+            let pais = origem.toLowerCase();
+            if (pais == "brasil" || pais == "argentina") {
+                hemisferio = "sul";
+            } else if (pais == "canada" || pais == "eua") {
+                hemisferio = "norte";
+            }
+            let hemisferioOrigem = hemisferio;
+
+            //sabendo o hemisfério da origem, vamos descobrir a estação da origem
+            if (hemisferioOrigem == "sul") {
+                if (mes == 12 || mes == 1 || mes == 2) {
+                    estacao = "verão";
+                } else if (mes == 3 || mes == 4 || mes == 5) {
+                    estacao = "outono";
+                } else if (mes == 6 || mes == 7 || mes == 8) {
+                    estacao = "inverno";
+                } else if (mes == 9 || mes == 10 || mes == 11) {
+                    estacao = "primavera";
+                }
+
+            } else {
+                if (mes == 12 || mes == 1 || mes == 2) {
+                    estacao = "inverno";
+                } else if (mes == 3 || mes == 4 || mes == 5) {
+                    estacao = "primavera";
+                } else if (mes == 6 || mes == 7 || mes == 8) {
+                    estacao = "verão";
+                } else if (mes == 9 || mes == 10 || mes == 11) {
+                    estacao = "outono";
+                }
+            }
+            estacaoOrigem = estacao;
+
+            //descobrir o hemisfério do destino
+            pais = destino.toLowerCase();
+            if (pais == "brasil" || pais == "argentina") {
+                hemisferio = "sul";
+            } else if (pais == "canada" || pais == "eua") {
+                hemisferio = "norte";
+            }
+            let hemisferioDestino = hemisferio;
+
+            //com o hemisferio, descobrir a estacao do destino
+            if (hemisferioDestino == "sul") {
+                if (mes == 12 || mes == 1 || mes == 2) {
+                    estacao = "verão";
+                } else if (mes == 3 || mes == 4 || mes == 5) {
+                    estacao = "outono";
+                } else if (mes == 6 || mes == 7 || mes == 8) {
+                    estacao = "inverno";
+                } else if (mes == 9 || mes == 10 || mes == 11) {
+                    estacao = "primavera";
+                }
+
+            } else {
+                if (mes == 12 || mes == 1 || mes == 2) {
+                    estacao = "inverno";
+                } else if (mes == 3 || mes == 4 || mes == 5) {
+                    estacao = "primavera";
+                } else if (mes == 6 || mes == 7 || mes == 8) {
+                    estacao = "verão";
+                } else if (mes == 9 || mes == 10 || mes == 11) {
+                    estacao = "outono";
+                }
+            }
+            estacaoDestino = estacao;
+
+            //concatenar a resposta
+
+            let resp = "Você está no(a) " + origem.toUpperCase() +
+                " que está no hemisfério " + hemisferioOrigem.toUpperCase() +
+                " cuja estação é " + estacaoOrigem.toUpperCase() +
+                " e o destino é o(a) " + destino.toUpperCase() +
+                " que está no hemisfério " + hemisferioDestino.toUpperCase() +
+                " e lá a estação é " + estacaoDestino.toUpperCase() + ".";
+
+            document.getElementById("spanResposta").innerText = resp;
+        }
+    </script>
+
+</body>
+
+</html>
