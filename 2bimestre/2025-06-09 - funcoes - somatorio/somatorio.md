@@ -9,7 +9,7 @@ E o problema não é de matemática e sim de linguagem. Não entendemos o que es
 
 ![alt text](image-6.png)
 
-A expressão deverá ser resolvida em uma function. Ou seja, deve criar uma function para fazer esse processamento (além da funcion acionada no button). O usuário fornecerá os valores de n.
+A expressão deverá ser resolvida em uma function. Ou seja, deve criar uma function para fazer esse processamento (além da function acionada no button). O usuário fornecerá os valores de n.
 
 --- 
 
