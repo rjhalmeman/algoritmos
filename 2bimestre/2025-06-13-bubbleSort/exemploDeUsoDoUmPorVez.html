@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <title>Adicionar ao Vetor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Número ao Vetor</title>
+    <style>
+        #respTabela {
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre;
+        }
+    </style>
 </head>
 
 <body>
-
     <h2>Adicionar Número ao Vetor</h2>
 
     <input type="number" id="inputNumero" placeholder="Digite um número">
-    <button onclick="adicionarNumero()">Adicionar</button>
+    <input type="button" value="Adicionar" onclick="adicionarNumeroNovo()">
 
     <h3>Conjunto (vetor):</h3>
     <p id="saidaVetor">[]</p>
     <br>
+
     <input type="button" value="Calcular" onclick="calcular()">
     <br>
     <p id="respConjuntoY">...</p>
     <br>
+
     <input type="button" value="Tabela" onclick="mostrarTabela()">
     <br>
     <p id="respTabela"></p>
@@ -26,18 +35,16 @@
     <script>
         let conjuntoX = [];
         let conjuntoY = [];
-        function adicionarNumero() {
-            debugger;
-            let elementoInputNumero = document.getElementById("inputNumero"); //componente visual criado no HTML
 
+        function adicionarNumeroNovo() {
+            let elementoInputNumero = document.getElementById("inputNumero");
             let numero = parseFloat(elementoInputNumero.value);
 
-            if (!isNaN(numero)) { //se é um número
-                conjuntoX.push(numero);//adiciona no fim do vetor
-                document.getElementById("saidaVetor").innerText = conjuntoX;
-
-                elementoInputNumero.value = ""; // limpa o input
-                elementoInputNumero.focus();    // foca de novo para digitar o próximo            
+            if (!isNaN(numero)) {
+                conjuntoX.push(numero);
+                document.getElementById("saidaVetor").innerText = "[" + conjuntoX.join(", ") + "]";
+                elementoInputNumero.value = "";
+                elementoInputNumero.focus();
             } else {
                 alert("Por favor, digite um número válido.");
             }
@@ -50,21 +57,27 @@
                 let y = x ** 2;
                 conjuntoY.push(y);
             }
-            document.getElementById("respConjuntoY").innerHTML = "[" + conjuntoY + "]";
+            document.getElementById("respConjuntoY").innerHTML = "[" + conjuntoY.join(", ") + "]";
         }
+
         function mostrarTabela() {
             conjuntoY = [];
+            let saida = "";
+
             for (let i = 0; i < conjuntoX.length; i++) {
                 const x = conjuntoX[i];
                 let y = x ** 2;
                 conjuntoY.push(y);
-                document.getElementById("respTabela").innerHTML 
-                      += conjuntoX[i]+ "|" + conjuntoY[i] +"<br>";
+
+                const xStr = String(x).padStart(5, ' ');
+                const yStr = String(y).padStart(5, ' ');
+
+                saida += xStr + "|" + yStr + "\n";
             }
+
+            document.getElementById("respTabela").innerText = saida;
         }
-
     </script>
-
 </body>
 
 </html>
