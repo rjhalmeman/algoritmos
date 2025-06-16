@@ -60,11 +60,48 @@ Mostre que funciona fazendo um teste de mesa no seu código.
 
 06/06/2025		3	sex
 Recuperação Paralela
+
 09/06/2025		2	seg
+Exercícios com uso de funções.
+
+
 13/06/2025		3	sex
+Método da bolha. Explicação e teste de mesa.
+
 16/06/2025		2	seg
+
+1) Faça um programa que leia um conjunto de números inteiros e armazene esses números em um vetor. Adicione um botão que calcule a média aritmética dos números do vetor. Outro botão que calcule a soma de todos os elementos do vetor e um terceiro botão que crie um novo vetor apenas com os números pares;
+
+outros laços de repetição
+
+while
+
+do while
+
+
+foreach (para indexados)
+let v = [5, 7, 3, 6, 5];
+let quadrados = [];
+
+arrow function
+v.forEach(x => {
+  quadrados.push(x * x);
+});
+
+console.log(quadrados); // [25, 49, 9, 36, 25]
+
+
+1) Faça um programa que mostre se um número informado é primo. Mostre uma versão com laço for e outra com laço while. É obrigatório o uso de função.
+
+2) Faça um programa que leia um vetor de números inteiros, verifique se cada número do vetor é primo e armazene os primos encontrados em um novo vetor. Imprima o vetor de primos.
+
+Façam todos os exercícios das listas e solicitem mais exercícios ao chatgpt.
+
 23/06/2025		2	seg
+
 27/06/2025		3	sex
+recaptulação para avaliação.
+
 Avaliação do 2º bimestre
 30/06/2025		2	seg
     Revisão da avaliação

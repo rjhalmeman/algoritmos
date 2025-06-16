@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Número ao Vetor</title>
+</head>
+
+<body>
+    <h2>Adicionar Número ao Vetor</h2>
+
+    <input type="number" id="inputNumero" placeholder="Digite um número">
+    <input type="button" value="Adicionar" onclick="adicionarNumeroNovo()">
+
+    <h3>Conjunto (vetor):</h3>
+    <p id="saidaVetor">[]</p>
+    <br>
+
+
+    <input type="button" value="Elevar ao quadrado" onclick="funcaoElevarAoQuadrado()">
+    <br>
+    <label for="respConjuntoY">Números elevados ao quadrado</label>
+    <p id="respConjuntoY">...</p>
+    <br>
+
+    <script>
+        let conjuntoX = [];
+        let conjuntoY = [];
+
+        function adicionarNumeroNovo() {
+            let elementoInputNumero = document.getElementById("inputNumero");
+            let numero = parseFloat(elementoInputNumero.value);
+
+            if (!isNaN(numero)) {
+                conjuntoX.push(numero);
+                document.getElementById("saidaVetor").innerText = "[" + conjuntoX + "]";
+                elementoInputNumero.value = "";
+                elementoInputNumero.focus();
+            } else {
+                alert("Por favor, digite um número válido.");
+            }
+        }
+
+        function funcaoElevarAoQuadrado() {
+            conjuntoY = [];
+            for (let i = 0; i < conjuntoX.length; i++) {
+                const x = conjuntoX[i];
+                let y = x ** 2;
+                conjuntoY.push(y);
+            }
+            document.getElementById("respConjuntoY").innerText = "[" + conjuntoY + "]";
+        }
+
+
+    </script>
+</body>
+
+</html>
