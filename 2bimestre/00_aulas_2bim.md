@@ -115,11 +115,12 @@ Façam todos os exercícios das listas e solicitem mais exercícios ao chatgpt.
     Revisão da avaliação
 
 # 07/07/2025		2	seg
-  Matrizes 
+  Matrizes array (multidimensional)
 
 # 11/07/2025		3	sex
 
 	Recuperação paralela 2º bimestre
+
 # 14/07/2025		2	seg
 
-revisão da avaliação
+revisão da avaliação de rp
