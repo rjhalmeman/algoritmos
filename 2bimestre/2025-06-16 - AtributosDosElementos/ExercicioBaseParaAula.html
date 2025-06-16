@@ -18,12 +18,18 @@
     <br>
 
 
-    <input type="button" value="Elevar ao quadrado" onclick="funcaoElevarAoQuadrado()">
+    <input type="button" value="Elevar ao quadrado" onclick="funcaoElevarAoQuadradoWhile()">
     <br>
     <label for="respConjuntoY">Números elevados ao quadrado</label>
     <p id="respConjuntoY">...</p>
     <br>
 
+
+    <input type="button" value="Elevar ao quadrado com hifem" onclick="funcaoElevarAoQuadradoComHifem()">
+    <br>
+    <label for="respConjuntoH">Números elevados ao quadrado</label>
+    <p id="respConjuntoH">...</p>
+    <br>
     <script>
         let conjuntoX = [];
         let conjuntoY = [];
@@ -51,6 +57,27 @@
             }
             document.getElementById("respConjuntoY").innerText = "[" + conjuntoY + "]";
         }
+
+        function funcaoElevarAoQuadradoWhile() {
+            conjuntoY = [];
+            let i = 0;
+            while (i < conjuntoX.length) {
+                const x = conjuntoX[i];
+                let y = x ** 2;
+                conjuntoY.push(y);
+                i++;
+            }
+            document.getElementById("respConjuntoY").innerText = "[" + conjuntoY + "]";
+        }
+        function funcaoElevarAoQuadradoComHifem() {
+            let quadrados = [];
+
+                //arrow function
+                conjuntoX.forEach(x => {
+                    quadrados.push(x * x);
+                });
+                document.getElementById("respConjuntoH").innerText = "[" + quadrados + "]";
+            }
 
 
     </script>
