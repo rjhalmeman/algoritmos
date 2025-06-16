@@ -83,7 +83,7 @@ foreach (para indexados)
 let v = [5, 7, 3, 6, 5];
 let quadrados = [];
 
-arrow function
+//arrow function
 v.forEach(x => {
   quadrados.push(x * x);
 });
@@ -101,11 +101,10 @@ Façam todos os exercícios das listas e solicitem mais exercícios ao chatgpt.
 
 27/06/2025		3	sex
 recaptulação para avaliação.
-
-Avaliação do 2º bimestre
 30/06/2025		2	seg
-    Revisão da avaliação
+Avaliação do 2º bimestre (a confirmar)
 04/07/2025		3	sex
+    Revisão da avaliação
 07/07/2025		2	seg
 11/07/2025		3	sex
 	Recuperação paralela 2º bimestre
