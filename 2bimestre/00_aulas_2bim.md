@@ -111,9 +111,15 @@ Façam todos os exercícios das listas e solicitem mais exercícios ao chatgpt.
        - vetores numéricos
      - funções - dividir o problema em partes menores
 
-04/07/2025		3	sex
+# 04/07/2025		3	sex
     Revisão da avaliação
-07/07/2025		2	seg
-11/07/2025		3	sex
+
+# 07/07/2025		2	seg
+  Matrizes 
+
+# 11/07/2025		3	sex
+
 	Recuperação paralela 2º bimestre
-14/07/2025		2	seg
+# 14/07/2025		2	seg
+
+revisão da avaliação
