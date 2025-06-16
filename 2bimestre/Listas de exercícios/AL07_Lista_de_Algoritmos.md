@@ -7,7 +7,7 @@
 
 02) Faça um programa que leia uma série de números inteiros e some esses números.
 
-03)Crie um programa que solicita ao usuário um número inteiro positivo e, em seguida, soma todos os números de 1 até esse número.
+03) Crie um programa que solicita ao usuário um número inteiro positivo e, em seguida, soma todos os números de 1 até esse número.
 
 04) Escreva um programa que solicita ao usuário um número inteiro e exibe a tabuada desse número de 1 a 10.
 

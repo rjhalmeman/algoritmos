@@ -1,10 +1,10 @@
 
-16/05/2025
+# 16/05/2025
 Comandos de repetição (aulas teóricas)
 
 
 
-19/05/2025
+# 19/05/2025
 Comandos de repetição (prática)
 
 1) Desenvolva um programa que leia o valor inicial e um valor final de 
@@ -21,20 +21,18 @@ pares. A média é 9.
 3) Escreva um programa que calcule a soma de todos os números inteiros múltiplos de 5 entre um número inicial e um número final informados pelo usuário. Emita uma mensagem de erro caso o número inicial seja maior ou igual ao número final.
 
 
-23/05/2025		3	sex
+# 23/05/2025		3	sex
 
 Conjuntos (string e vetor)
 
 [Exercícios usados como exemplos](https://github.com/rjhalmeman/algoritmos/tree/main/2bimestre/2025-05-23%20-%20conjuntos)
 
-
-
-26/05/2025		2	seg
+# 26/05/2025		2	seg
 
 Exercícios com conjuntos (strings e vetores)
 
 
-30/05/2025		3	sex
+# 30/05/2025		3	sex
 
 split, boolean - break - new Array
 
@@ -43,7 +41,7 @@ Faça um programa que leia uma frase e considerando o número de caracteres de c
 [Vídeo explicando sobre o exercício que procura a menor e maior palavra em uma frase](https://youtu.be/chTN5MfZG74)
 
 
-02/06/2025		2	seg
+# 02/06/2025		2	seg
 
 [Fibonacci](https://www.youtube.com/watch?v=MerxvuUjuzo)
 
@@ -58,17 +56,17 @@ string sem suas vogais. (retire as vogais e imprima). Comece no <body>.
 Mostre que funciona fazendo um teste de mesa no seu código.
 
 
-06/06/2025		3	sex
+# 06/06/2025		3	sex
 Recuperação Paralela
 
-09/06/2025		2	seg
+# 09/06/2025		2	seg
 Exercícios com uso de funções.
 
 
-13/06/2025		3	sex
+# 13/06/2025		3	sex
 Método da bolha. Explicação e teste de mesa.
 
-16/06/2025		2	seg
+# 16/06/2025		2	seg
 
 1) Faça um programa que leia um conjunto de números inteiros e armazene esses números em um vetor. Adicione um botão que calcule a média aritmética dos números do vetor. Outro botão que calcule a soma de todos os elementos do vetor e um terceiro botão que crie um novo vetor apenas com os números pares;
 
@@ -97,12 +95,22 @@ console.log(quadrados); // [25, 49, 9, 36, 25]
 
 Façam todos os exercícios das listas e solicitem mais exercícios ao chatgpt.
 
-23/06/2025		2	seg
+# 23/06/2025		2	seg
 
-27/06/2025		3	sex
-recaptulação para avaliação.
-30/06/2025		2	seg
-Avaliação do 2º bimestre (a confirmar)
+# 27/06/2025		3	sex
+
+  - recaptulação para avaliação.
+
+# 30/06/2025		2	seg
+   Avaliação do 2º bimestre
+    Conteúdos
+     - todo o primeiro bimestre
+     - laços de repetição
+     - arrays (variáveis indexadas) - conjuntos
+       - strings (split, concatenação, manipulação de caracteres)
+       - vetores numéricos
+     - funções - dividir o problema em partes menores
+
 04/07/2025		3	sex
     Revisão da avaliação
 07/07/2025		2	seg
