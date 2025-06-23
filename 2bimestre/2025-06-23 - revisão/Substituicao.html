@@ -8,45 +8,45 @@
 </head>
 
 <body>
-    <label for="inputF">Frase: </label>
-    <input type="text" id="inputF">
+    <label for="inputFrase">Frase: </label>
+    <input type="text" id="inputFrase">
     <br>
-    <input type="button" value="processar" onclick="funcaoProc()">
+    <input type="button" value="processar" onclick="funcaoProcessar()">
     <br>
     <span id="resp"></span>
     <script>
-        function funcaoProc() {
+        function funcaoProcessar() {
             debugger
-            let f = document.getElementById("inputF").value
-            let r = funcaoTransforme(f)
-            document.getElementById("resp").innerHTML = r
+            let f = document.getElementById("inputFrase").value;
+            let respostaDaFuncao = funcaoTransforme(f);
+            document.getElementById("resp").innerHTML = respostaDaFuncao;
         }
-        function funcaoTransforme(f) {
+        function funcaoTransforme(frase) {
             debugger;
-            let fr = f.toUpperCase()
-            let r = "";
-            for (i = 0; i < fr.length; i++) {
+            let fr = frase.toUpperCase()
+            let ns = ""; //nova String
+            for (let i = 0; i < fr.length; i++) {
                 if (fr[i] == "A") {
-                    r = r + "4";
+                    ns = ns + "4";
                 } else if (fr[i] == "E") {
-                    r = r + "3"
+                    ns = ns + "3"
                 } else if (fr[i] == "S") {
-                    r = r + "5"
+                    ns = ns + "5"
                 } else if (fr[i] == "T") {
-                    r = r + "7"
+                    ns = ns + "7"
                 } else if (fr[i] == "G") {
-                    r = r + "9"
+                    ns = ns + "9"
                 } else if (fr[i] == "I") {
-                    r = r + "1"
+                    ns = ns + "1"
                 } else if (fr[i] == "B") {
-                    r = r + "8"
+                    ns = ns + "8"
                 } else if (fr[i] == "O") {
-                    r = r + "0"
+                    ns = ns + "0"
                 } else {
-                    r = r + fr[i];
+                    ns = ns + fr[i];
                 }
             }
-            return r;
+            return ns;
 
         }
     </script>
