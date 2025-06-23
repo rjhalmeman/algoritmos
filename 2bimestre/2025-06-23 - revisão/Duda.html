@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 8, ex 7</title>
+</head>
+<body>
+    <!--
+    Crie um programa que solicita um número inteiro positivo ao usuário e calcula a soma de seus dígitos.
+    Por exemplo, se o usuário digitar 123, a saída deve ser 6 (1 + 2 + 3).
+    -->
+    <h1>Cálculo da soma dos dígitos de um número</h1>
+    <input type="number" id="inputn" placeholder="digite aqui">
+    <br>
+    <input type="button" value="calcular" onclick="fcalcular()">
+    <br>
+    <span id="resp"></span>
+
+    <script>
+        function fcalcular(){
+            debugger
+            let n=document.getElementById("inputn").value
+            let resp=0
+            for(let i=0; i<n.length; i++){
+                resp = resp + parseInt(n[i]);
+            }
+            document.getElementById("resp").innerHTML=resp
+        }
+    </script>
+</body>
+</html>
