@@ -15,15 +15,14 @@
     <br>
     <span id="resp"></span>
     <script>
-        function funcaoProcessar() {
-            debugger
-            let f = document.getElementById("inputFrase").value;
-            let respostaDaFuncao = funcaoTransforme(f);
-            document.getElementById("resp").innerHTML = respostaDaFuncao;
+        function funcaoProcessar() {            
+            let f = document.getElementById("inputFrase").value; //pega a frase que o usuário digitou
+            let respostaDaFuncao = funcaoTransforme(f); //a variável respostaDaFuncao guardará a resposta da funcaoTransforme(f)
+            document.getElementById("resp").innerHTML = respostaDaFuncao; //mostra na tela a frase que foi transformada
         }
         function funcaoTransforme(frase) {
             debugger;
-            let fr = frase.toUpperCase()
+            let fr = frase.toUpperCase(); // transforma em maiúsculas
             let ns = ""; //nova String
             for (let i = 0; i < fr.length; i++) {
                 if (fr[i] == "A") {
@@ -43,7 +42,7 @@
                 } else if (fr[i] == "O") {
                     ns = ns + "0"
                 } else {
-                    ns = ns + fr[i];
+                    ns = ns + fr[i]; // se não é nenhuma das "letras especiais", repete a própria letra
                 }
             }
             return ns;
