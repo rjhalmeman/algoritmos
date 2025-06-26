@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="inputFrase">Digite uma frase: </label>
+    <input type="text" name="inputFrase" id="inputFrase">
+    <input type="button" value="Processar" onclick="doSomething()">
+    <div id="resposta">...</div>
+
+    <script>
+        function doSomething() {
+            let frase = document.getElementById("inputFrase").value;
+            let novaFrase = "";
+            for (let i = 0; i < frase.length; i++) {
+                const elemento = frase[i];
+                if (!estaAqui(elemento)) {
+                    novaFrase += elemento;
+                }
+            }
+            document.getElementById("resposta").innerText = "Fica assim: " + novaFrase;
+        }
+
+        function estaAqui(c) {
+            c = c.toLowerCase();
+            if (c === 'a' || c === 'á' || c === 'à' || c === 'â' || c === 'ã' || c === 'e' || c === 'é' || c === 'ê' ||
+                c === 'i' || c === 'í' || c === 'o' || c === 'ó' || c === 'õ' || c === 'ô' || c === 'u' || c === 'ú'
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        }  
+    </script>
+</body>
+
+</html>
