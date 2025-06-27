@@ -3,37 +3,7 @@ Avaliação de algoritmos \- 2º bimestre
 1\) Considerando o código fonte abaixo.  
 1.1) Faça um teste de mesa (mostrando o passo a passo) para a frase: Essa prova de algoritmos está muito fácil.  
 1.2) O que o programa faz?
-
-| 1 | \<body\> |
-| :---- | :---- |
-| 2 |    \<label for="inputFrase"\>Digite uma frase: \</label\> |
-| 3 |    \<input type="text" name="inputFrase" id="inputFrase"\> |
-| 4 |    \<input type="button" value="Processar" onclick="doSomething()"\> |
-| 5 |    \<div id="resposta"\>...\</div\> |
-| 6 |    \<script\> |
-| 7 |        function doSomething() { |
-| 8 |            let frase \= document.getElementById("inputFrase").value; |
-| 9 |            let novaFrase \= ""; |
-| 10 |            for (let i \= 0; i \< frase.length; i++) { |
-| 11 |                const elemento \= frase\[i\]; |
-| 12 |                if (\!estaAqui(elemento)) { |
-| 13 |                    novaFrase \+= elemento; |
-| 14 |                } |
-| 15 |            } |
-| 16 |            document.getElementById("resposta").innerText \= "Fica assim: " \+ novaFrase; |
-| 17 |        } |
-| 18 |        function estaAqui(c) { |
-| 19 |            c \= c.toLowerCase(); |
-| 20 |            if (c \=== 'a' || c \=== 'á' || c \=== 'à' || c \=== 'â' || c \=== 'ã' || c \=== 'e' || c \=== 'é' || c \=== 'ê' || |
-| 21 |                c \=== 'i' || c \=== 'í' || c \=== 'o' || c \=== 'ó' || c \=== 'õ' || c \=== 'ô' || c \=== 'u' || c \=== 'ú' |
-| 22 |            ) { |
-| 23 |                return true; |
-| 24 |            } else { |
-| 25 |                return false; |
-| 26 |            } |
-| 27 |        }  |
-| 28 |    \</script\> |
-| 29 | \</body\> |
+![alt text](image.png)
 
 02\) Faça um programa usando HTML e Javascript que solicite ao usuário que insira uma data (por exemplo, 26/06/2025). Seu programa deverá usar um conjunto (vetor) predefinido com os nomes dos meses para obter no nome do mês correspondente e exibir uma mensagem nesse formato: 
 
