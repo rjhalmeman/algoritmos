@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agora eu durmo</title>
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+        .modoAcordado {
+            background-color: white;
+            color: black;
+        }
+        .modoDormindo {
+            background-color: black;
+            color: white;
+        }
+        .modoDormindo img {
+            display: none; /* Faz a imagem sumir no modo dormindo */
+        }
+    </style>
+</head>
+
+<body class="modoAcordado">
+    <input type="button" value="Ainda estou acordado.." onclick="contarOvelhas()">
+    <br>
+    <br>
+    <br>
+    <span id="quantidade"> ...</span>
+    <br>
+    <br>
+    <br>
+    <img src="./ovelhas.jpeg" alt="Contar ovelhas - meme">
+    
+    <script>
+        let ovelhas = 0;
+        let sleepTimer;
+        
+        function iniciarSleepTimer() {
+            // Limpa o timer anterior se existir
+            if (sleepTimer) {
+                clearTimeout(sleepTimer);
+            }
+            
+            // Volta para o modo acordado
+            document.body.classList.remove('modoDormindo');
+            document.body.classList.add('modoAcordado');
+            
+            // Configura novo timer para 5 segundos
+            sleepTimer = setTimeout(function() {
+                document.body.classList.remove('modoAcordado');
+                document.body.classList.add('modoDormindo');
+            }, 5000);
+        }
+        
+        function contarOvelhas() {
+            ovelhas++;
+            document.getElementById("quantidade").innerHTML = "Já contei "+ovelhas+" ovelhas";
+            
+            // Reinicia o timer a cada clique
+            iniciarSleepTimer();
+        }
+        
+        // Inicia o timer quando a página carrega
+        window.onload = iniciarSleepTimer;
+    </script>
+</body>
+
+</html>
