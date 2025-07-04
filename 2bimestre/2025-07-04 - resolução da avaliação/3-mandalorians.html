@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mandaloriano</title>
+</head>
+
+<body>
+    number
+    <h2>Mandalorianos</h2>
+    <input type="text" id="inputNome" placeholder="Digite um nome">
+    <input type="number" id="inputNivel" placeholder="Digite um nível">
+    <input type="number" id="inputValor" placeholder="Digite um valor">
+    <button onclick="adicionar()">Adicionar</button><br><br>
+    <button onclick="listagem()">Listagem</button><br><br>
+
+
+    <h3>Conjuntos:</h3>
+    <p id="saidaNomes">[]</p>
+    <p id="saidaNiveis">[]</p>
+    <p id="saidaValores">[]</p><br>
+    <p id="lista"></p>
+
+    <script>
+        let nomes = [];
+        let niveis = [];
+        let valores = [];
+
+        function adicionar() {
+            let nome = document.getElementById("inputNome").value;
+            let nivel = parseInt(document.getElementById("inputNivel").value);
+            let valor = parseFloat(document.getElementById("inputValor").value);
+
+            nomes.push(nome);//adiciona no fim do vetor
+            niveis.push(nivel);//adiciona no fim do vetor
+            valores.push(valor);//adiciona no fim do vetor
+
+            document.getElementById("saidaNomes").innerText = nomes;
+            document.getElementById("saidaNiveis").innerText = niveis;
+            document.getElementById("saidaValores").innerText = valores;  
+        }
+
+        function listagem() {
+            let resp = "";
+            for (let i = 0; i < nomes.length; i++) {
+                let valorComBonus = 
+                  calcularBonus(niveis[i], valores[i]);
+                resp = resp + nomes[i] + "-" + niveis[i] + "-" + valores[i] + "-" + valorComBonus+"<br>";
+            }
+            document.getElementById("lista").innerHTML = resp;
+        }
+        function calcularBonus(n, v) {
+            let vb = v;
+            if (n == 2) {
+                vb = v +  15 / 100 * v;
+            } else if (n == 3) {
+                vb = v +  25 / 100 * v;
+            }
+            return vb;
+        }
+
+    </script>
+
+</body>
+
+</html>
