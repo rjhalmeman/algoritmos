@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Relógio Digital</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
     <style>
         * {
             margin: 0;
@@ -37,6 +45,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="clock" id="clock">00:00:00</div>
 
@@ -46,7 +55,7 @@
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            
+
             document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
         }
 
@@ -55,4 +64,5 @@
         setInterval(updateClock, 1000);
     </script>
 </body>
+
 </html>
