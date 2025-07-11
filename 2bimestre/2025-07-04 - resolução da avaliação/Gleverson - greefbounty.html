@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Algoritmo do Greef </title>
+
+</head>
+
+<body>
+    <h1> Algoritmo do Greef - Questão 3 - AV 2BI</h1>
+
+    
+    <!-- Isso é um formulário.-->
+    <form id="registrarRecompensa">
+        <!-- Fieldset = Conjunto de campos do formulário -->
+        <fieldset>
+            <!-- Legend = "Título" do fieldset -->
+            <legend> Registrar recompensa </legend>
+
+            <label for="nomeDoCacadorHTML"> Nome do Caçador</label>
+            <input type="text" id="nomeDoCacadorHTML" minlength="1"> <br>
+
+            <label for="dificuldadeDaMissaoHTML"> Dificuldade da missão</label>
+            <!-- Lista com opções-->
+            <select id="dificuldadeDaMissaoHTML">
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+
+            </select> 
+            <br>
+
+            <label for="recompensaInicialHTML"> Recompensa inicial</label>
+            <input type="number" id="recompensaInicialHTML" min="0.1" step="0.1">
+
+            <input type="submit" value="Registrar dados" name="botaoDeEnviar">
+
+        </fieldset>
+
+        <fieldset>
+            <legend> Feedback dos dados</legend>
+            <p id="feedbackSaida"> Resultado: <span>...</span></p>
+
+        </fieldset>
+
+    </form>
+
+    <!-- Botão da lista-->
+    <input type="button" id="mostrarLista" value="Mostrar lista">
+
+    <!-- Tabela -->
+    <table id="lista">
+        <!-- Dados vão aqui dentro. -->
+    </table>
+
+    <!---->
+    <script>
+        let baseDeDados = [];
+        atribuirEventosAosElementosHTML();
+
+        function atribuirEventosAosElementosHTML() {
+            // querySelector = seleciona um elemento pelo seletor CS
+            // quando o formulário for enviado
+            document.querySelector("form#registrarRecompensa").addEventListener("submit", (recarregarPagina) => {
+                // impede que a página seja recarregada.
+                recarregarPagina.preventDefault();
+                adicionarDados();
+            });
+
+            // mostra lista
+            document.getElementById("mostrarLista").addEventListener("click", () => mostrarLista());
+        }
+
+        function adicionarDados() {
+            //// Entrada de dados
+            const CACADOR =  document.getElementById("nomeDoCacadorHTML").value;
+            const DIFICULDADE = parseInt(document.getElementById("dificuldadeDaMissaoHTML").value);
+            const RECOMPENSA_INICIAL = parseFloat(document.getElementById("recompensaInicialHTML").value);
+
+            //// Processamento de dados
+            let resultado;
+            
+            // Verifica se os valores das variáveis estão definidos (são desiguais a undefined);
+            if(CACADOR && DIFICULDADE && RECOMPENSA_INICIAL) {
+                // Estrutura de dados enviada: objeto. Pode-se definir como um array só que os indices são definíveis. Por exemplo, cacador (em minúscula), é um índice.
+                baseDeDados.push(
+                    {
+                        cacador: CACADOR,
+                        dificuldade: DIFICULDADE,
+                        recompensa_inicial: RECOMPENSA_INICIAL,
+                        recompensa_final: 0
+                    }
+                )
+
+                resultado = "Sucesso ao adicionar dados.";
+            
+            } else {
+                resultado = "Ao menos um dos dados está incorreto. Usuário, por favor insira corretamente os dados.";
+            }
+
+            //// Saída de dados
+            // Seleciona o parágrafo dentro do span
+            document.querySelector("#feedbackSaida > span").innerHTML = resultado;
+        }
+
+        function mostrarLista() {
+            const LISTA = document.getElementById("lista");
+            reiniciarLista();
+            
+
+            for(let dado of baseDeDados) {
+                dado.recompensa_final = obterRecompensaFinal(dado.recompensa_inicial, dado.dificuldade);
+
+                LISTA.innerHTML += `
+                    <tr>
+                        <td> ${dado.cacador} </td>
+                        <td> ${dado.dificuldade} </td>
+                        <td> ${dado.recompensa_inicial} </td>
+                        <td> ${dado.recompensa_final} </td>
+                    
+                    </tr>
+                `;
+            }
+
+            // feedback no console
+            console.log(baseDeDados);
+
+
+            // funções complementares
+            function reiniciarLista() {
+                // Cria os cabeçalhos, sem os dados
+                LISTA.innerHTML = `
+                    <tr>
+                        <th> Nome do caçador </th>
+                        <th> Dificuldade da missão </th>
+                        <th> Recompensa inicial </th>
+                        <th> Recompensa final </th>
+                    
+                    </tr>
+                `;
+            }
+
+            function obterRecompensaFinal(recompensaInicial, dificuldade) {
+                let retornoDaFuncao;
+
+                // switch é semelhante a um "if para valores absolutos"
+                switch(dificuldade) {
+                    case 1: 
+                        retornoDaFuncao = recompensaInicial;
+                        break;
+
+                    case 2:
+                        retornoDaFuncao = recompensaInicial + (recompensaInicial*12/100);
+                        break;
+
+                    case 3:
+                        retornoDaFuncao = recompensaInicial + (recompensaInicial*22/100);
+                        break;
+
+                    default:
+                        retornoDaFuncao = 0;
+                        break;
+                }
+
+                return retornoDaFuncao;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

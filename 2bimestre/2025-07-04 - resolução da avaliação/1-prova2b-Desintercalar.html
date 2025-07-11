@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2Bim - teste de mesa</title>
+</head>
+<body>
+    <label for="inputTextoCodificado">Frase codificada</label>
+    <input type="text" id="inputTextoCodificado" size="30"><br>
+    <button onclick="facaAlgo()">Execute</button><br>
+    <label for="resultado">Resultado:</label>
+    <span id="resultado">_________</span>
+    <script>   
+        function facaAlgo() {
+            let textoCodificado = document.getElementById("inputTextoCodificado").value;
+            let resposta = rebuild(textoCodificado);
+            document.getElementById('resultado').textContent = resposta;
+        }
+        function rebuild(frase) {
+            debugger;
+            let parte1 = '';
+            let parte2 = '';
+            for (let i = 0; i < frase.length; i++) {
+                if (i % 2 == 1) {
+                    parte2 = parte2 + frase[i];
+                } else {
+                    parte1 = parte1 + frase[i];
+                }
+            }
+            let resp = parte1 + parte2;
+            return resp;
+        }
+    </script>
+</body>
+
+</html>
