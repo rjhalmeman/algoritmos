@@ -15,6 +15,15 @@ Recaptulação
 ### agregados homogêneos multidimensionais (matrizes)
 ![alt text](matrizBidimensional.png)
 
+ <p>Leia uma matriz de ordem 3x4 (3 linhas e 4 colunas).Faça uma
+        função (para cada item) que calcule e mostre.<br>
+        a) soma dos elementos de cada coluna.<br>
+        b) média de cada linha.<br>
+        c) a soma de todos os elementos da matriz.<br></p>
+
+
+
+
 ### agregados heterogêneos (uni e multidimensionais)
 
 
