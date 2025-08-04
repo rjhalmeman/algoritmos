@@ -1,14 +1,15 @@
 # 04/08/2025 - Retorno após férias de julho
 
-Recaptulação
+Recapitulação
 - algoritmos
   - sequência de passos finitos para resolver um problema (entrada, processamento e saída)
-- sequenciais 
-  - variáveis (numéricas e texto)
-- condicionais (if)
-  - desvios condicionais
+
+- algoritmos sequenciais (sem desvios)
+- variáveis (numéricas e texto)
+- condicionais (com desvios condicionais - if)
+- funções
 - laços de repetição
-- variáveis indexadas (arrays - vetores) e manipulação de strings (vetor de caracteres)
+- variáveis indexadas (arrays - vetores) e manipulação de strings (vetor de caracteres) - conjuntos
 
 ## Conteúdo do 3º bimestre
 

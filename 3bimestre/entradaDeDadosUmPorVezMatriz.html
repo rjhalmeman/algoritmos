@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adicionar à matriz</title>
+</head>
+
+<body>
+
+    <h2>Definir tamanho da matriz</h2>
+    <input type="number" id="inputLinhas" placeholder="Linhas" min="1">
+    <input type="number" id="inputColunas" placeholder="Colunas" min="1">
+    <button onclick="iniciarMatriz()">Iniciar</button>
+
+    <h3>Inserir número</h3>
+    <input type="number" id="inputNumero" placeholder="Digite um número" disabled>
+    <button onclick="adicionarNumero()" id="btnAdicionar" disabled>Adicionar</button>
+
+    <h3>Matriz:</h3>
+    <pre id="saidaMatriz">[]</pre>
+
+    <script>
+        let matriz = [];
+        let linhas = 0;
+        let colunas = 0;
+        let posAtual = 0;
+
+        function iniciarMatriz() {
+            linhas = parseInt(document.getElementById("inputLinhas").value);
+            colunas = parseInt(document.getElementById("inputColunas").value);
+
+            matriz = [];
+            for (let i = 0; i < linhas; i++) {
+                let linha = [];
+                for (let j = 0; j < colunas; j++) {
+                    linha.push("");
+                }
+                matriz.push(linha);
+            }
+
+            posAtual = 0;
+
+            // Habilita os campos
+            document.getElementById("inputNumero").disabled = false;
+            document.getElementById("btnAdicionar").disabled = false;
+
+            atualizarSaida();
+            document.getElementById("inputNumero").focus();
+        }
+
+        function adicionarNumero() {
+            if (posAtual >= linhas * colunas) {
+                alert("A matriz já está completa.");
+                return;
+            }
+
+            let input = document.getElementById("inputNumero");
+            let valor = parseFloat(input.value);
+
+            if (isNaN(valor)) {
+                alert("Digite um número válido.");
+                return;
+            }
+
+            let linha = Math.floor(posAtual / colunas);
+            let coluna = posAtual % colunas;
+
+            matriz[linha][coluna] = valor;
+            posAtual++;
+
+            atualizarSaida();
+
+            input.value = "";
+            input.focus();
+
+            if (posAtual >= linhas * colunas) {
+                input.disabled = true;
+                document.getElementById("btnAdicionar").disabled = true;
+            }
+        }
+
+        function atualizarSaida() {
+            let texto = "";
+            for (let i = 0; i < matriz.length; i++) {
+                for (let j = 0; j < matriz[i].length; j++) {
+                    let valor = matriz[i][j];
+                    if (valor === "") {
+                        texto += "_";
+                    } else {
+                        texto += valor;
+                    }
+                    texto += " ";
+                }
+                texto += "\n";
+            }
+            document.getElementById("saidaMatriz").innerText = texto;
+        }
+    </script>
+
+</body>
+
+</html>
