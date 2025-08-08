@@ -18,7 +18,6 @@ c) a soma de todos os elementos da matriz.
 
 6\) Implemente um algoritmo que leia uma matriz 4x4 de números inteiros e uma função que gere a matriz transposta.
 
-[Solução em vídeo](https://www.youtube.com/watch?v=OlyGZ94omwM)
 
 ![alt text](AL11-03.png)
 
