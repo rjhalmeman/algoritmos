@@ -23,6 +23,8 @@
         let matriz = [];
         let linhas = 0;
         let colunas = 0;
+        let linha = 0;
+        let coluna = 0;
         let posAtual = 0;
 
         function iniciarMatriz() {
@@ -33,7 +35,7 @@
             for (let i = 0; i < linhas; i++) {
                 let linha = [];
                 for (let j = 0; j < colunas; j++) {
-                    linha.push("");
+                    linha.push(0); // Inicializa com zero
                 }
                 matriz.push(linha);
             }
@@ -57,16 +59,17 @@
             let input = document.getElementById("inputNumero");
             let valor = parseFloat(input.value);
 
-            if (isNaN(valor)) {
-                alert("Digite um número válido.");
-                return;
-            }
-
-            let linha = Math.floor(posAtual / colunas);
-            let coluna = posAtual % colunas;
-
             matriz[linha][coluna] = valor;
+
+            if(coluna<colunas-1) {
+                coluna++;
+            } else {
+                coluna = 0;
+                linha++;
+            }
             posAtual++;
+
+
 
             atualizarSaida();
 
