@@ -29,8 +29,6 @@ Recapitulação
 
 data da avaliação bimestral (19/09/2025)
 
-
-### 04/08/2025		2	seg
 Conceitos e aplicações de matrizes
 
 ### 08/08/2025		3	sex
@@ -38,20 +36,14 @@ Aula teórica (g102) exercícios com matrizes. Entrada de dados.
 
 
 ### 11/08/2025		2	seg
-Exercícios
 Matrizes, funções e organização de código.
+
 
 Separar HTML de JS em documentos diferentes.
 
 
-1) Leia uma matriz de ordem NxM de numeros inteiros e armazene na memória RAM do computador. Em seguida, faça uma função para cada item abaixo. Separe o HTML do JS.
-a) somar todos os elementos da matriz
-b) somar uma coluna, cujo número será informado pelo usuário.
-c) calcular a média aritmética simples de uma linha informada pelo usuário.
-d) separar em um vetor todos os números pares que estiverem na matriz
-e) conte quantos números primos estão na matriz
-f) mostre a posição (linha e coluna) do maior elemento da matriz
-g) multiplique dois números da matriz, cujas posições serão informadas pelo usuário.
+[Lista de exercícios 15](https://github.com/rjhalmeman/algoritmos/blob/main/3bimestre/Listas%20de%20exerc%C3%ADcios/AL15%20-%20Algoritmos%20-%20Matrizes.md)
+
 
 
 
