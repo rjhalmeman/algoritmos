@@ -1,0 +1,79 @@
+
+let matriz = [];
+let linhas = 0;
+let colunas = 0;
+let linha = 0;
+let coluna = 0;
+let posAtual = 0;
+
+function iniciarMatriz() {
+    linhas = parseInt(document.getElementById("inputLinhas").value);
+    colunas = parseInt(document.getElementById("inputColunas").value);
+
+    matriz = [];
+    for (let i = 0; i < linhas; i++) {
+        let linha = [];
+        for (let j = 0; j < colunas; j++) {
+            linha.push(0); // Inicializa com zero
+        }
+        matriz.push(linha);
+    }
+
+    posAtual = 0;
+
+    // Habilita os campos
+    document.getElementById("inputNumero").disabled = false;
+    document.getElementById("btnAdicionar").disabled = false;
+
+    atualizarSaida();
+    document.getElementById("inputNumero").focus();
+}
+
+function adicionarNumero() {
+    if (posAtual >= linhas * colunas) {
+        alert("A matriz já está completa.");
+        return;
+    }
+
+    let input = document.getElementById("inputNumero");
+    let valor = parseFloat(input.value);
+
+    matriz[linha][coluna] = valor;
+
+    if (coluna < colunas - 1) {
+        coluna++;
+    } else {
+        coluna = 0;
+        linha++;
+    }
+    posAtual++;
+
+
+
+    atualizarSaida();
+
+    input.value = "";
+    input.focus();
+
+    if (posAtual >= linhas * colunas) {
+        input.disabled = true;
+        document.getElementById("btnAdicionar").disabled = true;
+    }
+}
+
+function atualizarSaida() {
+    let texto = "";
+    for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+            let valor = matriz[i][j];
+            if (valor === "") {
+                texto += "_";
+            } else {
+                texto += valor;
+            }
+            texto += " ";
+        }
+        texto += "\n";
+    }
+    document.getElementById("saidaMatriz").innerText = texto;
+}
