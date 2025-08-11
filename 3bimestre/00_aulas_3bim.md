@@ -11,7 +11,7 @@ Recapitulação
 - laços de repetição
 - variáveis indexadas (arrays - vetores) e manipulação de strings (vetor de caracteres) - conjuntos
 
-## Conteúdo do 3º bimestre
+# Conteúdo do 3º bimestre
 
 ### agregados homogêneos multidimensionais (matrizes)
 ![alt text](matrizBidimensional.png)
@@ -24,16 +24,33 @@ Recapitulação
 
 
 
-
 ### agregados heterogêneos (uni e multidimensionais)
 
 
-datas de avaliações (19/09/2025)
+data da avaliação bimestral (19/09/2025)
 
 
-04/08/2025		2	seg
-08/08/2025		3	sex
-11/08/2025		2	seg
+### 04/08/2025		2	seg
+Conceitos e aplicações de matrizes
+
+### 08/08/2025		3	sex
+Aula teórica (g102) exercícios com matrizes. Entrada de dados.
+
+
+### 11/08/2025		2	seg
+Exercícios
+Matrizes, funções e organização de código.
+
+1) Leia uma matriz de ordem NxM de numeros inteiros e armazene na memória RAM do computador. Em seguida faça uma função para cada item abaixo:
+a) somar todos os elementos da matriz
+b) somar uma coluna, cujo número será informado pelo usuário.
+c) calcular a média aritmética simples de uma linha informada pelo usuário.
+d) separar em um vetor todos os números pares que estiverem na matriz
+e) conte quantos números primos estão na matriz
+f) mostre a posição (linha e coluna) do maior elemento da matriz
+g) multiplique dois números da matriz, cujas posições serão informadas pelo usuário.
+
+
 15/08/2025		3	sex
 18/08/2025		2	seg (gincana)
 22/08/2025		3	sex
