@@ -93,3 +93,18 @@ function somarTodosOsElementos(){
     let resultado = somarTodos(matriz);
     document.getElementById("spanSomaTodos").innerHTML = resultado;
 }
+
+function somarColuna(coluna, matriz){
+    let soma = 0;
+    for (let i = 0; i < matriz.length; i++) {
+        soma += matriz[i][coluna];
+        
+    }
+    return soma;
+}
+
+function botaoSomarColuna(){
+    let coluna =parseInt(document.getElementById("inputNumeroDaColuna").value);
+    let resultado = somarColuna(coluna,matriz);
+    document.getElementById("spanSomaColuna").innerHTML = resultado;
+}
