@@ -94,8 +94,7 @@ function somarTodosOsElementos(){
 function somarColuna(coluna, matriz){
     let soma = 0;
     for (let i = 0; i < matriz.length; i++) {
-        soma += matriz[i][coluna];
-        
+        soma += matriz[i][coluna];        
     }
     return soma;
 }
