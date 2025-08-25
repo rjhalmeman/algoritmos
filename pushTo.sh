@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nome padrão do repositório remoto
-default_remote="https://github.com/rjhalmeman/dw1-modelo-aval-3bim"
+default_remote="https://github.com/rjhalmeman/algoritmos"
 
 # Verifica se o git está instalado
 if ! command -v git &> /dev/null
