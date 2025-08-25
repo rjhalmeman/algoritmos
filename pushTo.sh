@@ -3,13 +3,16 @@
 # Obtém o nome da pasta atual
 current_folder=$(basename "$PWD")
 
-# Nome padrão do repositório remoto
-default_remote="https://github.com/rjhalmeman/$current_folder"
+# Nome do remote (não a URL)
+remote_name="origin"
+# Nome do branch (ajuste conforme necessário)
+branch_name="main"
 
 clear
 git status
 echo ""
-echo $default_remote
+echo "Remote: $remote_name"
+echo "Branch: $branch_name"
 echo
 
 # Verifica se o git está instalado
@@ -19,21 +22,28 @@ then
     exit
 fi
 
+# Verifica se o remote existe, se não, adiciona
+if ! git remote get-url "$remote_name" &> /dev/null; then
+    default_remote="https://github.com/rjhalmeman/$current_folder"
+    echo "Adicionando remote: $remote_name -> $default_remote"
+    git remote add "$remote_name" "$default_remote"
+fi
+
 # Adiciona todas as alterações ao índice do Git
 git add .
 
-# Obtém a data e hora atual e formata para o formato desejado (por exemplo, YYYY-MM-DD HH:MM:SS)
+# Obtém a data e hora atual
 timestamp=$(date +"%d/%m/%Y - %H:%M:%S")
 
-# Realiza um commit com a mensagem contendo a data e hora
-git commit -m "$timestamp"
-
-# Verifica se um argumento foi fornecido
+# Verifica se foi fornecido um parâmetro adicional para a mensagem de commit
 if [ $# -eq 0 ]; then
-    # Faz o push para o repositório remoto padrão no GitHub
-    git push "$default_remote"
+    commit_message="$timestamp"
 else
-    # Faz o push para o repositório remoto fornecido no GitHub
-    git push "$1" "$default_remote"
+    commit_message="$timestamp - $*"
 fi
 
+# Realiza um commit com a mensagem
+git commit -m "$commit_message"
+
+# Faz o push para o repositório remoto
+git push "$remote_name" "$branch_name"
