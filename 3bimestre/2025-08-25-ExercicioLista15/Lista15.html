@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adicionar à matriz</title>
+</head>
+
+<body>
+
+    <h2>Definir tamanho da matriz</h2>
+    <input type="number" id="inputLinhas" placeholder="Linhas" min="1">
+    <input type="number" id="inputColunas" placeholder="Colunas" min="1">
+    <button onclick="iniciarMatriz()">Iniciar</button>
+
+    <h3>Inserir número</h3>
+    <input type="number" id="inputNumero" placeholder="Digite um número" disabled>
+    <button onclick="adicionarNumero()" id="btnAdicionar" disabled>Adicionar</button>
+
+    <h3>Matriz armazenada:</h3>
+    <pre id="saidaMatriz">[]</pre>
+
+    <p>a) somar todos os elementos da matriz</p>
+    <input type="button" value="Somar todos" onclick="somarTodosOsElementos()">
+    <span id="spanSomaTodos"></span>
+
+    <br>
+    <p> b) somar uma coluna, cujo número será informado pelo usuário.</p>
+    <label for="inputNumeroDaColuna">Qual coluna </label>
+    <input type="number" id="inputNumeroDaColuna">
+    <input type="button" value="Somar coluna" onclick="botaoSomarColuna()">
+    <span id="spanSomaColuna"></span>
+
+    <p> c) calcular a média aritmética simples de uma linha informada pelo usuário.</p>
+    <label for="inputNumeroDaLinha">Qual linha </label>
+    <input type="number" id="inputNumeroDaLinha">
+    <input type="button" value="Média da linha" onclick="botaoMediaLinha()">
+    <span id="spanMediaLinha"></span>
+
+    <!-- d) separar em um vetor todos os números pares que estiverem na matriz. -->
+    <p>d) separar em um vetor todos os números pares que estiverem na matriz.</p>
+    <input type="button" value="Separar pares" onclick="botaoSepararPares()">
+    <span id="spanPares"></span>
+
+    <!-- e) conte quantos números primos estão na matriz -->
+    <p>e) conte quantos números primos estão na matriz</p>
+    <input type="button" value="Contar primos" onclick="botaoContarPrimos()">
+    <span id="spanContagemDePrimos"></span>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
