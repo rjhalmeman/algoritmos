@@ -20,7 +20,6 @@ function iniciarMatriz() {
     }
 
     posAtual = 0;
-
     // Habilita os campos
     document.getElementById("inputNumero").disabled = false;
     document.getElementById("btnAdicionar").disabled = false;
@@ -47,8 +46,6 @@ function adicionarNumero() {
         linha++;
     }
     posAtual++;
-
-
 
     atualizarSaida();
 
