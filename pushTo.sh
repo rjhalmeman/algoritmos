@@ -1,7 +1,16 @@
 #!/bin/bash
 
+# Obtém o nome da pasta atual
+current_folder=$(basename "$PWD")
+
 # Nome padrão do repositório remoto
-default_remote="https://github.com/rjhalmeman/algoritmos"
+default_remote="https://github.com/rjhalmeman/$current_folder"
+
+clear
+git status
+echo ""
+echo $default_remote
+echo
 
 # Verifica se o git está instalado
 if ! command -v git &> /dev/null
