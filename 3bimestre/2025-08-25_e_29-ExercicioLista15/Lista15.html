@@ -49,14 +49,46 @@
     <span id="spanContagemDePrimos"></span>
 
     <br>
-    <!-- f) encontre o maior número da matriz e sua posição (linha e coluna). -->
-    <!-- mostre a posição (linha e coluna) do maior elemento da matriz.
+    <br>
+    <p>f) encontre o maior número da matriz e sua posição (linha e coluna). </p>
+    <input type="button" value="Procurar maior" onclick="funcaoProcurarOMaior()">
+    <span id="spanMaioral">..</span>
+    <br>
+    <p>g) multiplique dois números da matriz, cujas posições serão informadas pelo usuário.</p>
 
-    g) multiplique dois números da matriz, cujas posições serão informadas pelo usuário.
 
-    h) separe os elementos pares e os elementos ímpares da matriz em 2 vetores distintos.
+    <p> 
+        Elemento 1
+        <input type="number" placeholder="linha" id="inputLinhaA">
+        <input type="number" placeholder="coluna" id="inputColunaA">
+    </p>  
+    <p style="background-color: aqua;"> 
+        Elemento 2
+        <input type="number" placeholder="linha" id="inputLinhaB">
+        <input type="number" placeholder="coluna" id="inputColunaB">
+    </p>
+    <input type="button" value="multiplique os valores" onclick="multipliqueValores()">
+    <span id="spanMultiplicacao"></span>
 
-    i) faça uma função que procure um elemento na matriz e informe se está presente ou não na matriz.
+    <p>h) separe os elementos pares e os elementos ímpares da matriz em 2 vetores distintos.</p>
+    <input type="button" value="Separar pares e ímpares" onclick="separarParesImpares()">
+    <label for="spanHPares">Pares</label>
+    <span id="spanHPares"></span>
+    <label for="spanHImpares">Ímpares</label>
+    <span id="spanHImpares"></span>
+   
+    <script src="./script.js"></script>
+    <script src="./scriptF.js"></script>
+    <script src="./scriptG.js"></script>
+    <script src="./scriptH.js"></script>
+
+
+
+ <!-- 
+    
+
+    i) faça uma função que procure um elemento na 
+        matriz e informe onde ele está.
 
     j) faça uma função que procure e conte quantas vezes um elemento aparece na matriz.
 
@@ -64,13 +96,6 @@
 
     l) faça uma função que retorne as posições (linha e coluna) de um determinado elemento em um matriz.
      -->
-
-
-
-
-    <script src="./script.js"></script>
-   
-
 </body>
 
 </html>
