@@ -57,7 +57,75 @@ Separar HTML de JS em documentos diferentes.
 
 29/08/2025		3	sex exercícios com matrizes (lista 15)
 
+## as soluções para os exercícios da lista 15 estão em:
+
+[Solução do exercício da lista 15 estão no github] (https://github.com/rjhalmeman/algoritmos/tree/main/3bimestre/2025-08-25_e_29-ExercicioLista15)
+
 01/09/2025		2	seg Agregados Heterogêneos 
+
+Estrutura de dados que armazena em cada elemento de variáveis agregadas (vetores e matrizes) diferentes tipos de dados. 
+
+# Há várias maneiras de trabalhar, vamos usar classes para representar a estrutura dos dados (class). Uma classe, depois que recebe dados é chamada de Objeto.
+
+## Classe aluno (exemplo)
+```
+class Aluno {
+    constructor(ra, nome, nota1, nota2, nota3, nota4) {
+        this.ra = ra;
+        this.nome = nome;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
+        this.nota4 = nota4;
+    }
+}
+```
+
+## Estrutura do tipo vetor
+let listaAlunos = []; //conjunto de dados
+
+# Adicionando aluno na listaAlunos
+
+```
+//Adicionando um aluno no vetor
+let aluno = new Aluno('111', 'Ana Silva', 8.5, 7.2, 9.0, 8.0);
+    listaAlunos.push(aluno);
+```
+
+## como mostrar os dados armazenados em um vetor com dados heterogêneos
+```
+function listar(vetor) {
+    let texto = "";
+    for (let i = 0; i < vetor.length; i++) {
+        const linha = vetor[i];
+        texto += linha.ra + " - " +
+            linha.nome + " - " +
+            linha.nota1 + " - " +
+            linha.nota2 + " - " +
+            linha.nota3 + " - " +
+            linha.nota4 + "<br>";
+    }
+    return texto;
+}
+```
+
+## operações com os dados armazenados
+```
+function mediaDaTurma() {
+    let somaMediasDeAluno = 0;
+    for (let i = 0; i < listaAlunos.length; i++) {
+        const aluno = listaAlunos[i];
+        let mediaAluno = (aluno.nota1 + aluno.nota2 + aluno.nota3 + aluno.nota4) / 4;
+        somaMediasDeAluno = somaMediasDeAluno + mediaAluno;
+    }
+    let mediaGeral = somaMediasDeAluno / listaAlunos.length;
+
+    document.getElementById("spanMediaTurma").innerHTML = mediaGeral.toFixed(1);
+
+}
+```
+
+
 
 05/09/2025		3	sex
 
