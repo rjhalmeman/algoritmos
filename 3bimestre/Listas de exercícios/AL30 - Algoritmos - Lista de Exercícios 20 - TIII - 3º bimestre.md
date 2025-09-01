@@ -1,4 +1,4 @@
-AL13 \- Algoritmos \- Lista de Exercícios 13 \- TIII \- Objetos/vetores
+AL13 \- Algoritmos \- Lista de Exercícios 30 \- TIII \- Objetos/vetores
 
 Para cada exercício, faça o programa usando HTML e Js para que o usuário possa adicionar produtos na lista e visualizar a lista inteira.
 

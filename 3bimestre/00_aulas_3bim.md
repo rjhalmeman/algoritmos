@@ -47,17 +47,17 @@ Separar HTML de JS em documentos diferentes.
 
 
 
-15/08/2025		3	sex
+15/08/2025		3	sex exercícios com matrizes (lista 15)
 
 18/08/2025		2	seg (gincana)
 
-22/08/2025		3	sex
+22/08/2025		3	sex (gincana)
 
-25/08/2025		2	seg
+25/08/2025		2	seg exercícios com matrizes (lista 15)
 
-29/08/2025		3	sex
+29/08/2025		3	sex exercícios com matrizes (lista 15)
 
-01/09/2025		2	seg
+01/09/2025		2	seg Agregados Heterogêneos 
 
 05/09/2025		3	sex
 
