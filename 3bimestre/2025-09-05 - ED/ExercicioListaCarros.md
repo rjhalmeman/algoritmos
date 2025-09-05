@@ -1,2 +1,0 @@
-Faça um programa, usando como base o código fonte do entradaDeDadosUmPorVez.html, para adicionar carros (placa, modelo, marca, ano) em uma lista de carros.
-O programa deve ler os dados de um carro e ao clicar no botão adicionar incluir o carro na lista. Deve ter também um botão que mostre todos os carros que estão na lista.
