@@ -6,4 +6,3 @@ class Carro {
         this.ano = ano;
     }
 }
-
