@@ -1,3 +1,19 @@
+Um roteiro para resolver
+1 - leia o enunciado e entenda o problema
+
+2 - crie uma pasta (para guardar os arquivos)
+
+3 - abra a pasta no vscode
+
+4 - crie a classe (para especificar os atributos)
+
+5 - faça o HTML
+
+6 - faça o Javascript (lembre-se de importar o script no html)
+
+--- 
+
+
 ### Faça um programa usando JS e HTML que leia e armazene os dados para uma lista de compras. Os atributos são nome_produto, quantidade, preco_unitario. Organize seu projeto criando uma pasta para conter os arquivos produto.js, compras.html e compras.js.
 
 a) Faça a entrada de dados lendo os dados de um produto por vez e adicionando a um agregado heterogêneo unidimensional (vetor). Não permita produtos repetidos.
