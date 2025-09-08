@@ -2,9 +2,12 @@
 
 a) Faça a entrada de dados lendo os dados de um produto por vez e adicionando a um agregado heterogêneo unidimensional (vetor). Não permita produtos repetidos.
 
+
 b) Crie uma função que insira 5 produtos no vetor (facilita os testes). São dados iniciais.
 
+
 c) Considerando os dados adquiridos (que estão no vetor), calcule e mostre o subtotal (quantidade multiplicada pelo valor unitário).
+
 
 d) Mostre o valor total da compra.
 
