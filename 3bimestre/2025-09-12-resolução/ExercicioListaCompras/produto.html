@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Adicionar Produto</title>
+</head>
+<body>
+
+    <h2>Adicionar um produto à lista</h2>
+
+    <input type="text" id="inputNome" placeholder="Digite o nome do produto">
+    <input type="number" id="inputQuantidade" placeholder="Digite a quantidade" min="1">
+    <input type="number" id="inputPreco" placeholder="Digite o preço unitário" min="0.01" step="0.01">
+
+    <input type="button" value="Adicionar" onclick="adicionarProduto()">
+    <input type="button" value="Mostrar Lista" onclick="listarProdutos()">
+
+    <h3>Produtos (vetor heterogêneo):</h3>
+    <p id="listaDeProdutos">[]</p>
+    
+    <br>
+    <input type="text" id="inputNomeProcurado" placeholder="Digite o nome para buscar">
+    <input type="button" value="Buscar por nome" onclick="buscarPorNome()">
+    
+    <br><br>
+    <h3>Valor total do estoque:</h3>
+    <p id="valorTotalEstoque">R$ 0,00</p>
+    <input type="button" value="Calcular Total" onclick="calcularTotalEstoque()">
+
+    <script src="./produto.js"></script>
+    <script src="./produtoControle.js"></script>
+
+</body>
+</html>
