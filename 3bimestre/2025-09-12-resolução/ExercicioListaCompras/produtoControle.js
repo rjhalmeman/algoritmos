@@ -16,8 +16,7 @@ function adicionarProduto() {
         document.getElementById('inputNome').value = '';
         document.getElementById('inputQuantidade').value = '';
         document.getElementById('inputPreco').value = '';
-
-        alert('Produto adicionado com sucesso!');
+        listarProdutos();
     } else {
         alert('Por favor, preencha todos os campos corretamente!');
     }
