@@ -128,12 +128,18 @@ function mediaDaTurma() {
 
 
 05/09/2025		3	sex
+https://github.com/rjhalmeman/algoritmos/tree/main/3bimestre/2025-09-05%20-%20ED
 
 08/09/2025		2	seg
- 
- - repescagem (nesta semana - todo o conteúdo do primeiro semestre)
+https://github.com/rjhalmeman/algoritmos/tree/main/3bimestre/2025-09-08%20-%20Exerc%C3%ADcios
+(alunos fazendo o exercício)
+
+09/09/2025 - RP para alunos que solicitaram via DERAC (horário do p-aluno)
+
+11/09/2025 - repescagem (nesta semana - todo o conteúdo do primeiro semestre - 13h50 até 17h30)
   
 12/09/2025		3	sex
+
 
 15/09/2025		2	seg
 

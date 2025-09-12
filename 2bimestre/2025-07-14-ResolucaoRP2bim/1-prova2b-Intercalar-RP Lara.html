@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mensagem Criptografada</title>
+</head>
+
+<body>
+    <label for="inputFrase">Digite a frase:</label>
+    <input type="text" id="inputFrase" value="essa prova esta muito facil">
+    <input type="button" onclick="facaAlgo()" value="Vai" /><br>
+    <label for="resultado">Resultado: </label>
+    <span id="resultado"></span>
+    <script>
+        function misture(parte1, parte2) {
+            let resp = '';
+            for (let i = 0; i < parte1.length; i++) {
+                resp = resp + parte1[i];
+                if (i < parte2.length) {
+                    resp = resp + parte2[i];
+                }
+            }
+            return resp;
+        }
+        function facaAlgo() {
+            const frase = document.getElementById('inputFrase').value;
+            const tamanho = frase.length;
+            let meio = parseInt(tamanho / 2);
+            if (tamanho % 2 !== 0) {
+                meio += 1;
+            }
+            let parte1 = '';
+            let parte2 = '';
+            for (let i = 0; i < tamanho; i++) {
+                if (i < meio) {
+                    parte2 = parte2 + frase[i];
+                } else {
+                    parte1 = parte1 + frase[i];
+                }
+            }
+            let resultado = misture(parte1, parte2);
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -9,7 +9,6 @@ function fibonacci(termo) {
         a = b;
         b = p;
     }
-
     return resp;
 }
 

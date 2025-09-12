@@ -22,10 +22,10 @@
     <h3>Conjunto (vetor):</h3>
     <p id="saidaVetor">[]</p>
     <br>
-
-
-
-    <input type="button" value="Ordenar" onclick="ordenar()">
+    <input type="button" value="Ordenar" onclick="ordenarBubble()">
+    <br>
+    <br>
+    <input type="button" value="Ordenar gnome" onclick="ordenarGnome()">
     <br>
     <p id="respConjuntoOrdenado">...</p>
     <br>
@@ -49,10 +49,16 @@
             }
         }
 
-        function ordenar() {
+        function ordenarBubble() {
             debugger;
             conjuntoOrdenado = funcaoBubbleSort(conjuntoX);
-            document.getElementById("respConjuntoOrdenado").innerHTML = "[" + conjuntoOrdenado +  "]";
+            document.getElementById("respConjuntoOrdenado").innerHTML = "[" + conjuntoOrdenado + "]";
+        }
+
+        function ordenarGnome() {
+            debugger;
+            conjuntoOrdenado = gnome(conjuntoX);
+            document.getElementById("respConjuntoOrdenado").innerHTML = "[" + conjuntoOrdenado + "]";
         }
 
         function funcaoBubbleSort(conj) {
@@ -66,6 +72,22 @@
                 }
             }
             return conj;
+        }
+
+
+        function gnome(vetor) {
+            let n = vetor.length;                                  
+            for (let i = 0; i < n;) {
+                if (i == 0 || vetor[i] >= vetor[i - 1]) {
+                    i++;
+                } else {                    
+                    let aux = vetor[i];
+                    vetor[i] = vetor[i - 1];
+                    vetor[i - 1] = aux;
+                    i--;
+                }
+            }
+            return vetor;
         }
 
     </script>
