@@ -113,3 +113,12 @@ function maiorGasto(){
         produtos[posicao].nome_produto+" - R$"+ oMaior.toFixed(2);
 }
 
+function calcularQuantidadeDeItens(){
+    let cont = 0;
+    for (let i = 0; i < produtos.length; i++) {
+        let p = produtos[i];
+        cont += p.quantidade;        
+    }
+    document.getElementById("spanQuantidadeDeItens").innerHTML = cont;
+}
+
