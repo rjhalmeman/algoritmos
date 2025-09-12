@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>Adicionar Produto</title>
 </head>
+
 <body>
 
     <h2>Adicionar um produto à lista</h2>
@@ -16,18 +18,24 @@
 
     <h3>Produtos (vetor heterogêneo):</h3>
     <p id="listaDeProdutos">[]</p>
-    
+
     <br>
     <input type="text" id="inputNomeProcurado" placeholder="Digite o nome para buscar">
     <input type="button" value="Buscar por nome" onclick="buscarPorNome()">
-    
+    <p id="nomeNaLista">-----</p>
     <br><br>
     <h3>Valor total do estoque:</h3>
     <p id="valorTotalEstoque">R$ 0,00</p>
     <input type="button" value="Calcular Total" onclick="calcularTotalEstoque()">
+    <br>
+    <br>
+    <input type="button" value="Maior gasto" onclick="maiorGasto()">
+    <br>
+    <span id="oMaiorGasto">---</span>
 
     <script src="./produto.js"></script>
     <script src="./produtoControle.js"></script>
 
 </body>
+
 </html>
