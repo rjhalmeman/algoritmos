@@ -58,7 +58,16 @@ function valorTotalDoEstoque() {
 } //  - calcular e mostrar o valor total do estoque. Deve-se considerar as quantidades e os preços dos produtos na lista.
 
 function mostreProdutosDeUmaCategoria() {
-  
+    let categoriaDesejada = document.getElementById("inputQualCategoria").value;
+    let resp = "";
+    for (let i = 0; i < listaDeProdutos.length; i++) {
+        const produto = listaDeProdutos[i];
+        if (produto.categoria == categoriaDesejada) {
+            resp += produto.id + " - " + produto.nome + " - R$ " + produto.precoUnitario.toFixed(2) + " - " +
+            produto.quantidadeEstoque + " - " + produto.categoria + " - " + produto.unidadeDeMedida + "<br>"
+        }
+    }
+    document.getElementById("outputLista").innerHTML = resp;
 } // - mostrar os produtos de uma determinada categoria.
 
 function filtrarProdutosPorPreco() { }
