@@ -25,17 +25,40 @@ function gerarPrint(vetor) {
     return resp;
 }
 function inserirProduto() {
+    let id = document.getElementById("id").value
+    let nome = document.getElementById("nome").value
+    let precoUnitario = parseFloat(document.getElementById("precoUnitario").value)
+    let quantidadeEstoque = parseInt(document.getElementById("quantidadeEstoque").value)
+    let categoria = document.getElementById("categoria").value
+    let unidadeDeMedida = document.getElementById("unidadeDeMedida").value
+    if (id != "" && nome != "" && precoUnitario > 0 && quantidadeEstoque > 0 && categoria != "" && unidadeDeMedida != "") {
+        let novoProduto = new Produto(id, nome, precoUnitario, quantidadeEstoque, categoria, unidadeDeMedida)
+        listaDeProdutos.push(novoProduto)
+        document.getElementById("id").innerHTML = ""
+        document.getElementById("nome").innerHTML = ""
+        document.getElementById("precoUnitario").innerHTML = ""
+        document.getElementById("categoria").innerHTML = ""
+        document.getElementById("unidadeDeMedida").innerHTML = ""
+    } else {
+        alert("Erro nos dados")
+    }
 
 } // adicione um produto na lista.
 function listarProdutos() {
-
+    document.getElementById("outputLista").innerHTML =
+        gerarPrint(listaDeProdutos)
 } //  listar todos os produtos cadastrados
 function valorTotalDoEstoque() {
-
+    let resp = 0;
+    for (let i = 0; i < listaDeProdutos.length; i++) {
+        const produto = listaDeProdutos[i];
+        resp += produto.precoUnitario * produto.quantidadeEstoque
+    }
+    document.getElementById("outputLista").innerHTML = "R$ " + resp.toFixed(2);
 } //  - calcular e mostrar o valor total do estoque. Deve-se considerar as quantidades e os preços dos produtos na lista.
 
 function mostreProdutosDeUmaCategoria() {
-
+  
 } // - mostrar os produtos de uma determinada categoria.
 
 function filtrarProdutosPorPreco() { }

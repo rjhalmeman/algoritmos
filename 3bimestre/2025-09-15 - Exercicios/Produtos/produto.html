@@ -24,6 +24,14 @@
     <input type="button" value="Inserir produto" onclick="inserirProduto()">
     <input type="button" value="Listar Produtos" onclick="listarProdutos()">
     <input type="button" value="Valor total do estoque" onclick="valorTotalDoEstoque()">
+
+    <div style="background-color: burlywood;">
+        Qual a categoria
+        <input type="text"  id="inputQualCategoria">
+        <input type="button" value="Filtrar por categoria" onclick="mostreProdutosDeUmaCategoria()">
+    </div>
+
+
     <div id="outputLista" style="background-color: aquamarine;"> </div>
 
     <script src="./produto.js"></script>
