@@ -150,6 +150,9 @@ function ehPrimo(num){
 }
 
 function botaoContarPrimos() {
+
+    debugger; 
+
     let cont = 0;
     for (let i = 0; i < matriz.length; i++) {
         for (let j = 0; j < matriz[0].length; j++) { 

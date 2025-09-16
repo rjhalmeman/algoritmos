@@ -24,6 +24,26 @@ function gerarPrint(vetor) {
     }
     return resp;
 }
+
+function funcaoBubbleSortNome(conj) {
+    for (let topo = conj.length - 1; topo > 0; topo--) {
+        for (let i = 0; i < topo; i++) {            
+            if (conj[i].categoria > conj[i + 1].categoria) {
+                let bolha = conj[i];
+                conj[i] = conj[i + 1];
+                conj[i + 1] = bolha;
+            }
+        }
+    }
+    return conj;
+}
+
+function ordene(){
+    let listaOrdenada = funcaoBubbleSortNome(listaDeProdutos);
+    document.getElementById("outputLista").innerHTML =
+    gerarPrint(listaOrdenada);
+}
+
 function inserirProduto() {
     let id = document.getElementById("id").value
     let nome = document.getElementById("nome").value
