@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-Mine</title>
+</head>
+
+<body>
+    <img src="./mine.png" alt="Baú e inventario do jogo MineCraft"><br>
+    <input type="button" value="Mostar Baú" onclick="mostrarBauInventario()"><br>
+
+    <input type="text" id="inputItem" placeholder="Item"><br>
+    <input type="button" value="ContarItem" onclick="contarItem()"><br>
+    <input type="button" value="Transferir Simples" onclick="transferirItemSimples()"><br>
+
+    <div> Baú <br> <span id="spanBau"></span><br> </div>
+    <div> Inventário <br> <span id="spanInventario"></span><br></div>
+    <span id="spanQuantosItens"></span>
+    <script>
+        class Item {
+            constructor(nome, quantidade) {
+                this.nome = nome;
+                this.quantidade = quantidade;
+            }
+        }
+
+        let inventario = iniciarVazio();
+        let bau = iniciarVazio();
+        bau[0][1] = new Item("Machado", 1);
+        bau[0][4] = new Item("Macã", 2);
+        bau[0][7] = new Item("Machado", 1);
+        bau[1][1] = new Item("Madeira", 3);
+        bau[1][5] = new Item("Madeira", 1);
+        bau[1][7] = new Item("Madeira", 2);
+        bau[2][1] = new Item("Pão", 2);
+        bau[2][5] = new Item("Pão", 3);
+        bau[2][7] = new Item("Graveto", 3);
+
+        function iniciarVazio() {
+            let linhas = 3;
+            let colunas = 9;
+            let matriz = [];
+            for (let i = 0; i < linhas; i++) {
+                let linha = [];
+                for (let j = 0; j < colunas; j++) {
+                    let novoItem = new Item("", 0);
+                    linha.push(novoItem); // cada slot começa vazio
+                }
+                matriz.push(linha);
+            }
+            return matriz;
+        }
+
+        function mostrarBauInventario() {
+            document.getElementById("spanBau").innerHTML = printarMatriz(bau);
+            document.getElementById("spanInventario").innerHTML = printarMatriz(inventario);
+        }
+
+
+        function printarMatriz(matriz) {
+            let resposta = "";
+            for (let linha = 0; linha < matriz.length; linha++) {
+                for (let coluna = 0; coluna < matriz[linha].length; coluna++) {
+                    let item = matriz[linha][coluna];
+                    if (item.nome != "") {
+                        resposta +=
+                            matriz[linha][coluna].quantidade + " - " +
+                            matriz[linha][coluna].nome + "<br>";
+
+                    }
+                }
+            }
+            return resposta
+        }
+        function contarItem() {
+            let itemProcurado = document.getElementById("inputItem").value;
+            let contador = 0;
+
+            for (let linha = 0; linha < bau.length; linha++) {
+                for (let coluna = 0; coluna < bau[linha].length; coluna++) {
+                    let item = bau[linha][coluna];
+                    if (item.nome != "") {
+                        if (bau[linha][coluna].nome == itemProcurado) {
+                            contador += bau[linha][coluna].quantidade;
+                        }
+                    }
+                }
+            }
+            document.getElementById("spanQuantosItens").innerHTML =
+                "Total de " + itemProcurado + ": " + contador;
+        }
+
+
+
+        function transferirItemSimples() {
+            let itemProcurado = document.getElementById("inputItem").value;
+            let quantidadeTotal = 0;
+
+            // percorre o baú
+            for (let linha = 0; linha < bau.length; linha++) {
+                for (let coluna = 0; coluna < bau[linha].length; coluna++) {
+                    let item = bau[linha][coluna];
+                    if (item.nome === itemProcurado) {
+                        inventario[linha][coluna] = new Item(itemProcurado, item.quantidade);
+                        bau[linha][coluna] = new Item("", 0);
+                    }
+                }
+            }
+            mostrarBauInventario();
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

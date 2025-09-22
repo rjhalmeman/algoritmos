@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Adicionar drone</title>
+</head>
+
+<body>
+    <input type="text" id="inputId" placeholder="Digite o ID do drone">
+    <input type="text" id="inputModelo" placeholder="Digite o modelo do drone"> 
+    <input type="number" id="inputAutonomia" placeholder="Digite a autonomia da bateria (min)">
+    <input type="number" id="inputAlcance" placeholder="Digite o alcance máximo (m)">
+    <input type="button" value="Adicionar" onclick="adicionarDrone()"><br><br>
+    <input type="button" value="Mostrar Lista" onclick="listarTodos()">
+    
+    
+    <h3>Drones (vetor heterogêneo):</h3>
+    <p id="listaDeDrones">[]</p>
+    <br>
+    <!-- trocar de modelo para ID -->
+    <input type="text" id="inputIdProcurado" placeholder="Digite o ID do drone">
+    <input type="button" value="Listar por id" onclick="listarPorId()">
+    <br><br>
+    <!-- adicionar esse html -->
+    <input type="number" id="inputAlcanceMinimo" placeholder="Alcance mínimo (m)">
+    <input type="number" id="inputAlcanceMaximo" placeholder="Alcance máximo (m)">
+    <input type="button" value="Listar por alcance" onclick="listarPorAlcance()">
+   <!-- adicionar -->
+
+    <script src="drone.js"></script>
+    <script src="droneControle.js"></script>
+</body>
+
+</html>

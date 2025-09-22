@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de mesa</title>
+</head>
+
+<body>
+    <input type="text" id="inputN" placeholder="Nome"><br>
+    <input type="button" value="Executar" onclick="execute()"><br>
+    <span id="resposta"></span>
+    <script>
+        let mat = [[5, 6, 7, 8, 5], [7, 8, 9, 4, 4], [6, 5, 9, 3, 3], [8, 9, 3, 5, 7]]
+        let vet = ["Clésio", "Arminia", "Clotilde", "Tenório", "Catarina"];
+        function execute() {
+            let n = document.getElementById("inputN").value;
+            let pos = -1;
+            for (let i = 0; i < vet.length; i++) {
+                if (vet[i] == n) {
+                    pos = i;
+                    break;
+                }
+            }
+            if (pos == -1) {
+                document.getElementById("resposta").innerHTML = "Não encontrado";
+            } else {
+                let sc = calcule(mat, pos);
+                let resp = vet[pos] + " - " + sc;
+                document.getElementById("resposta").innerHTML = resp;
+            }
+        }
+
+        function calcule(matriz, pos) {
+            let s = 0;
+            for (let t = 0; t < matriz.length; t++) {
+                s += matriz[t][pos];
+            }
+            let k = s / matriz.length;
+            return k;
+        }
+
+    </script>
+
+</body>
+
+</html>
