@@ -85,16 +85,17 @@ function salvar() {
 
     const nome = document.getElementById("inputNome").value;
     const ano = parseInt(document.getElementById("inputAno").value);
+    const diretor = document.getElementById("inputDiretor").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-if(id && nome && ano && 50 ){// se tudo certo 
+if(id && nome && ano && diretor ){// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                filme = new Filme(id,nome,ano,50);
+                filme = new Filme(id,nome,ano,diretor);
                 listaFilme.push(filme);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                filmeAlterado = new Filme(id,nome,ano,50);
+                filmeAlterado = new Filme(id,nome,ano,diretor);
                 listaFilme[filme.posicaoNaLista] = filmeAlterado;
                 mostrarAviso("Alterado");
                 break;
@@ -131,7 +132,7 @@ function preparaListagem(vetor) {
             linha.id+" - " +
             linha.nome+" - " +
             linha.ano+" - " +
-            linha.50+"<br>";
+            linha.diretor+"<br>";
     }
     return texto;
 }
@@ -158,7 +159,7 @@ function mostrarDadosFilme(filme) {
     document.getElementById("inputId").value = filme.id;
     document.getElementById("inputNome").value = filme.nome;
     document.getElementById("inputAno").value = filme.ano;
-    document.getElementById("input50").value = filme.50;
+    document.getElementById("inputDiretor").value = filme.diretor;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -168,7 +169,7 @@ function mostrarDadosFilme(filme) {
 function limparAtributos() {
     document.getElementById("inputNome").value = "";
     document.getElementById("inputAno").value = "";
-    document.getElementById("input50").value = "";
+    document.getElementById("inputDiretor").value = "";
 
     bloquearAtributos(true);
 }
@@ -178,7 +179,7 @@ function bloquearAtributos(soLeitura) {
     document.getElementById("inputId").readOnly = !soLeitura;
     document.getElementById("inputNome").readOnly = soLeitura;
     document.getElementById("inputAno").readOnly = soLeitura;
-    document.getElementById("input50").readOnly = soLeitura;
+    document.getElementById("inputDiretor").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -241,7 +242,7 @@ function prepararESalvarCSV() { //gera um arquivo csv com as informações da li
 textoCSV +=         linha.id + ";" +
         linha.nome + ";" +
         linha.ano + ";" +
-        linha.50     }
+        linha.diretor     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
@@ -263,7 +264,7 @@ function converterDeCSVparaListaObjeto(arquivo) {
     id:dados[0],
     nome:dados[1],
     ano:dados[2],
-    50:dados[3]               });
+    diretor:dados[3]               });
                 }
             }
         }
