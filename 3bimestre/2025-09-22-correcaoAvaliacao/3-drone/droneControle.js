@@ -40,12 +40,12 @@ function printar(vetor) {
         resposta += drone.id + " - " + drone.modelo
             + " - " + drone.autonomiaBateria + " min"
             + " - " + drone.alcanceMaximo + " m<br>";
-    }   
-    return resposta; 
+    }
+    return resposta;
 }
 
-function listarTodos() {       
-    document.getElementById("listaDeDrones").innerHTML = printar(conjuntoDrones);  
+function listarTodos() {
+    document.getElementById("listaDeDrones").innerHTML = printar(conjuntoDrones);
 }
 
 function listarPorId() {
@@ -64,6 +64,8 @@ function listarPorId() {
     document.getElementById("listaDeDrones").innerHTML = resposta;
 }
 
+
+
 function listarPorAlcance() {
     let alcanceMinimo = parseInt(document.getElementById("inputAlcanceMinimo").value);
     let alcanceMaximo = parseInt(document.getElementById("inputAlcanceMaximo").value);
@@ -77,5 +79,16 @@ function listarPorAlcance() {
                 + " - " + drone.alcanceMaximo + " m<br>";
         }
     }
+    document.getElementById("listaDeDrones").innerHTML = resposta;
+}
+
+function listarPorAlcanceFiltro() {
+    let alcanceMinimo = parseInt(document.getElementById("inputAlcanceMinimo").value);
+    let alcanceMaximo = parseInt(document.getElementById("inputAlcanceMaximo").value);
+    let resposta = "";
+    let filtro = conjuntoDrones.filter(p => p.alcanceMaximo >= alcanceMinimo && p.alcanceMaximo <= alcanceMaximo);
+
+    resposta = printar(filtro);
+
     document.getElementById("listaDeDrones").innerHTML = resposta;
 }
