@@ -230,8 +230,7 @@ function prepararESalvarCSV() { //gera um arquivo csv com as informações da li
     for (let i = 0; i < listaPet.length; i++) {
         const linha = listaPet[i]; //variavel linha contem as informações de cada pet
         textoCSV += linha.id + ";" +
-            linha.nome +
-            "\n";
+            linha.nome + "\n";
     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
