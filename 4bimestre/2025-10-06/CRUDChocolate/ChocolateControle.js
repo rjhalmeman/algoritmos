@@ -1,14 +1,14 @@
-let listaFruta = []; //conjunto de dados
+let listaChocolate = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let fruta = null; //variavel global 
+let chocolate = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaFruta.length; i++) {
-        const fruta = listaFruta[i];
-        if (fruta.id == chave) {
-            fruta.posicaoNaLista = i;
-            return listaFruta[i];
+    for (let i = 0; i < listaChocolate.length; i++) {
+        const chocolate = listaChocolate[i];
+        if (chocolate.codigo == chave) {
+            chocolate.posicaoNaLista = i;
+            return listaChocolate[i];
         }
     }
     return null;//não achou
@@ -16,17 +16,17 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const id = document.getElementById("inputId").value;
-    if (isNaN(id) || !Number.isInteger(Number(id))) {
+    const codigo = document.getElementById("inputCodigo").value;
+    if (isNaN(codigo) || !Number.isInteger(Number(codigo))) {
         mostrarAviso("Precisa ser um número inteiro");
-        document.getElementById("inputId").focus();
+        document.getElementById("inputCodigo").focus();
         return;
     }
 
-    if (id) { // se digitou um Id
-        fruta = procurePorChavePrimaria(id);
-        if (fruta) { //achou na lista
-            mostrarDadosFruta(fruta);
+    if (codigo) { // se digitou um Codigo
+        chocolate = procurePorChavePrimaria(codigo);
+        if (chocolate) { //achou na lista
+            mostrarDadosChocolate(chocolate);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -35,7 +35,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputId").focus();
+        document.getElementById("inputCodigo").focus();
         return;
     }
 }
@@ -46,7 +46,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputId").focus();
+    document.getElementById("inputCodigo").focus();
 
 }
 
@@ -76,36 +76,37 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    let id;
-    if (fruta == null) {
-        id = parseInt(document.getElementById("inputId").value);
+    let codigo;
+    if (chocolate == null) {
+        codigo = parseInt(document.getElementById("inputCodigo").value);
     } else {
-        id = fruta.id;
+        codigo = chocolate.codigo;
     }
 
     const nome = document.getElementById("inputNome").value;
-    const cor = document.getElementById("inputCor").value;
+    const fabricante = document.getElementById("inputFabricante").value;
+    const dataDeLancamento = document.getElementById("inputDataDeLancamento").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (id && nome && cor) {// se tudo certo 
+    if (codigo && nome && fabricante && dataDeLancamento) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                fruta = new Fruta(id, nome, cor);
-                listaFruta.push(fruta);
+                chocolate = new Chocolate(codigo, nome, fabricante, dataDeLancamento);
+                listaChocolate.push(chocolate);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                frutaAlterado = new Fruta(id, nome, cor);
-                listaFruta[fruta.posicaoNaLista] = frutaAlterado;
+                chocolateAlterado = new Chocolate(codigo, nome, fabricante, dataDeLancamento);
+                listaChocolate[chocolate.posicaoNaLista] = chocolateAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaFruta.length; i++) {
-                    if (fruta.posicaoNaLista != i) {
-                        novaLista.push(listaFruta[i]);
+                for (let i = 0; i < listaChocolate.length; i++) {
+                    if (chocolate.posicaoNaLista != i) {
+                        novaLista.push(listaChocolate[i]);
                     }
                 }
-                listaFruta = novaLista;
+                listaChocolate = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -115,7 +116,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputId").focus();
+        document.getElementById("inputCodigo").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -128,16 +129,17 @@ function preparaListagem(vetor) {
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
         texto +=
-            linha.id + " - " +
+            linha.codigo + " - " +
             linha.nome + " - " +
-            linha.cor + "<br>";
+            linha.fabricante + " - " +
+            linha.dataDeLancamento + "<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaFruta);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaChocolate);
 }
 
 function cancelarOperacao() {
@@ -152,11 +154,12 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Fruta nos campos
-function mostrarDadosFruta(fruta) {
-    document.getElementById("inputId").value = fruta.id;
-    document.getElementById("inputNome").value = fruta.nome;
-    document.getElementById("inputCor").value = fruta.cor;
+// Função para mostrar os dados do Chocolate nos campos
+function mostrarDadosChocolate(chocolate) {
+    document.getElementById("inputCodigo").value = chocolate.codigo;
+    document.getElementById("inputNome").value = chocolate.nome;
+    document.getElementById("inputFabricante").value = chocolate.fabricante;
+    document.getElementById("inputDataDeLancamento").value = chocolate.dataDeLancamento;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -165,16 +168,18 @@ function mostrarDadosFruta(fruta) {
 // Função para limpar os dados dos campos
 function limparAtributos() {
     document.getElementById("inputNome").value = "";
-    document.getElementById("inputCor").value = "";
+    document.getElementById("inputFabricante").value = "";
+    document.getElementById("inputDataDeLancamento").value = "";
 
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputId").readOnly = !soLeitura;
+    document.getElementById("inputCodigo").readOnly = !soLeitura;
     document.getElementById("inputNome").readOnly = soLeitura;
-    document.getElementById("inputCor").readOnly = soLeitura;
+    document.getElementById("inputFabricante").readOnly = soLeitura;
+    document.getElementById("inputDataDeLancamento").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -189,7 +194,7 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputId").focus();
+    document.getElementById("inputCodigo").focus();
 }
 
 function persistirEmLocalPermanente(arquivoDestino, conteudo) {
@@ -230,35 +235,37 @@ function abrirArquivoSalvoEmLocalPermanente() {
 }
 
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Fruta.csv";  //define o nome do arquivo csv
+    let nomeDoArquivoDestino = "./Chocolate.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaFruta.length; i++) {
-        const linha = listaFruta[i]; //variavel linha contem as informações de cada fruta
-        textoCSV += linha.id + ";" +
+    for (let i = 0; i < listaChocolate.length; i++) {
+        const linha = listaChocolate[i]; //variavel linha contem as informações de cada chocolate
+        textoCSV += linha.codigo + ";" +
             linha.nome + ";" +
-            linha.cor + ";"
-    }
+            linha.fabricante + ";" +
+            linha.dataDeLancamento + ";" 
+          }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaFruta
+// Função para processar o arquivo CSV e transferir os dados para a listaChocolate
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaFruta = []; // Limpa a lista atual (se necessário)
+        listaChocolate = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
-                if (dados.length === 3) { //verifica os seis campos
-                    // Adiciona os dados à listaFruta como um objeto
-                    listaFruta.push({
-                        id: dados[0],
+                if (dados.length === 4) { //verifica os seis campos
+                    // Adiciona os dados à listaChocolate como um objeto
+                    listaChocolate.push({
+                        codigo: dados[0],
                         nome: dados[1],
-                        cor: dados[2]
+                        fabricante: dados[2],
+                        dataDeLancamento: dados[3]
                     });
                 }
             }
