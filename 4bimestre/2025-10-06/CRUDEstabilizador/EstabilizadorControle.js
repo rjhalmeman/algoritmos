@@ -1,14 +1,14 @@
-let listaChocolate = []; //conjunto de dados
+let listaEstabilizador = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let chocolate = null; //variavel global 
+let estabilizador = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaChocolate.length; i++) {
-        const chocolate = listaChocolate[i];
-        if (chocolate.codigo == chave) {
-            chocolate.posicaoNaLista = i;
-            return listaChocolate[i];
+    for (let i = 0; i < listaEstabilizador.length; i++) {
+        const estabilizador = listaEstabilizador[i];
+        if (estabilizador.id == chave) {
+            estabilizador.posicaoNaLista = i;
+            return listaEstabilizador[i];
         }
     }
     return null;//não achou
@@ -16,17 +16,17 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const codigo = document.getElementById("inputCodigo").value;
-    if (isNaN(codigo) || !Number.isInteger(Number(codigo))) {
+    const id = document.getElementById("inputId").value;
+    if (isNaN(id) || !Number.isInteger(Number(id))) {
         mostrarAviso("Precisa ser um número inteiro");
-        document.getElementById("inputCodigo").focus();
+        document.getElementById("inputId").focus();
         return;
     }
 
-    if (codigo) { // se digitou um Codigo
-        chocolate = procurePorChavePrimaria(codigo);
-        if (chocolate) { //achou na lista
-            mostrarDadosChocolate(chocolate);
+    if (id) { // se digitou um Id
+        estabilizador = procurePorChavePrimaria(id);
+        if (estabilizador) { //achou na lista
+            mostrarDadosEstabilizador(estabilizador);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -35,7 +35,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputCodigo").focus();
+        document.getElementById("inputId").focus();
         return;
     }
 }
@@ -46,7 +46,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputCodigo").focus();
+    document.getElementById("inputId").focus();
 
 }
 
@@ -74,39 +74,39 @@ function excluir() {
 function salvar() {
     //gerencia operações inserir, alterar e excluir na lista
 
-    // obter os dados a partir do html
+// obter os dados a partir do html
 
-    let codigo;
-    if (chocolate == null) {
-        codigo = parseInt(document.getElementById("inputCodigo").value);
+    let id;
+    if (estabilizador == null) {
+         id = parseInt(document.getElementById("inputId").value);
     } else {
-        codigo = chocolate.codigo;
+        id = estabilizador.id;
     }
 
-    const nome = document.getElementById("inputNome").value;
-    const fabricante = document.getElementById("inputFabricante").value;
-    const dataDeLancamento = document.getElementById("inputDataDeLancamento").value;
+    const modelo = document.getElementById("inputModelo").value;
+    const marca = document.getElementById("inputMarca").value;
+    const preco = parseFloat(document.getElementById("inputPreco").value);
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (codigo && nome && fabricante && dataDeLancamento) {// se tudo certo 
+if(id && modelo && marca && preco ){// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                chocolate = new Chocolate(codigo, nome, fabricante, dataDeLancamento);
-                listaChocolate.push(chocolate);
+                estabilizador = new Estabilizador(id,modelo,marca,preco);
+                listaEstabilizador.push(estabilizador);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                chocolateAlterado = new Chocolate(codigo, nome, fabricante, dataDeLancamento);
-                listaChocolate[chocolate.posicaoNaLista] = chocolateAlterado;
+                estabilizadorAlterado = new Estabilizador(id,modelo,marca,preco);
+                listaEstabilizador[estabilizador.posicaoNaLista] = estabilizadorAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaChocolate.length; i++) {
-                    if (chocolate.posicaoNaLista != i) {
-                        novaLista.push(listaChocolate[i]);
+                for (let i = 0; i < listaEstabilizador.length; i++) {
+                    if (estabilizador.posicaoNaLista != i) {
+                        novaLista.push(listaEstabilizador[i]);
                     }
                 }
-                listaChocolate = novaLista;
+                listaEstabilizador = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -116,7 +116,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputCodigo").focus();
+        document.getElementById("inputId").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -128,18 +128,18 @@ function preparaListagem(vetor) {
     let texto = "";
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
-        texto +=
-            linha.codigo + " - " +
-            linha.nome + " - " +
-            linha.fabricante + " - " +
-            linha.dataDeLancamento + "<br>";
+        texto += 
+            linha.id+" - " +
+            linha.modelo+" - " +
+            linha.marca+" - " +
+            linha.preco+"<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaChocolate);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaEstabilizador);
 }
 
 function cancelarOperacao() {
@@ -154,12 +154,12 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Chocolate nos campos
-function mostrarDadosChocolate(chocolate) {
-    document.getElementById("inputCodigo").value = chocolate.codigo;
-    document.getElementById("inputNome").value = chocolate.nome;
-    document.getElementById("inputFabricante").value = chocolate.fabricante;
-    document.getElementById("inputDataDeLancamento").value = chocolate.dataDeLancamento;
+// Função para mostrar os dados do Estabilizador nos campos
+function mostrarDadosEstabilizador(estabilizador) {
+    document.getElementById("inputId").value = estabilizador.id;
+    document.getElementById("inputModelo").value = estabilizador.modelo;
+    document.getElementById("inputMarca").value = estabilizador.marca;
+    document.getElementById("inputPreco").value = estabilizador.preco;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -167,19 +167,19 @@ function mostrarDadosChocolate(chocolate) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputNome").value = "";
-    document.getElementById("inputFabricante").value = "";
-    document.getElementById("inputDataDeLancamento").value = "";
+    document.getElementById("inputModelo").value = "";
+    document.getElementById("inputMarca").value = "";
+    document.getElementById("inputPreco").value = "";
 
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputCodigo").readOnly = !soLeitura;
-    document.getElementById("inputNome").readOnly = soLeitura;
-    document.getElementById("inputFabricante").readOnly = soLeitura;
-    document.getElementById("inputDataDeLancamento").readOnly = soLeitura;
+    document.getElementById("inputId").readOnly = !soLeitura;
+    document.getElementById("inputModelo").readOnly = soLeitura;
+    document.getElementById("inputMarca").readOnly = soLeitura;
+    document.getElementById("inputPreco").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -194,7 +194,7 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputCodigo").focus();
+    document.getElementById("inputId").focus();
 }
 
 function persistirEmLocalPermanente(arquivoDestino, conteudo) {
@@ -214,7 +214,7 @@ function persistirEmLocalPermanente(arquivoDestino, conteudo) {
 
 // Função para abrir o seletor de arquivos para upload (para processar o arquivo selecionado)
 function abrirArquivoSalvoEmLocalPermanente() {
-
+    
     const input = document.createElement('input');
     //cria o elemento input do tipo file (serve para abrir o seletor de arquivos)
     input.type = 'file';
@@ -235,40 +235,37 @@ function abrirArquivoSalvoEmLocalPermanente() {
 }
 
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Chocolate.csv";  //define o nome do arquivo csv
+   let nomeDoArquivoDestino = "./Estabilizador.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaChocolate.length; i++) {
-        const linha = listaChocolate[i]; //variavel linha contem as informações de cada chocolate
-        textoCSV += linha.codigo + ";" +
-            linha.nome + ";" +
-            linha.fabricante + ";" +
-            linha.dataDeLancamento + "\n";
-           
-    }
+    for (let i = 0; i < listaEstabilizador.length; i++) {
+        const linha = listaEstabilizador[i]; //variavel linha contem as informações de cada estabilizador
+textoCSV +=         linha.id + ";" +
+        linha.modelo + ";" +
+        linha.marca + ";" +
+        linha.preco + ";" 
+          }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
-    listar();
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaChocolate
+// Função para processar o arquivo CSV e transferir os dados para a listaEstabilizador
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaChocolate = []; // Limpa a lista atual (se necessário)
+        listaEstabilizador = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
                 if (dados.length === 4) { //verifica os seis campos
-                    // Adiciona os dados à listaChocolate como um objeto
-                    listaChocolate.push({
-                        codigo: dados[0],
-                        nome: dados[1],
-                        fabricante: dados[2],
-                        dataDeLancamento: dados[3]
-                    });
+                    // Adiciona os dados à listaEstabilizador como um objeto
+                    listaEstabilizador.push({
+    id:dados[0],
+    modelo:dados[1],
+    marca:dados[2],
+    preco:dados[3]               });
                 }
             }
         }

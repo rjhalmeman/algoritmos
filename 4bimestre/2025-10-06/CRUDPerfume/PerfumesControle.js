@@ -1,14 +1,14 @@
-let listaChocolate = []; //conjunto de dados
+let listaPerfumes = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let chocolate = null; //variavel global 
+let perfumes = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaChocolate.length; i++) {
-        const chocolate = listaChocolate[i];
-        if (chocolate.codigo == chave) {
-            chocolate.posicaoNaLista = i;
-            return listaChocolate[i];
+    for (let i = 0; i < listaPerfumes.length; i++) {
+        const perfumes = listaPerfumes[i];
+        if (perfumes.codigo == chave) {
+            perfumes.posicaoNaLista = i;
+            return listaPerfumes[i];
         }
     }
     return null;//não achou
@@ -24,9 +24,9 @@ function procure() {
     }
 
     if (codigo) { // se digitou um Codigo
-        chocolate = procurePorChavePrimaria(codigo);
-        if (chocolate) { //achou na lista
-            mostrarDadosChocolate(chocolate);
+        perfumes = procurePorChavePrimaria(codigo);
+        if (perfumes) { //achou na lista
+            mostrarDadosPerfumes(perfumes);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -74,39 +74,39 @@ function excluir() {
 function salvar() {
     //gerencia operações inserir, alterar e excluir na lista
 
-    // obter os dados a partir do html
+// obter os dados a partir do html
 
     let codigo;
-    if (chocolate == null) {
-        codigo = parseInt(document.getElementById("inputCodigo").value);
+    if (perfumes == null) {
+         codigo = parseInt(document.getElementById("inputCodigo").value);
     } else {
-        codigo = chocolate.codigo;
+        codigo = perfumes.codigo;
     }
 
     const nome = document.getElementById("inputNome").value;
     const fabricante = document.getElementById("inputFabricante").value;
-    const dataDeLancamento = document.getElementById("inputDataDeLancamento").value;
+    const preco = parseFloat(document.getElementById("inputPreco").value);
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (codigo && nome && fabricante && dataDeLancamento) {// se tudo certo 
+if(codigo && nome && fabricante && preco ){// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                chocolate = new Chocolate(codigo, nome, fabricante, dataDeLancamento);
-                listaChocolate.push(chocolate);
+                perfumes = new Perfumes(codigo,nome,fabricante,preco);
+                listaPerfumes.push(perfumes);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                chocolateAlterado = new Chocolate(codigo, nome, fabricante, dataDeLancamento);
-                listaChocolate[chocolate.posicaoNaLista] = chocolateAlterado;
+                perfumesAlterado = new Perfumes(codigo,nome,fabricante,preco);
+                listaPerfumes[perfumes.posicaoNaLista] = perfumesAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaChocolate.length; i++) {
-                    if (chocolate.posicaoNaLista != i) {
-                        novaLista.push(listaChocolate[i]);
+                for (let i = 0; i < listaPerfumes.length; i++) {
+                    if (perfumes.posicaoNaLista != i) {
+                        novaLista.push(listaPerfumes[i]);
                     }
                 }
-                listaChocolate = novaLista;
+                listaPerfumes = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -128,18 +128,18 @@ function preparaListagem(vetor) {
     let texto = "";
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
-        texto +=
-            linha.codigo + " - " +
-            linha.nome + " - " +
-            linha.fabricante + " - " +
-            linha.dataDeLancamento + "<br>";
+        texto += 
+            linha.codigo+" - " +
+            linha.nome+" - " +
+            linha.fabricante+" - " +
+            linha.preco+"<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaChocolate);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaPerfumes);
 }
 
 function cancelarOperacao() {
@@ -154,12 +154,12 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Chocolate nos campos
-function mostrarDadosChocolate(chocolate) {
-    document.getElementById("inputCodigo").value = chocolate.codigo;
-    document.getElementById("inputNome").value = chocolate.nome;
-    document.getElementById("inputFabricante").value = chocolate.fabricante;
-    document.getElementById("inputDataDeLancamento").value = chocolate.dataDeLancamento;
+// Função para mostrar os dados do Perfumes nos campos
+function mostrarDadosPerfumes(perfumes) {
+    document.getElementById("inputCodigo").value = perfumes.codigo;
+    document.getElementById("inputNome").value = perfumes.nome;
+    document.getElementById("inputFabricante").value = perfumes.fabricante;
+    document.getElementById("inputPreco").value = perfumes.preco;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -169,7 +169,7 @@ function mostrarDadosChocolate(chocolate) {
 function limparAtributos() {
     document.getElementById("inputNome").value = "";
     document.getElementById("inputFabricante").value = "";
-    document.getElementById("inputDataDeLancamento").value = "";
+    document.getElementById("inputPreco").value = "";
 
     bloquearAtributos(true);
 }
@@ -179,7 +179,7 @@ function bloquearAtributos(soLeitura) {
     document.getElementById("inputCodigo").readOnly = !soLeitura;
     document.getElementById("inputNome").readOnly = soLeitura;
     document.getElementById("inputFabricante").readOnly = soLeitura;
-    document.getElementById("inputDataDeLancamento").readOnly = soLeitura;
+    document.getElementById("inputPreco").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -214,7 +214,7 @@ function persistirEmLocalPermanente(arquivoDestino, conteudo) {
 
 // Função para abrir o seletor de arquivos para upload (para processar o arquivo selecionado)
 function abrirArquivoSalvoEmLocalPermanente() {
-
+    
     const input = document.createElement('input');
     //cria o elemento input do tipo file (serve para abrir o seletor de arquivos)
     input.type = 'file';
@@ -235,40 +235,37 @@ function abrirArquivoSalvoEmLocalPermanente() {
 }
 
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Chocolate.csv";  //define o nome do arquivo csv
+   let nomeDoArquivoDestino = "./Perfumes.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaChocolate.length; i++) {
-        const linha = listaChocolate[i]; //variavel linha contem as informações de cada chocolate
-        textoCSV += linha.codigo + ";" +
-            linha.nome + ";" +
-            linha.fabricante + ";" +
-            linha.dataDeLancamento + "\n";
-           
-    }
+    for (let i = 0; i < listaPerfumes.length; i++) {
+        const linha = listaPerfumes[i]; //variavel linha contem as informações de cada perfumes
+textoCSV +=         linha.codigo + ";" +
+        linha.nome + ";" +
+        linha.fabricante + ";" +
+        linha.preco + ";" 
+          }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
-    listar();
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaChocolate
+// Função para processar o arquivo CSV e transferir os dados para a listaPerfumes
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaChocolate = []; // Limpa a lista atual (se necessário)
+        listaPerfumes = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
                 if (dados.length === 4) { //verifica os seis campos
-                    // Adiciona os dados à listaChocolate como um objeto
-                    listaChocolate.push({
-                        codigo: dados[0],
-                        nome: dados[1],
-                        fabricante: dados[2],
-                        dataDeLancamento: dados[3]
-                    });
+                    // Adiciona os dados à listaPerfumes como um objeto
+                    listaPerfumes.push({
+    codigo:dados[0],
+    nome:dados[1],
+    fabricante:dados[2],
+    preco:dados[3]               });
                 }
             }
         }
