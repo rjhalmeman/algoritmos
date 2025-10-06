@@ -1,0 +1,3 @@
+int;id;10
+String;nome;50
+String;cor;50
