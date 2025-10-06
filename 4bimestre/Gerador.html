@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar</title>
+</head>
+
+<body>
+    <label for="inputNomeClasse">Nome da classe</label>
+    <input type="text" id="inputNomeClasse"><br>
+    <label for="inputAtributos">Atributos" </label>
+    <input type="text" id="inputAtributos" style="width: 500px;"><br><br>
+
+    <input type="button" value="Model" onclick="gerarModel()">
+    <input type="button" value="View" onclick="gerarView()">
+    <input type="button" value="Controller" onclick="gerarController()">
+
+    <br><br>
+    <textarea name="taCodigoFonte" id="taCodigoFonte" cols="200" rows="40"></textarea>
+
+    <script>
+        let codigoFonte = "";
+        function gerarModel() {
+            let nomeClasse = document.getElementById("inputNomeClasse").value;
+            let atributos = document.getElementById("inputAtributos").value;
+
+            let vetAtributos = atributos.split(",");
+
+            codigoFonte = "class " + nomeClasse + "{" + "\n";
+
+            codigoFonte += "   constructor (" + atributos + ")" + "{\n";
+
+            for (let i = 0; i < vetAtributos.length; i++) {
+                const at = vetAtributos[i];
+                codigoFonte += "          this." + at + " = " + at + ";\n";
+            }
+            codigoFonte += "          this.posicaoNaLista = null;\n"
+            codigoFonte += "   }\n}\n";
+
+            //console.log(codigoFonte);
+            document.getElementById("taCodigoFonte").textContent = codigoFonte;
+        }
+
+        function gerarView() {
+            codigoFonte = "";
+            nomeClasse = "AClasseDaNatalia";
+            codigoFonte = "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <title>CRUD " + nomeClasse + "</title>\n" +
+                "</head>\n" +
+                "\n" +
+                "<body>\n\n";
+            document.getElementById("taCodigoFonte").textContent = codigoFonte;
+        }
+
+        function gerarController() {
+            codigoFonte = ".... basta programar para gerar o Controller como aprendeu em algoritmos no segundo e terceiro bimestres...\n ";
+            codigoFonte += "dá trabalho (uma vez) mas depois fica muito mais fácil\n ";
+            document.getElementById("taCodigoFonte").textContent = codigoFonte;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- class Carro {
+constructor(placa, nome, dataLancamento, peso, cor, posicaoNaLista) {
+this.placa = placa;
+this.nome = nome;
+this.dataLancamento = dataLancamento;
+this.peso = peso;
+this.cor = cor;
+
+
+this.posicaoNaLista = posicaoNaLista; //atributo para facilitar a alteração e exclusão
+}
+} -->
