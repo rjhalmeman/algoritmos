@@ -1,0 +1,4 @@
+int;numeroMac;10
+String;modelo;50
+String;fabricante;50
+float;preco;10

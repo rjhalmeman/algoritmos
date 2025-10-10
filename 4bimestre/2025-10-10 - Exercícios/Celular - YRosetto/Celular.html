@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Celular</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Celular</h1>
+
+   <label for="inputNumeroMac">NumeroMac</label>
+   <input type="text" name="inputNumeroMac" id="inputNumeroMac">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputModelo">Modelo</label>
+   <input type="text" name="inputModelo" id="inputModelo">
+   <br>
+   <!-- 
+   <label for="inputFabricante">Fabricante</label>
+   <input type="text" name="inputFabricante" id="inputFabricante">
+   <br> -->
+
+   <label for="inputFabricante">Escolha um fabricante:</label>
+   <select name="inputFabricante" id="inputFabricante">
+      <option value="Apple">Apple</option>
+      <option value="Samsung">Samsung</option>
+      <option value="Lenovo">Lenovo</option>
+      <option value="Motorola">Motorola</option>
+   </select>
+   <br><br>
+
+
+
+   <label for="inputPreco">Preco</label>
+   <input type="number" name="inputPreco" id="inputPreco">
+   <br>
+
+   <br><br>
+   <div id="divAviso" style="background-color: antiquewhite;"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: aqua;">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./Celular.js"></script>
+   <script src="./CelularControle.js"></script>
+</body>
+
+</html>
