@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Mínima do Aluno</title>
+</head>
+
+<body>
+    <div>
+        <label for="inputNome">Insira o nome do Aluno:</label>
+        <input type="text" id="inputNome" placeholder="Ex: Ana">
+        <button onclick="encontrar()">Buscar</button>
+    </div>
+
+    <span id="resultado"></span>
+
+    <script>       
+        const alunos = ["Ana", "Bruno", "Carlos", "Diana", "Eduardo"];
+        const notas = [
+            [8.5, 7.0, 9.0, 6.5, 7.5],
+            [6.0, 5.5, 7.0, 4.5, 6.5],
+            [9.5, 8.0, 10.0, 9.0, 8.5],
+            [7.0, 7.5, 6.5, 8.0, 7.0],
+            [5.0, 6.0, 4.0, 5.5, 6.0]
+        ];
+        function encontrar() {
+            const nome = document.getElementById('inputNome').value;
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = "";
+            let indice = -1;
+            for (let i = 0; i < alunos.length; i++) {
+                if (alunos[i] === nome) {
+                    indice = i;
+                    break;
+                }
+            }
+            if (indice !== -1) {
+                const linha = notas[indice];
+                const m = facaAlgo(linha);
+                resultado.innerHTML = "Encontrou " 
+                + m + " para " 
+                + alunos[indice];
+            } else {
+                resultado.innerHTML = nome +
+                 " não encontrado(a) na lista.";
+            }
+        }
+        function facaAlgo(dados) {
+            let nm = dados[0];
+            for (let i = 1; i < dados.length; i++) {
+                if (dados[i] < nm) {
+                    nm = dados[i];
+                }
+            }
+            return nm;
+        }
+    </script>
+</body>
+
+</html>

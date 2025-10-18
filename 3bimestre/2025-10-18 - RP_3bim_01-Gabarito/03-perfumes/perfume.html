@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfume</title>
+</head>
+<body> 
+    <label for="inputId">Id</label> <input type="text" name="inputId" id="inputId"><br>
+    <label for="inputNome">Nome</label> <input type="text" name="inputNome" id="inputNome"> <br>
+    <label for="inputPreco">Preco</label> <input type="number" name="inputPreco" id="inputPreco"> <br>
+    <label for="inputFabricante">Fabricante</label> <input type="text" name="inputFabricante" id="inputFabricante"> <br>
+    <input type="button" value="Inserir" id="btInserir" onclick="inserir()"> <br>
+    <input type="button" value="Listar todos" onclick="listarTodos()"> <br>
+    <input type="number"  id="inputPrecoMin" placeholder="Preço Mínimo">
+    <input type="number"  id="inputPrecoMax" placeholder="Preço Máximo">
+    <input type="button" value="Listar por Preço" onclick="listarPorFaixaPreco()"><br>
+    <input type="number"  id="inputBuscaId" placeholder="ID">
+    <input type="button" value="Buscar por ID"onclick="buscarPorId()"><br>
+    <input type="button" value="Exibir com Desconto" onclick="exibirPerfumesComDesconto()"><br>    
+    <div id="outputSaida" style="background-color: aqua;">...</div>
+    <script src="./perfume.js"></script>
+    <script src="./perfumeControle.js"></script>
+</body></html>

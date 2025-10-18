@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício Matriz</title>
+</head>
+
+<body>
+  <h2>Matriz A</h2>
+  <pre id="matriz"></pre>
+
+  <button onclick="mostrarSomaPares()">2a) Soma dos pares</button>
+  <p id="resA"></p>
+
+  <button onclick="mostrarImpares()">2b) Vetor com ímpares</button>
+  <p id="resB"></p>
+
+  <button onclick="mostrarSomaComVetor()">2c) Matriz somada com vetor [6,7,2] v1</button>
+  <br>
+
+
+  <button onclick="mostrarSomaComVetor2()">2c) Matriz somada com vetor [6,7,2] v2</button>
+  <pre id="resC"></pre>
+
+  <script>
+    // Matriz global A
+    const A = [
+      [1, 3, 0],
+      [2, 5, 1],
+      [2, 1, 3]
+    ];
+
+    // Vetor global v
+    const v = [6, 7, 2];
+
+    // Mostrar matriz 
+    function mostrarMatriz(matriz) {
+      let texto = "";
+      for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+          texto += matriz[i][j] + "\t";
+        }
+        texto += "\n";
+      }
+      return texto;
+    }
+    document.getElementById('matriz').textContent = mostrarMatriz(A);
+
+
+    // 2a) Soma dos números pares
+    function somaPares(matriz) {
+      let soma = 0;
+      for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+          if (matriz[i][j] % 2 === 0) {
+            soma += matriz[i][j];
+          }
+        }
+      }
+      return soma;
+    }
+
+    // 2b) Retorna vetor com os ímpares
+    function vetorImpares(matriz) {
+      let impares = [];
+      for (let i = 0; i < matriz.length; i++) {
+        for (let j = 0; j < matriz[i].length; j++) {
+          if (matriz[i][j] % 2 !== 0) {
+            impares.push(matriz[i][j]);
+          }
+        }
+      }
+      return impares;
+    }
+
+    // 2c) Soma vetor com cada linha da matriz
+    function somaComVetor(matriz, vetor) {
+      let nova = [];
+      for (let i = 0; i < matriz.length; i++) {
+        let linhaNova = [];
+        for (let j = 0; j < matriz[i].length; j++) {
+          linhaNova[j] = matriz[i][j] + vetor[i];
+        }
+        nova[i] = linhaNova;
+      }
+      return nova;
+    }
+
+        // 2c) Soma vetor com cada linha da matriz
+    function somaComVetor2(matriz, vetor) {
+      let nova = matriz; // copia da matriz original
+      for (let i = 0; i < matriz.length; i++) {        
+        for (let j = 0; j < matriz[i].length; j++) {
+          nova[i][j] = matriz[i][j] + vetor[i];
+        }        
+      }
+      return nova;
+    }
+
+    // Funções de exibição
+    function mostrarSomaPares() {
+      document.getElementById('resA').textContent = "Soma dos pares: " + somaPares(A);
+    }
+
+    function mostrarImpares() {
+      document.getElementById('resB').textContent = "Vetor ímpares: [" + vetorImpares(A).join(', ') + "]";
+    }
+
+    function mostrarSomaComVetor() {
+        const resultado = somaComVetor(A, v);
+        document.getElementById('resC').textContent = mostrarMatriz(resultado);
+    }
+
+      function mostrarSomaComVetor2() {
+        const resultado = somaComVetor(A, v);
+        document.getElementById('resC').textContent = mostrarMatriz(resultado);
+    }
+  </script>
+</body>
+
+</html>
