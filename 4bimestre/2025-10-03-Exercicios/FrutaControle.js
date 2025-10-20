@@ -86,6 +86,9 @@ function salvar() {
     const nome = document.getElementById("inputNome").value;
     const cor = document.getElementById("inputCor").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
+
+    
+
     if (id && nome && cor) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
