@@ -1,0 +1,5 @@
+int;id;10 
+String;titulo;50
+String;diretor;50
+Date;dataLancamento;10
+float;avaliacao;10
