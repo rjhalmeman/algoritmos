@@ -224,13 +224,20 @@ function abrirArquivoSalvoEmLocalPermanente() {
     input.click(); //seletor de arquivos exibido automaticamente    
 }
 
+
+
+
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
     let nomeDoArquivoDestino = "./Pet.csv";  //define o nome do arquivo csv
     let textoCSV = "";
+     let fimDeLinha = "\n";
     for (let i = 0; i < listaPet.length; i++) {
         const linha = listaPet[i]; //variavel linha contem as informações de cada pet
+         if (i == listaPet.length - 1) {
+            fimDeLinha = "";
+        }
         textoCSV += linha.id + ";" +
-            linha.nome + "\n";
+            linha.nome + fimDeLinha;
     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
