@@ -94,7 +94,9 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 - string;genero  
 
 🔹 Adicione um campo de busca que mostre **apenas os livros de um determinado gênero**.
+
 🔹 Adicione um campo de busca que mostre **apenas os livros de um determinado autor**.
+
 🔹 Adicione um campo de busca que mostre **apenas os livros de um determinado ano de publicação**.
 
 
@@ -110,8 +112,11 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 - float;nota4  
 
 🔹 Adicione um botão que calcule a **média de cada aluno** e mostre se o aluno **passou (≥6)** ou **reprovou**.
+
 🔹 Adicione um botão que calcule a **maior nota de cada aluno**.
+
 🔹 Adicione um botão que calcule a **média da turma**.
+
 🔹 Adicione um botão que calcule a **porcentagem de alunos reprovados**.
 
 
@@ -127,6 +132,7 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 - float;preco  
 
 🔹 Adicione um filtro para mostrar apenas **jogos de uma plataforma específica**.
+
 🔹 Adicione um filtro para mostrar apenas **jogos em uma faixa de preço**.
 
 
@@ -141,7 +147,8 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 - boolean;fazEntrega  
 
 🔹 Adicione um botão que **liste apenas os restaurantes que fazem entrega e têm nota ≥ 4**.
-🔹 Adicione um botão que **liste os restaurante em ordem do melhor avaliado para o pior avaliado.
+
+🔹 Adicione um botão que **liste os restaurante em ordem do melhor avaliado para o pior avaliado.**.
 
 ---
 
@@ -154,7 +161,9 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 - float;avaliacao  
 
 🔹 Adicione um botão que mostre **a série com o maior número de temporadas**.
+
 🔹 Adicione um botão que mostre **a série com o menor número de temporadas**.
+
 🔹 Adicione um botão que mostre **a série de uma plataforma específica melhor avaliada**.
 
 ---
