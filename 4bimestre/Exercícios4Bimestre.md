@@ -152,7 +152,7 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 
 ---
 
-13) Série
+13) Serie
 
 - int;id  
 - string;titulo  
