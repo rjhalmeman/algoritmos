@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Filme</title>
+</head>
+
+<body>
+
+    <h1>Cadastro de Filme</h1>
+
+    <label for="inputId">Id</label>
+    <input type="number" name="inputId" id="inputId">
+    <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+    <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+    <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+    <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+    <br><br>
+
+    <label for="inputTitulo">Titulo</label>
+    <input type="text" name="inputTitulo" id="inputTitulo">
+    <br>
+    <label for="inputDiretor">Diretor</label>
+    <input type="text" name="inputDiretor" id="inputDiretor">
+    <br>
+
+    <label for="inputDataLancamento">Data de Lançamento</label>
+    <input type="date" name="inputDataLancamento" id="inputDataLancamento">
+    <br>
+
+    <label for="inputAvaliacao">Avaliação</label>
+    <input type="number" name="inputAvaliacao" id="inputAvaliacao">
+    <br>
+
+    <br><br>
+    <div id="divAviso" style="background-color: antiquewhite;"></div>
+    <br>
+    <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+    <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+    <br><br>
+     <input type="button" value="Listar" onclick="listar()">
+    <br>
+     <input type="button" value="Listar avaliados com nota maior que 8" onclick="listarMaiorQueOito()">
+    <br><br> 
+
+    <div id="outputSaida" style="background-color: aqua;">...</div>
+
+    <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+    <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+    <script src="./Filme.js"></script>
+    <script src="./FilmeControle.js"></script>
+</body>
+
+</html>
