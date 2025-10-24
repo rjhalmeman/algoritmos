@@ -71,6 +71,10 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 
 🔹 Adicione um botão que filtre e mostre apenas os filmes com **avaliação acima de 8.0**.
 
+Vídeo mostrando como foi resolvido
+
+https://youtu.be/lZaw_leSSEc
+
 ---
 
 8) Animal
