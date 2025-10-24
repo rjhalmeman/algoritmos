@@ -73,7 +73,7 @@ Após fazer o CRUD, adicione um botão que calcule e mostre a média para cada d
 
 Vídeo mostrando como foi resolvido
 
-https://youtu.be/lZaw_leSSEc
+https://youtu.be/yrdV3kfNPsU
 
 ---
 
