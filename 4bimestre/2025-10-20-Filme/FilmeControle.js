@@ -198,6 +198,7 @@ function bloquearAtributos(soLeitura) {
     document.getElementById("inputDiretor").readOnly = soLeitura;
     document.getElementById("inputDataLancamento").readOnly = soLeitura;
     document.getElementById("inputAvaliacao").readOnly = soLeitura;
+ 
 }
 
 // Função para deixar visível ou invisível os botões
@@ -267,7 +268,7 @@ function prepararESalvarCSV() { //gera um arquivo csv com as informações da li
             linha.dataLancamento + ";" +
             linha.avaliacao + fimDeLinha;
     }
-
+/
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 

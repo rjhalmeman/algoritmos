@@ -171,3 +171,11 @@ https://youtu.be/yrdV3kfNPsU
 🔹 Adicione um botão que mostre **a série de uma plataforma específica melhor avaliada**.
 
 ---
+
+14) Considere a lista de produtos
+![alt text](imagens/tabPalelaria.png)
+
+Faça um CRUD completo para gerenciar a lista, usando menu suspenso, data list e/ou data list (o que achar mais adequado).
+
+Adicione a possibilidade de escolher uma categoria e seu programa vai mostrar todos os elementos daquela categoria. Deve-se usar um menu suspenso na escolha da categoria.
+
