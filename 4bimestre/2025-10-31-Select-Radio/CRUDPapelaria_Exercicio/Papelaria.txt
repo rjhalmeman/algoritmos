@@ -1,0 +1,5 @@
+int;id;10
+String;nome;50
+String;categoria;50
+int;quantidadeEstoque;10
+float;precoUnitario;10
