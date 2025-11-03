@@ -210,7 +210,10 @@ O número da matrícula não pode ser zero ou negativo.
  Os tipos são residencial, comercial ou rural. Use um menu suspenso.
 
  A quantidade de cômodos não pode ser menor do que 1. 
- O atributo alugado deve ter um checkbox. Use eventos onChange nos menus suspensos.
+
+ O atributo alugado deve ter um checkbox. 
+ 
+ Use eventos onChange nos menus suspensos.
 
 
 --- 
