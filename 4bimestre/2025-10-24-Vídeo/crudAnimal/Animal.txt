@@ -1,0 +1,5 @@
+int;id;10
+String;nome;50
+String;especie;50
+String;genero;30
+Date;dataNascimento;10

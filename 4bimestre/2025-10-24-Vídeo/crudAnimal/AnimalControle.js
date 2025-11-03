@@ -1,14 +1,14 @@
-let listaPapelaria = []; //conjunto de dados
+let listaAnimal = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let papelaria = null; //variavel global 
+let animal = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaPapelaria.length; i++) {
-        const papelaria = listaPapelaria[i];
-        if (papelaria.id == chave) {
-            papelaria.posicaoNaLista = i;
-            return listaPapelaria[i];
+    for (let i = 0; i < listaAnimal.length; i++) {
+        const animal = listaAnimal[i];
+        if (animal.id == chave) {
+            animal.posicaoNaLista = i;
+            return listaAnimal[i];
         }
     }
     return null;//não achou
@@ -24,9 +24,9 @@ function procure() {
     }
 
     if (id) { // se digitou um Id
-        papelaria = procurePorChavePrimaria(id);
-        if (papelaria) { //achou na lista
-            mostrarDadosPapelaria(papelaria);
+        animal = procurePorChavePrimaria(id);
+        if (animal) { //achou na lista
+            mostrarDadosAnimal(animal);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -74,40 +74,40 @@ function excluir() {
 function salvar() {
     //gerencia operações inserir, alterar e excluir na lista
 
-    // obter os dados a partir do html
+// obter os dados a partir do html
 
     let id;
-    if (papelaria == null) {
-        id = parseInt(document.getElementById("inputId").value);
+    if (animal == null) {
+         id = parseInt(document.getElementById("inputId").value);
     } else {
-        id = papelaria.id;
+        id = animal.id;
     }
 
     const nome = document.getElementById("inputNome").value;
-    const categoria = document.getElementById("inputCategoria").value;
-    const quantidadeEstoque = parseInt(document.getElementById("inputQuantidadeEstoque").value);
-    const precoUnitario = parseFloat(document.getElementById("inputPrecoUnitario").value);
+    const especie = document.getElementById("inputEspecie").value;
+    const genero = document.getElementById("inputGenero").value;
+    const dataNascimento = document.getElementById("inputDataNascimento").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (id && nome && categoria && quantidadeEstoque && precoUnitario) {// se tudo certo 
+if(id && nome && especie && genero && dataNascimento ){// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                papelaria = new Papelaria(id, nome, categoria, quantidadeEstoque, precoUnitario);
-                listaPapelaria.push(papelaria);
+                animal = new Animal(id,nome,especie,genero,dataNascimento);
+                listaAnimal.push(animal);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                papelariaAlterado = new Papelaria(id, nome, categoria, quantidadeEstoque, precoUnitario);
-                listaPapelaria[papelaria.posicaoNaLista] = papelariaAlterado;
+                animalAlterado = new Animal(id,nome,especie,genero,dataNascimento);
+                listaAnimal[animal.posicaoNaLista] = animalAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaPapelaria.length; i++) {
-                    if (papelaria.posicaoNaLista != i) {
-                        novaLista.push(listaPapelaria[i]);
+                for (let i = 0; i < listaAnimal.length; i++) {
+                    if (animal.posicaoNaLista != i) {
+                        novaLista.push(listaAnimal[i]);
                     }
                 }
-                listaPapelaria = novaLista;
+                listaAnimal = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -129,19 +129,19 @@ function preparaListagem(vetor) {
     let texto = "";
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
-        texto +=
-            linha.id + " - " +
-            linha.nome + " - " +
-            linha.categoria + " - " +
-            linha.quantidadeEstoque + " - " +
-            linha.precoUnitario + "<br>";
+        texto += 
+            linha.id+" - " +
+            linha.nome+" - " +
+            linha.especie+" - " +
+            linha.genero+" - " +
+            linha.dataNascimento+"<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaPapelaria);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaAnimal);
 }
 
 function cancelarOperacao() {
@@ -156,13 +156,13 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Papelaria nos campos
-function mostrarDadosPapelaria(papelaria) {
-    document.getElementById("inputId").value = papelaria.id;
-    document.getElementById("inputNome").value = papelaria.nome;
-    document.getElementById("inputCategoria").value = papelaria.categoria;
-    document.getElementById("inputQuantidadeEstoque").value = papelaria.quantidadeEstoque;
-    document.getElementById("inputPrecoUnitario").value = papelaria.precoUnitario;
+// Função para mostrar os dados do Animal nos campos
+function mostrarDadosAnimal(animal) {
+    document.getElementById("inputId").value = animal.id;
+    document.getElementById("inputNome").value = animal.nome;
+    document.getElementById("inputEspecie").value = animal.especie;
+    document.getElementById("inputGenero").value = animal.genero;
+    document.getElementById("inputDataNascimento").value = animal.dataNascimento;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -171,9 +171,9 @@ function mostrarDadosPapelaria(papelaria) {
 // Função para limpar os dados dos campos
 function limparAtributos() {
     document.getElementById("inputNome").value = "";
-    document.getElementById("inputCategoria").value = "";
-    document.getElementById("inputQuantidadeEstoque").value = "";
-    document.getElementById("inputPrecoUnitario").value = "";
+    document.getElementById("inputEspecie").value = "";
+    document.getElementById("inputGenero").value = "";
+    document.getElementById("inputDataNascimento").value = "";
 
     bloquearAtributos(true);
 }
@@ -182,9 +182,9 @@ function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
     document.getElementById("inputId").readOnly = !soLeitura;
     document.getElementById("inputNome").readOnly = soLeitura;
-    document.getElementById("inputCategoria").readOnly = soLeitura;
-    document.getElementById("inputQuantidadeEstoque").readOnly = soLeitura;
-    document.getElementById("inputPrecoUnitario").readOnly = soLeitura;
+    document.getElementById("inputEspecie").readOnly = soLeitura;
+    document.getElementById("inputGenero").readOnly = soLeitura;
+    document.getElementById("inputDataNascimento").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -219,7 +219,7 @@ function persistirEmLocalPermanente(arquivoDestino, conteudo) {
 
 // Função para abrir o seletor de arquivos para upload (para processar o arquivo selecionado)
 function abrirArquivoSalvoEmLocalPermanente() {
-
+    
     const input = document.createElement('input');
     //cria o elemento input do tipo file (serve para abrir o seletor de arquivos)
     input.type = 'file';
@@ -240,40 +240,39 @@ function abrirArquivoSalvoEmLocalPermanente() {
 }
 
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Papelaria.csv";  //define o nome do arquivo csv
+   let nomeDoArquivoDestino = "./Animal.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaPapelaria.length; i++) {
-        const linha = listaPapelaria[i]; //variavel linha contem as informações de cada papelaria
-        textoCSV += linha.id + ";" +
-            linha.nome + ";" +
-            linha.categoria + ";" +
-            linha.quantidadeEstoque + ";" +
-            linha.precoUnitario
-    }
+    for (let i = 0; i < listaAnimal.length; i++) {
+        const linha = listaAnimal[i]; //variavel linha contem as informações de cada animal
+textoCSV +=         linha.id + ";" +
+        linha.nome + ";" +
+        linha.especie + ";" +
+        linha.genero + ";" +
+        linha.dataNascimento + ";" 
+          }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaPapelaria
+// Função para processar o arquivo CSV e transferir os dados para a listaAnimal
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaPapelaria = []; // Limpa a lista atual (se necessário)
+        listaAnimal = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
                 if (dados.length === 5) { //verifica os seis campos
-                    // Adiciona os dados à listaPapelaria como um objeto
-                    listaPapelaria.push({
-                        id: dados[0],
-                        nome: dados[1],
-                        categoria: dados[2],
-                        quantidadeEstoque: dados[3],
-                        precoUnitario: dados[4]
-                    });
+                    // Adiciona os dados à listaAnimal como um objeto
+                    listaAnimal.push({
+    id:dados[0],
+    nome:dados[1],
+    especie:dados[2],
+    genero:dados[3],
+    dataNascimento:dados[4]               });
                 }
             }
         }
@@ -282,27 +281,3 @@ function converterDeCSVparaListaObjeto(arquivo) {
     leitor.readAsText(arquivo); // Lê o arquivo como texto
 }
 
-function filtrarPorCategoria() {
-    const categoriaFiltro = document.getElementById("selectCategorias").value;
-    if (categoriaFiltro) {
-
-        if (categoriaFiltro=="todas") {
-            document.getElementById("outputSaida").innerHTML = preparaListagem(listaPapelaria);
-            return;
-        }
-
-        //  const listaFiltrada = listaPapelaria.filter(papelaria => papelaria.categoria === categoriaFiltro);
-        let listaFiltrada = [];
-        for (let i = 0; i < listaPapelaria.length; i++) {
-            const linha = listaPapelaria[i];
-            if (linha.categoria == categoriaFiltro) {
-                listaFiltrada.push(linha);
-            }
-
-        }
-        document.getElementById("outputSaida").innerHTML = preparaListagem(listaFiltrada);
-    } else {
-        listar(); // Se o filtro estiver vazio, mostra toda a lista
-        mostrarAviso("Mostrando todos os itens (sem filtro)");
-    }
-}
