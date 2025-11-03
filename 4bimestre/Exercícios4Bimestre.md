@@ -185,20 +185,33 @@ Adicione a possibilidade de escolher uma categoria e seu programa vai mostrar to
 ## Imovel
 
 int;numMatricula
+
 String;endereco
+
 String;bairro
+
 String;tipo
+
 float;area
+
 int;comodos
+
 boolean;alugado
+
 Date;dataDeConclusaoDaConstrucao
 
-Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo. 
+
+Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo.
+
 O número da matrícula não pode ser zero ou negativo.
+
  Para o atributo bairro, use um menu suspenso para que o usuário possa escolhem entre 5 bairros. 
+
  Os tipos são residencial, comercial ou rural. Use um menu suspenso.
+
  A quantidade de cômodos não pode ser menor do que 1. 
  O atributo alugado deve ter um checkbox. Use eventos onChange nos menus suspensos.
+
 
 --- 
 
@@ -207,25 +220,43 @@ O número da matrícula não pode ser zero ou negativo.
 ## Aluguel
 
 int;numeroContrato
+
 String;nomeProprietario
+
 String;nomeInquilino
+
 float;valorAluguel
+
 int;prazoDoContratoEmMeses
+
 boolean;estaAlugado
+
 Date;dataDeInicioDoContrato
+
 String;cepImovel
+
 String;enderecoImovel
+
 String;bairro
+
 String;cidade
 
 ### Restrições
+
 O número do contrato deve ser maior que zero.
+
 O nome do proprietário não pode ficar vazio.
+
 O nome do inquilino não pode ficar vazio.
+
 O valor do aluguel deve ser maior que zero.
+
 O prazo de contrato deve ser um número entre 1 e 48.
+
 Deve-se usar checkbox para o atributo estaAlugado.
+
 Ao informar a dataDeInicioDoContrato, deve-se calcular e mostrar a data de término (conforme o prazo do contrato).
+
 
 Extra:
 Ao digitar o cep é possível usar uma API para preencher os demais atributos. Consulte https://viacep.com.br/. 

@@ -287,7 +287,8 @@ function filtrarPorCategoria() {
     if (categoriaFiltro) {
 
         if (categoriaFiltro=="todas") {
-            document.getElementById("outputSaida").innerHTML = preparaListagem(listaPapelaria);
+            document.getElementById("outputSaida").innerHTML =
+             preparaListagem(listaPapelaria);
             return;
         }
 
@@ -300,7 +301,8 @@ function filtrarPorCategoria() {
             }
 
         }
-        document.getElementById("outputSaida").innerHTML = preparaListagem(listaFiltrada);
+        document.getElementById("outputSaida").innerHTML = 
+        preparaListagem(listaFiltrada);
     } else {
         listar(); // Se o filtro estiver vazio, mostra toda a lista
         mostrarAviso("Mostrando todos os itens (sem filtro)");
