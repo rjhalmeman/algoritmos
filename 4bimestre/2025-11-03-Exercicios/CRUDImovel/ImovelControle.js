@@ -1,14 +1,14 @@
-let listaPapelaria = []; //conjunto de dados
+let listaImovel = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let papelaria = null; //variavel global 
+let imovel = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaPapelaria.length; i++) {
-        const papelaria = listaPapelaria[i];
-        if (papelaria.id == chave) {
-            papelaria.posicaoNaLista = i;
-            return listaPapelaria[i];
+    for (let i = 0; i < listaImovel.length; i++) {
+        const imovel = listaImovel[i];
+        if (imovel.numMatricula == chave) {
+            imovel.posicaoNaLista = i;
+            return listaImovel[i];
         }
     }
     return null;//não achou
@@ -16,17 +16,17 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const id = document.getElementById("inputId").value;
-    if (isNaN(id) || !Number.isInteger(Number(id))) {
+    const numMatricula = document.getElementById("inputNumMatricula").value;
+    if (isNaN(numMatricula) || !Number.isInteger(Number(numMatricula))) {
         mostrarAviso("Precisa ser um número inteiro");
-        document.getElementById("inputId").focus();
+        document.getElementById("inputNumMatricula").focus();
         return;
     }
 
-    if (id) { // se digitou um Id
-        papelaria = procurePorChavePrimaria(id);
-        if (papelaria) { //achou na lista
-            mostrarDadosPapelaria(papelaria);
+    if (numMatricula) { // se digitou um NumMatricula
+        imovel = procurePorChavePrimaria(numMatricula);
+        if (imovel) { //achou na lista
+            mostrarDadosImovel(imovel);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -35,7 +35,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputId").focus();
+        document.getElementById("inputNumMatricula").focus();
         return;
     }
 }
@@ -46,7 +46,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputId").focus();
+    document.getElementById("inputNumMatricula").focus();
 
 }
 
@@ -76,38 +76,41 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    let id;
-    if (papelaria == null) {
-        id = parseInt(document.getElementById("inputId").value);
+    let numMatricula;
+    if (imovel == null) {
+        numMatricula = parseInt(document.getElementById("inputNumMatricula").value);
     } else {
-        id = papelaria.id;
+        numMatricula = imovel.numMatricula;
     }
 
-    const nome = document.getElementById("inputNome").value;
-    const categoria = document.getElementById("inputCategoria").value;
-    const quantidadeEstoque = parseInt(document.getElementById("inputQuantidadeEstoque").value);
-    const precoUnitario = parseFloat(document.getElementById("inputPrecoUnitario").value);
+    const endereco = document.getElementById("inputEndereco").value;
+    const bairro = document.getElementById("inputBairro").value;
+    const tipo = document.getElementById("inputTipo").value;
+    const area = parseInt(document.getElementById("inputArea").value);
+    const comodos = parseInt(document.getElementById("inputComodos").value);
+    const alugado = parseInt(document.getElementById("inputAlugado").value);
+    const dataConclusao = document.getElementById("inputDataConclusao").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (id && nome && categoria && quantidadeEstoque && precoUnitario) {// se tudo certo 
+    if (numMatricula && endereco && bairro && tipo && area && comodos && alugado && dataConclusao) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                papelaria = new Papelaria(id, nome, categoria, quantidadeEstoque, precoUnitario);
-                listaPapelaria.push(papelaria);
+                imovel = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugado, dataConclusao);
+                listaImovel.push(imovel);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                papelariaAlterado = new Papelaria(id, nome, categoria, quantidadeEstoque, precoUnitario);
-                listaPapelaria[papelaria.posicaoNaLista] = papelariaAlterado;
+                imovelAlterado = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugado, dataConclusao);
+                listaImovel[imovel.posicaoNaLista] = imovelAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaPapelaria.length; i++) {
-                    if (papelaria.posicaoNaLista != i) {
-                        novaLista.push(listaPapelaria[i]);
+                for (let i = 0; i < listaImovel.length; i++) {
+                    if (imovel.posicaoNaLista != i) {
+                        novaLista.push(listaImovel[i]);
                     }
                 }
-                listaPapelaria = novaLista;
+                listaImovel = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -117,7 +120,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputId").focus();
+        document.getElementById("inputNumMatricula").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -130,18 +133,21 @@ function preparaListagem(vetor) {
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
         texto +=
-            linha.id + " - " +
-            linha.nome + " - " +
-            linha.categoria + " - " +
-            linha.quantidadeEstoque + " - " +
-            linha.precoUnitario + "<br>";
+            linha.numMatricula + " - " +
+            linha.endereco + " - " +
+            linha.bairro + " - " +
+            linha.tipo + " - " +
+            linha.area + " - " +
+            linha.comodos + " - " +
+            linha.alugado + " - " +
+            linha.dataConclusao + "<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaPapelaria);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaImovel);
 }
 
 function cancelarOperacao() {
@@ -156,13 +162,16 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Papelaria nos campos
-function mostrarDadosPapelaria(papelaria) {
-    document.getElementById("inputId").value = papelaria.id;
-    document.getElementById("inputNome").value = papelaria.nome;
-    document.getElementById("inputCategoria").value = papelaria.categoria;
-    document.getElementById("inputQuantidadeEstoque").value = papelaria.quantidadeEstoque;
-    document.getElementById("inputPrecoUnitario").value = papelaria.precoUnitario;
+// Função para mostrar os dados do Imovel nos campos
+function mostrarDadosImovel(imovel) {
+    document.getElementById("inputNumMatricula").value = imovel.numMatricula;
+    document.getElementById("inputEndereco").value = imovel.endereco;
+    document.getElementById("inputBairro").value = imovel.bairro;
+    document.getElementById("inputTipo").value = imovel.tipo;
+    document.getElementById("inputArea").value = imovel.area;
+    document.getElementById("inputComodos").value = imovel.comodos;
+    document.getElementById("inputAlugado").value = imovel.alugado;
+    document.getElementById("inputDataConclusao").value = imovel.dataConclusao;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -170,21 +179,27 @@ function mostrarDadosPapelaria(papelaria) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputNome").value = "";
-    document.getElementById("inputCategoria").value = "";
-    document.getElementById("inputQuantidadeEstoque").value = "";
-    document.getElementById("inputPrecoUnitario").value = "";
+    document.getElementById("inputEndereco").value = "";
+    document.getElementById("inputBairro").value = "";
+    document.getElementById("inputTipo").value = "";
+    document.getElementById("inputArea").value = "";
+    document.getElementById("inputComodos").value = "";
+    document.getElementById("inputAlugado").value = "";
+    document.getElementById("inputDataConclusao").value = "";
 
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputId").readOnly = !soLeitura;
-    document.getElementById("inputNome").readOnly = soLeitura;
-    document.getElementById("inputCategoria").readOnly = soLeitura;
-    document.getElementById("inputQuantidadeEstoque").readOnly = soLeitura;
-    document.getElementById("inputPrecoUnitario").readOnly = soLeitura;
+    document.getElementById("inputNumMatricula").readOnly = !soLeitura;
+    document.getElementById("inputEndereco").readOnly = soLeitura;
+    document.getElementById("inputBairro").readOnly = soLeitura;
+    document.getElementById("inputTipo").readOnly = soLeitura;
+    document.getElementById("inputArea").readOnly = soLeitura;
+    document.getElementById("inputComodos").readOnly = soLeitura;
+    document.getElementById("inputAlugado").readOnly = soLeitura;
+    document.getElementById("inputDataConclusao").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -199,7 +214,7 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputId").focus();
+    document.getElementById("inputNumMatricula").focus();
 }
 
 function persistirEmLocalPermanente(arquivoDestino, conteudo) {
@@ -240,39 +255,45 @@ function abrirArquivoSalvoEmLocalPermanente() {
 }
 
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Papelaria.csv";  //define o nome do arquivo csv
+    let nomeDoArquivoDestino = "./Imovel.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaPapelaria.length; i++) {
-        const linha = listaPapelaria[i]; //variavel linha contem as informações de cada papelaria
-        textoCSV += linha.id + ";" +
-            linha.nome + ";" +
-            linha.categoria + ";" +
-            linha.quantidadeEstoque + ";" +
-            linha.precoUnitario+"\n";
-    }
+    for (let i = 0; i < listaImovel.length; i++) {
+        const linha = listaImovel[i]; //variavel linha contem as informações de cada imovel
+        textoCSV += linha.numMatricula + ";" +
+            linha.endereco + ";" +
+            linha.bairro + ";" +
+            linha.tipo + ";" +
+            linha.area + ";" +
+            linha.comodos + ";" +
+            linha.alugado + ";" +
+            linha.dataConclusao + ";" 
+          }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaPapelaria
+// Função para processar o arquivo CSV e transferir os dados para a listaImovel
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaPapelaria = []; // Limpa a lista atual (se necessário)
+        listaImovel = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
-                if (dados.length === 5) { //verifica os seis campos
-                    // Adiciona os dados à listaPapelaria como um objeto
-                    listaPapelaria.push({
-                        id: dados[0],
-                        nome: dados[1],
-                        categoria: dados[2],
-                        quantidadeEstoque: dados[3],
-                        precoUnitario: dados[4]
+                if (dados.length === 8) { //verifica os seis campos
+                    // Adiciona os dados à listaImovel como um objeto
+                    listaImovel.push({
+                        numMatricula: dados[0],
+                        endereco: dados[1],
+                        bairro: dados[2],
+                        tipo: dados[3],
+                        area: dados[4],
+                        comodos: dados[5],
+                        alugado: dados[6],
+                        dataConclusao: dados[7]
                     });
                 }
             }
@@ -282,29 +303,3 @@ function converterDeCSVparaListaObjeto(arquivo) {
     leitor.readAsText(arquivo); // Lê o arquivo como texto
 }
 
-function filtrarPorCategoria() {
-    const categoriaFiltro = document.getElementById("selectCategorias").value;
-    if (categoriaFiltro) {
-
-        if (categoriaFiltro=="todas") {
-            document.getElementById("outputSaida").innerHTML =
-             preparaListagem(listaPapelaria);
-            return;
-        }
-
-        //  const listaFiltrada = listaPapelaria.filter(papelaria => papelaria.categoria === categoriaFiltro);
-        let listaFiltrada = [];
-        for (let i = 0; i < listaPapelaria.length; i++) {
-            const linha = listaPapelaria[i];
-            if (linha.categoria == categoriaFiltro) {
-                listaFiltrada.push(linha);
-            }
-
-        }
-        document.getElementById("outputSaida").innerHTML = 
-        preparaListagem(listaFiltrada);
-    } else {
-        listar(); // Se o filtro estiver vazio, mostra toda a lista
-        mostrarAviso("Mostrando todos os itens (sem filtro)");
-    }
-}

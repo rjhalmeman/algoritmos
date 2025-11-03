@@ -1,0 +1,8 @@
+int;numMatricula
+String;endereco;50
+String;bairro;10
+String;tipo;20
+int;area;10
+int;comodos;10
+int;alugado;10
+Date;dataConclusao
