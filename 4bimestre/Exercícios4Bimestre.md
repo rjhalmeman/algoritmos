@@ -187,13 +187,21 @@ Adicione a possibilidade de escolher uma categoria e seu programa vai mostrar to
 ## Imovel
 
 int;numMatricula
+
 String;endereco
+
 String;bairro
+
 String;tipo
+
 float;area
+
 int;comodos
+
 boolean;alugado
+
 Date;dataDeConclusaoDaConstrucao
+
 
 
 Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo.
