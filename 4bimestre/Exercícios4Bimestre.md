@@ -199,11 +199,17 @@ Date;dataDeConclusaoDaConstrucao
 Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo.
 
 O número da matrícula não pode ser zero ou negativo.
+
  Para o atributo bairro, use um menu suspenso para que o usuário possa escolhem entre 5 bairros.
+
  Os tipos são residencial, comercial ou rural. Use um menu suspenso.
+
  A quantidade de cômodos não pode ser menor do que 1. 
+
  O atributo alugado deve ter um checkbox.  
+
  Use eventos onChange nos menus suspensos.
+
 
 --- 
 
@@ -212,15 +218,25 @@ O número da matrícula não pode ser zero ou negativo.
 ## Aluguel
 
 int;numeroContrato
+
 String;nomeProprietario
+
 String;nomeInquilino
+
 float;valorAluguel
+
 int;prazoDoContratoEmMeses
+
 boolean;estaAlugado
+
 Date;dataDeInicioDoContrato
+
 String;cepImovel
+
 String;enderecoImovel
+
 String;bairro
+
 String;cidade
 
 ### Restrições
