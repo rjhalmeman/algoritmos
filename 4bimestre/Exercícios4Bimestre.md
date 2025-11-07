@@ -217,8 +217,6 @@ A quantidade de cômodos não pode ser menor do que 1.
 
 O atributo alugado deve ter um checkbox.  
 
-Use eventos onChange nos menus suspensos.
-
 
 --- 
 
@@ -274,17 +272,17 @@ Ao digitar o cep é possível usar uma API para preencher os demais atributos. C
 
 ### Tabela `Equipamento`
 
-| Tipo | Atributo | Descrição / Restrição |
-|------|-----------|------------------------|
-| `int` | **patrimonio** 
-| `string` | **descricao** 
-| `date` | **dataDeAquisicao** 
-| `string` | **localizacao** 
-| `boolean` | **emManutencao** | Usar **checkbox** |
+| Tipo | Atributo | 
+|------|-----------|
+| `int` | **patrimonio** |
+| `string` | **descricao**| 
+| `date` | **dataDeAquisicao** |
+| `string` | **localizacao** |
+| `boolean` | **emManutencao** |
 
 ---
 
-### Resumo das Restrições
+### Restrições
 - `patrimonio`: 6 dígitos obrigatórios  
 - `dataDeAquisicao`: não pode ser futura  
 - `localizacao`: usar `<datalist>` com opções predefinidas -sugestões: “E001”, “E007”, “F001”
@@ -292,8 +290,8 @@ Ao digitar o cep é possível usar uma API para preencher os demais atributos. C
 
 ### Funcionalidades
 
-Possibilite escolher uma localização e liste todos os equipamentos desta localização.
-Liste todos os equipamentos que estão em manutenção
+- Possibilite escolher uma localização e liste todos os equipamentos desta localização.
+- Liste todos os equipamentos que estão em manutenção
 
 
 
