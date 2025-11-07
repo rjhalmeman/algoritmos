@@ -268,9 +268,9 @@ Ao digitar o cep é possível usar uma API para preencher os demais atributos. C
 
 --- 
 
-## 17) CRUD: Controle de Equipamentos
+## 17) CRUD para controle de Equipamentos
 
-### Tabela `Equipamento`
+### `Equipamento`
 
 | Tipo | Atributo | 
 |------|-----------|
