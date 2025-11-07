@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de Data</title>
+</head>
+
+<body>
+    <h2>Exemplo: validar se a data não é anterior a hoje</h2>
+
+    <label for="data">Escolha uma data:</label>
+    <input type="date" id="data">
+
+    <script>
+
+        function formatarData(dataISO) {
+            // Exemplo de entrada: "2025-11-07"
+            const partes = dataISO.split('-'); // divide em ["2025", "11", "07"]
+            const ano = partes[0];
+            const mes = partes[1];
+            const dia = partes[2];
+
+            return `${dia}/${mes}/${ano}`;
+        }
+
+        const campoData = document.getElementById('data');
+
+        // Data atual no formato YYYY-MM-DD
+        const hoje = new Date().toISOString().split('T')[0];
+
+        // Quando o usuário mudar a data
+        campoData.addEventListener('change', function () {
+            const dataEscolhida = campoData.value;
+
+            if (dataEscolhida < hoje) {
+                alert("A data não pode ser anterior à data atual!");
+                campoData.value = ""; // limpa o campo
+            } else {
+
+                alert("Data escolhida " + formatarData(campoData.value) + " Data válida!");
+            }
+        });
+    </script>
+</body>
+
+</html>

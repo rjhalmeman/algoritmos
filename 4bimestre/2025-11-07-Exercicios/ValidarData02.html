@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Validação de Data</title>
+</head>
+<body>
+  <h2>Exemplo: validar data mínima (não pode ser anterior a hoje)</h2>
+
+  <form id="formData">
+    <label for="data">Escolha uma data:</label>
+    <input type="date" id="data" name="data" required>
+    <br><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="mensagem"></p>
+
+  <script>
+    // Obtém o elemento input da data
+    const campoData = document.getElementById('data');
+
+    // Obtém a data de hoje no formato YYYY-MM-DD
+    const hoje = new Date().toISOString().split('T')[0];
+
+    // Define a data mínima como hoje
+    campoData.min = hoje;
+
+    // Quando o formulário for enviado...
+    document.getElementById('formData').addEventListener('submit', function(evento) {
+      const dataEscolhida = campoData.value;
+      const mensagem = document.getElementById('mensagem');
+
+      // Verifica se a data é anterior a hoje
+      if (dataEscolhida < hoje) {
+        evento.preventDefault(); // impede o envio do formulário
+        mensagem.textContent = "❌ A data não pode ser anterior a hoje.";
+      } else {
+        mensagem.textContent = "✅ Data válida!";
+      }
+    });
+  </script>
+</body>
+</html>
