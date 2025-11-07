@@ -180,41 +180,30 @@ Faça um CRUD completo para gerenciar a lista, usando menu suspenso, data list e
 
 Adicione a possibilidade de escolher uma categoria e seu programa vai mostrar todos os elementos daquela categoria. Deve-se usar um menu suspenso na escolha da categoria.
 
-15) Faça um CRUD completo para 
+--- 
+
+# 15) Faça um CRUD completo para 
     
 ## Imovel
 
 int;numMatricula
-
 String;endereco
-
 String;bairro
-
 String;tipo
-
 float;area
-
 int;comodos
-
 boolean;alugado
-
 Date;dataDeConclusaoDaConstrucao
 
 
 Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo.
 
 O número da matrícula não pode ser zero ou negativo.
-
- Para o atributo bairro, use um menu suspenso para que o usuário possa escolhem entre 5 bairros. 
-
+ Para o atributo bairro, use um menu suspenso para que o usuário possa escolhem entre 5 bairros.
  Os tipos são residencial, comercial ou rural. Use um menu suspenso.
-
  A quantidade de cômodos não pode ser menor do que 1. 
-
- O atributo alugado deve ter um checkbox. 
- 
+ O atributo alugado deve ter um checkbox.  
  Use eventos onChange nos menus suspensos.
-
 
 --- 
 
