@@ -218,30 +218,20 @@ O número da matrícula não pode ser zero ou negativo.
 
 --- 
 
-16) Faça um CRUD completo para:
+# 16) Faça um CRUD completo para:
 
 ## Aluguel
 
 int;numeroContrato
-
 String;nomeProprietario
-
 String;nomeInquilino
-
 float;valorAluguel
-
 int;prazoDoContratoEmMeses
-
 boolean;estaAlugado
-
 Date;dataDeInicioDoContrato
-
 String;cepImovel
-
 String;enderecoImovel
-
 String;bairro
-
 String;cidade
 
 ### Restrições
@@ -280,11 +270,16 @@ Ao digitar o cep é possível usar uma API para preencher os demais atributos. C
 
 ---
 
-### ⚙️ Resumo das Restrições
+### Resumo das Restrições
 - `patrimonio`: 6 dígitos obrigatórios  
 - `dataDeAquisicao`: não pode ser futura  
 - `localizacao`: usar `<datalist>` com opções predefinidas -sugestões: “E001”, “E007”, “F001”
 - `emManutencao`: usar `<input type="checkbox">`
+
+### Funcionalidades
+
+Possibilite escolher uma localização e liste todos os equipamentos desta localização.
+Liste todos os equipamentos que estão em manutenção
 
 
 
