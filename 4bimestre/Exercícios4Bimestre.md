@@ -264,8 +264,28 @@ Ao informar a dataDeInicioDoContrato, deve-se calcular e mostrar a data de térm
 Extra:
 Ao digitar o cep é possível usar uma API para preencher os demais atributos. Consulte https://viacep.com.br/. 
 
+--- 
+
+## 17) CRUD: Controle de Equipamentos
+
+### Tabela `Equipamento`
+
+| Tipo | Atributo | Descrição / Restrição |
+|------|-----------|------------------------|
+| `int` | **patrimonio** 
+| `string` | **descricao** 
+| `date` | **dataDeAquisicao** 
+| `string` | **localizacao** 
+| `boolean` | **emManutencao** | Usar **checkbox** |
+
+---
+
+### ⚙️ Resumo das Restrições
+- `patrimonio`: 6 dígitos obrigatórios  
+- `dataDeAquisicao`: não pode ser futura  
+- `localizacao`: usar `<datalist>` com opções predefinidas -sugestões: “E001”, “E007”, “F001”
+- `emManutencao`: usar `<input type="checkbox">`
 
 
 
-
-
+---
