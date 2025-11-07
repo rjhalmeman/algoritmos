@@ -21,6 +21,10 @@ function procure() {
         mostrarAviso("Precisa ser um número inteiro");
         document.getElementById("inputNumMatricula").focus();
         return;
+    } else if (numMatricula <= 0) {
+        mostrarAviso("Precisa ser um número inteiro MAIOR que zero");
+        document.getElementById("inputNumMatricula").focus();
+        return;
     }
 
     if (numMatricula) { // se digitou um NumMatricula
@@ -88,18 +92,32 @@ function salvar() {
     const tipo = document.getElementById("inputTipo").value;
     const area = parseInt(document.getElementById("inputArea").value);
     const comodos = parseInt(document.getElementById("inputComodos").value);
-    const alugado = parseInt(document.getElementById("inputAlugado").value);
+
+    if (isNaN(area) || area <= 0) {
+        mostrarAviso("Área precisa ser um número maior que zero");
+        document.getElementById("inputArea").focus();
+        return;
+    }
+    
+    if (isNaN(comodos) || comodos <= 0) {           
+        mostrarAviso("Cômodos precisa ser um número maior ou igual a 1");
+        document.getElementById("inputComodos").focus();
+        return;
+    }
+
+    let alugado = document.getElementById("inputAlugado").checked;
+    let alugadoTraduzido = alugado ? "Sim" : "Não";// para armazenar na lista como "Sim" ou "Não"
     const dataConclusao = document.getElementById("inputDataConclusao").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (numMatricula && endereco && bairro && tipo && area && comodos && alugado && dataConclusao) {// se tudo certo 
+    if (numMatricula && endereco && bairro && tipo && area && comodos && dataConclusao) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                imovel = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugado, dataConclusao);
+                imovel = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugadoTraduzido, dataConclusao);
                 listaImovel.push(imovel);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                imovelAlterado = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugado, dataConclusao);
+                imovelAlterado = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugadoTraduzido, dataConclusao);
                 listaImovel[imovel.posicaoNaLista] = imovelAlterado;
                 mostrarAviso("Alterado");
                 break;
@@ -166,11 +184,13 @@ function mostrarAviso(mensagem) {
 function mostrarDadosImovel(imovel) {
     document.getElementById("inputNumMatricula").value = imovel.numMatricula;
     document.getElementById("inputEndereco").value = imovel.endereco;
+
+    //bairro como select, então atribui o valor diretamente
     document.getElementById("inputBairro").value = imovel.bairro;
     document.getElementById("inputTipo").value = imovel.tipo;
     document.getElementById("inputArea").value = imovel.area;
     document.getElementById("inputComodos").value = imovel.comodos;
-    document.getElementById("inputAlugado").value = imovel.alugado;
+    document.getElementById("inputAlugado").checked = imovel.alugado == "Sim" ? true : false;
     document.getElementById("inputDataConclusao").value = imovel.dataConclusao;
 
     // Define os campos como readonly
@@ -184,7 +204,7 @@ function limparAtributos() {
     document.getElementById("inputTipo").value = "";
     document.getElementById("inputArea").value = "";
     document.getElementById("inputComodos").value = "";
-    document.getElementById("inputAlugado").value = "";
+    document.getElementById("inputAlugado").checked = false;
     document.getElementById("inputDataConclusao").value = "";
 
     bloquearAtributos(true);
@@ -266,8 +286,8 @@ function prepararESalvarCSV() { //gera um arquivo csv com as informações da li
             linha.area + ";" +
             linha.comodos + ";" +
             linha.alugado + ";" +
-            linha.dataConclusao + ";" 
-          }
+            linha.dataConclusao + ";"
+    }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
