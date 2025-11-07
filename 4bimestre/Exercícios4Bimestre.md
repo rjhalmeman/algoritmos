@@ -204,19 +204,20 @@ Date;dataDeConclusaoDaConstrucao
 
 
 
-Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo.
+
+### Após fazer o CRUD básico funcionar, acrescente as funcionalidades abaixo.
 
 O número da matrícula não pode ser zero ou negativo.
 
- Para o atributo bairro, use um menu suspenso para que o usuário possa escolhem entre 5 bairros.
+Para o atributo bairro, use um menu suspenso para que o usuário possa escolhem entre 5 bairros.
 
- Os tipos são residencial, comercial ou rural. Use um menu suspenso.
+Os tipos são residencial, comercial ou rural. Use um menu suspenso.
 
- A quantidade de cômodos não pode ser menor do que 1. 
+A quantidade de cômodos não pode ser menor do que 1. 
 
- O atributo alugado deve ter um checkbox.  
+O atributo alugado deve ter um checkbox.  
 
- Use eventos onChange nos menus suspensos.
+Use eventos onChange nos menus suspensos.
 
 
 --- 
