@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Equipamentos</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Equipamentos</h1>
+
+   <label for="inputPatrimonio">Patrimonio</label>
+   <input type="number" name="inputPatrimonio" id="inputPatrimonio">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+   <label for="inputdescricao">descricao</label>
+   <input type="text" name="inputdescricao" id="inputdescricao">
+   <br>
+   <label for="inputDataDeAquisicao">dataDeAquisicao</label>
+   <input type="date" name="inputDataDeAquisicao" id="inputDataDeAquisicao">
+   <br>
+   <label for="inputlocalizacao">localizacao</label>
+   <select id="inputlocalizacao">
+      <option value="E001">E001</option>
+      <option value="E002">E002</option>
+      <option value="E003">E003</option>
+      <option value="F001">F001</option>
+      <option value="E107">E107</option>
+   </select>
+   <br>
+   <label for="inputEmManutencao">emManutencao?</label>
+   <input type="checkbox" name="inputEmManutencao" id="inputEmManutencao">
+   <br>
+     
+   <label for="inputDataConclusao">dataConclusao</label>
+   <input type="date" name="inputDataConclusao" id="inputDataConclusao">
+   <br><br>
+   
+   <div id="divAviso" style="background-color: rgb(255, 164, 45);"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: rgb(253, 179, 83);">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./Equipamentos.js"></script>
+   <script src="./EquipamentosControle.js"></script>
+</body>
+
+</html>

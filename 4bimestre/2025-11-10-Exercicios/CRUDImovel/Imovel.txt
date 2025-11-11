@@ -1,0 +1,11 @@
+int;numeroContrato
+String;nomeProprietario
+String;nomeInquilino
+float;valorAluguel
+int;prazoDoContratoEmMeses
+int;estaAlugado
+Date;dataDeInicioDoContrato
+String;cepImovel
+String;enderecoImovel
+String;bairro
+String;cidade
