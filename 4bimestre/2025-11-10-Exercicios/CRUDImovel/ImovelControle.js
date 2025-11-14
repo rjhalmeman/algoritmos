@@ -87,14 +87,16 @@ function salvar() {
     const nomeInquilino = document.getElementById("inputNomeInquilino").value;
     const valorAluguel = parseFloat(document.getElementById("inputValorAluguel").value);
     const prazoDoContratoEmMeses = parseInt(document.getElementById("inputPrazoDoContratoEmMeses").value);
-    const estaAlugado = document.getElementById("inputEstaAlugado").value;
+    const estaAlugado = document.getElementById("inputEstaAlugado").checked;        
     const dataDeInicioDoContrato = document.getElementById("inputDataDeInicioDoContrato").value;
     const cepImovel = document.getElementById("inputCepImovel").value;
     const enderecoImovel = document.getElementById("inputEnderecoImovel").value;
     const bairro = document.getElementById("inputBairro").value;
     const cidade = document.getElementById("inputCidade").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (numeroContrato && nomeProprietario && nomeInquilino && valorAluguel && prazoDoContratoEmMeses &&  dataDeInicioDoContrato && cepImovel && enderecoImovel && bairro && cidade) {// se tudo certo 
+
+
+    if (numeroContrato && nomeProprietario && nomeInquilino && valorAluguel && prazoDoContratoEmMeses  && dataDeInicioDoContrato && cepImovel && enderecoImovel && bairro && cidade) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
                 imovel = new Imovel(numeroContrato, nomeProprietario, nomeInquilino, valorAluguel, prazoDoContratoEmMeses, estaAlugado, dataDeInicioDoContrato, cepImovel, enderecoImovel, bairro, cidade);
@@ -141,7 +143,7 @@ function preparaListagem(vetor) {
             linha.nomeInquilino + " - " +
             linha.valorAluguel + " - " +
             linha.prazoDoContratoEmMeses + " - " +
-            linha.estaAlugado?"Sim":"Não" + " - " +
+            linha.estaAlugado + " - " +
             linha.dataDeInicioDoContrato + " - " +
             linha.cepImovel + " - " +
             linha.enderecoImovel + " - " +
@@ -192,7 +194,7 @@ function limparAtributos() {
     document.getElementById("inputNomeInquilino").value = "";
     document.getElementById("inputValorAluguel").value = "";
     document.getElementById("inputPrazoDoContratoEmMeses").value = "";
-    document.getElementById("inputEstaAlugado").checked = false;
+    document.getElementById("inputEstaAlugado").value = "";
     document.getElementById("inputDataDeInicioDoContrato").value = "";
     document.getElementById("inputCepImovel").value = "";
     document.getElementById("inputEnderecoImovel").value = "";
@@ -284,7 +286,7 @@ function prepararESalvarCSV() { //gera um arquivo csv com as informações da li
             linha.cepImovel + ";" +
             linha.enderecoImovel + ";" +
             linha.bairro + ";" +
-            linha.cidade
+            linha.cidade + "\n"
     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
