@@ -296,3 +296,29 @@ Ao digitar o cep é possível usar uma API para preencher os demais atributos. C
 
 
 ---
+## 18) CRUD para controle cadastro de Material Escolar
+
+
+
+| Tipo | Atributo | 
+|------|-----------|
+| `int` | **id_material** |
+| `string` | **nome_material**| 
+| `date` | **data_de_validade** |
+| `string` | **quantidade_estoque** |
+| `float` | **preco_unitario** |
+| `string` | **categoria** | (Cadernos, Canetas, Borrachas)
+
+---
+
+### Restrições
+- `id_material`: maior que zero  
+- `data_de_validade`: não pode ser data passada  
+- `quantidade_estoque`: maior que zero
+- `categoria`: usar `menu suspenso`
+
+### Funcionalidades
+
+- Liste todos os materiais de uma categoria
+- procure um material pelo nome
+- liste todos os materiais com menos de 5 unidades no estoque

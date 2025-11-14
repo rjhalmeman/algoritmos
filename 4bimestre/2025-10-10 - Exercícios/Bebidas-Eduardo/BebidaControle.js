@@ -133,7 +133,9 @@ function preparaListagem(vetor) {
         const linha = vetor[i];
         texto +=
             linha.id + " - " +
-            linha.nome + " - " + linha.fabricante + " - " + linha.precoEtiqueta + " - " + (linha.ehAlcolico ? "Sim" : "Não") + "<br>"; //se ehAlcolico for true, escreve Sim, senão escreve Não
+            linha.nome + " - " + linha.fabricante + " - " 
+            + linha.precoEtiqueta + " - " 
+            + (linha.ehAlcolico ? "Sim" : "Não") + "<br>"; //se ehAlcolico for true, escreve Sim, senão escreve Não
     }
     return texto;
 }
