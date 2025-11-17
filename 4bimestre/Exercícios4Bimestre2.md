@@ -23,7 +23,21 @@
   -   Listar todas as especialidades por conselho regional
   -   Procurar especialidade pelo nome
   -   Listar especialidades com tempo de formação acima de 5 anos
+-   
 
+** Exemplos de conselhos regionais
+
+    1. CRM – Conselho Regional de Medicina - médicos
+    2. CRO – Conselho Regional de Odontologia -  dentistas
+    3. CRP – Conselho Regional de Psicologia -  psicólogos
+    4. COREN – Conselho Regional de Enfermagem -  enfermeiros e técnicos de enfermagem
+    5. CREFITO – Conselho Regional de Fisioterapia e Terapia Ocupacional -  fisioterapeutas e terapeutas ocupacionais
+    6. CRF – Conselho Regional de Farmácia -  farmacêuticos
+    7. CRN – Conselho Regional de Nutricionistas -  nutricionistas
+    8. CREF – Conselho Regional de Educação Física - profissionais de educação física
+    9. CRBM – Conselho Regional de Biomedicina -  biomédicos
+    10. CRFA – Conselho Regional de Fonoaudiologia -  fonoaudiólogos
+    
 ------------------------------------------------------------------------
 
 # 2) CRUD para controle de **Exames de Saúde**
@@ -107,8 +121,8 @@
 
 ### Funcionalidades
 
-  -   Listar materiais por categoria\
-  -   Listar materiais com estoque inferior a 10 unidades\
+  -   Listar materiais por categoria
+  -   Listar materiais com estoque inferior a 10 unidades
   -   Buscar material pelo nome
   -   Liste todos os produtos cuja dada de validade está a uma semana do vencimento do produto
 
@@ -125,7 +139,7 @@
     `float`    **potencia_cv**
     `string`   **tipo_tracao**
     `int`      **horas_trabalhadas**
-    `int`      **horas_entre_manutencoes** //quantidade de horas que trabalha para daí ser enviado para manutenção
+    `int`      **horas_entre_manutencoes** //quantidade de horas que trabalha antes de ser enviado para manutenção
     `date`     **data_ultima_manutencao**
 
 ### Restrições
