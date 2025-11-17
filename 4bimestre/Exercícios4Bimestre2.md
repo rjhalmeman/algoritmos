@@ -2,7 +2,7 @@
 
 # 1) CRUD para controle de **Especialidade Médica**
 
-  Tipo       Atributo
+   Tipo       Atributo
   ---------- -------------------------
     `int`      **id_especialidade**
     `string`   **nome_especialidade**
@@ -42,8 +42,8 @@
 
 # 2) CRUD para controle de **Exames de Saúde**
 
-  Tipo       Atributo
-  ---------- -----------------------------
+   Tipo       Atributo
+   ---------- -----------------------------
       - `int`      **id_exame**
       - `string`   **nome_exame**
       - `string`   **tipo_exame**
