@@ -35,25 +35,31 @@
   Tipo       Atributo
   ---------- -----------------------------
   `int`      **id_exame**
+
   `string`   **nome_exame**
+
   `string`   **tipo_exame**
+
   `date`     **data_validade_resultado**
+
   `float`    **custo_exame**
+
   `int`      **tempo_resultado_dias**
+
 
 ### Restrições
 
--   `id_exame`: maior que zero\
--   `data_validade_resultado`: não pode ser passada\
--   `custo_exame`: maior que zero\
--   `tempo_resultado_dias`: entre 1 e 30\
--   `tipo_exame`: selecionar via menu suspenso
+    -   `id_exame`: maior que zero
+    -   `data_validade_resultado`: não pode ser passada
+    -   `custo_exame`: maior que zero
+    -   `tempo_resultado_dias`: entre 1 e 30
+    -   `tipo_exame`: selecionar via menu suspenso
 
 ### Funcionalidades
 
--   Listar exames por tipo\
--   Buscar exame pelo nome\
--   Listar exames cujo custo ultrapasse determinado valor
+    -   Listar exames por tipo
+    -   Buscar exame pelo nome
+    -   Listar exames cujo custo ultrapasse determinado valor
 
 ------------------------------------------------------------------------
 
