@@ -2,7 +2,7 @@
 
 # 1) CRUD para controle de **Especialidade Médica**
 
-   Tipo       Atributo
+   Tipo     -     Atributo
   ---------- -------------------------
     `int`      **id_especialidade**
     `string`   **nome_especialidade**
@@ -42,7 +42,7 @@
 
 # 2) CRUD para controle de **Exames de Saúde**
 
-   Tipo       Atributo
+   Tipo     -     Atributo
    ---------- -----------------------------
       - `int`      **id_exame**
       - `string`   **nome_exame**
@@ -72,7 +72,7 @@
 
 # 3) CRUD para controle de **Linguagem de Programação**
 
-  Tipo       Atributo
+  Tipo     -     Atributo
   ---------- --------------------------
     `int`      **id_linguagem**
     `string`   **nome_linguagem**
@@ -99,7 +99,7 @@
 
 # 4) CRUD para controle de **Material de Construção**
 
-  Tipo       Atributo
+  Tipo     -     Atributo
   ---------- ----------------------------
     `int`      **id_material_construcao**
     `string`   **nome_material**
@@ -130,7 +130,7 @@
 
 # 5) CRUD para controle de **Trator (Máquinas Agrícolas)**
 
-  Tipo       Atributo
+  Tipo     -     Atributo
   ---------- ----------------------------
     `int`      **id_trator**
     `string`   **modelo**
