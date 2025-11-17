@@ -4,23 +4,19 @@
 
   Tipo       Atributo
   ---------- -------------------------
-  `int`      **id_especialidade**
-
-  `string`   **nome_especialidade**
-
-  `string`   **area_atuacao**
-
-  `int`      **tempo_formacao_anos**
-
-  `string`   **conselho_regional**
+    `int`      **id_especialidade**
+    `string`   **nome_especialidade**
+    `string`   **area_atuacao**
+    `int`      **tempo_formacao_anos**
+    `string`   **conselho_regional**
 
 
 ### Restrições
 
-  -   `id_especialidade`: maior que zero
-  -   `nome_especialidade`: mínimo 3 caracteres
-  -   `tempo_formacao_anos`: maior ou igual a 2
-  -   `conselho_regional`: selecionar via menu suspenso a qual conselho está vinculado
+    -   `id_especialidade`: maior que zero
+    -   `nome_especialidade`: mínimo 3 caracteres
+    -   `tempo_formacao_anos`: maior ou igual a 2
+    -   `conselho_regional`: selecionar via menu suspenso a qual conselho está vinculado
 
 ### Funcionalidades
 
@@ -34,19 +30,13 @@
 
   Tipo       Atributo
   ---------- -----------------------------
-  `int`      **id_exame**
-
-  `string`   **nome_exame**
-
-  `string`   **tipo_exame**
-
-  `date`     **data_validade_resultado**
-
-  `float`    **custo_exame**
-
-  `int`      **tempo_resultado_dias**
-
-  `string`    **nome_laboratorio**
+      - `int`      **id_exame**
+      - `string`   **nome_exame**
+      - `string`   **tipo_exame**
+      - `date`     **data_validade_resultado**
+      - `float`    **custo_exame**
+      - `int`      **tempo_resultado_dias**
+      - `string`    **nome_laboratorio**
 
 
 ### Restrições
@@ -79,16 +69,16 @@
 
 ### Restrições
 
-  -   `id_linguagem`: maior que zero\
-  -   `nome_linguagem`: mínimo 2 caracteres\
-  -   `ano_criacao`: não pode ser futura\
-  -   `popularidade_indices`: entre 0 e 100\
-  -   `paradigma`: menu suspenso
+      -   `id_linguagem`: maior que zero
+      -   `nome_linguagem`: mínimo 2 caracteres
+      -   `ano_criacao`: não pode ser futura
+      -   `popularidade_indices`: entre 0 e 100
+      -   `paradigma`: menu suspenso
 
 ### Funcionalidades
 
-    -   Listar linguagens por paradigma\
-    -   Buscar linguagem pelo nome\
+    -   Listar linguagens por paradigma
+    -   Buscar linguagem pelo nome
     -   Listar linguagens criadas antes do ano 2000
 
 ------------------------------------------------------------------------
@@ -108,12 +98,12 @@
 
 ### Restrições
 
-  -   `id_material_construcao`: maior que zero
-  -   `preco_unitario`: maior que zero
-  -   `quantidade_estoque`: maior ou igual a zero
-  -   `unidade_de_medida` : escolher em data list
-  -   `data_validade`: não pode ser passada
-  -   `categoria`: menu suspenso
+      -   `id_material_construcao`: maior que zero
+      -   `preco_unitario`: maior que zero
+      -   `quantidade_estoque`: maior ou igual a zero
+      -   `unidade_de_medida` : escolher em data list
+      -   `data_validade`: não pode ser passada
+      -   `categoria`: menu suspenso
 
 ### Funcionalidades
 
@@ -140,12 +130,12 @@
 
 ### Restrições
 
-  -   `id_trator`: maior que zero
-  -   `ano_fabricacao`: não pode ser futuro
-  -   `potencia_cv`: maior que zero
-  -   `horas_trabalhadas`: maior ou igual a zero
-  -   `tipo_tracao`: menu suspenso
-  -   `data_ultima_manutencao`: não pode ser futura
+      -   `id_trator`: maior que zero
+      -   `ano_fabricacao`: não pode ser futuro
+      -   `potencia_cv`: maior que zero
+      -   `horas_trabalhadas`: maior ou igual a zero
+      -   `tipo_tracao`: menu suspenso
+      -   `data_ultima_manutencao`: não pode ser futura
 
 ### Funcionalidades
 
