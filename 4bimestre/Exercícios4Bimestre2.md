@@ -1,14 +1,14 @@
 
 
-# 1) CRUD para controle de **Especialidade Médica**
+# 1) CRUD para controle de  Especialidade Médica 
 
    Tipo     -     Atributo
   ---------- -------------------------
-    `int`      **id_especialidade**
-    `string`   **nome_especialidade**
-    `string`   **area_atuacao**
-    `int`      **tempo_formacao_anos**
-    `string`   **conselho_regional**
+    `int`       id_especialidade 
+    `string`    nome_especialidade 
+    `string`    area_atuacao 
+    `int`       tempo_formacao_anos 
+    `string`    conselho_regional 
 
 
 ### Restrições
@@ -25,7 +25,7 @@
   -   Listar especialidades com tempo de formação acima de 5 anos
 -   
 
-** Exemplos de conselhos regionais
+  Exemplos de conselhos regionais
 
     1. CRM – Conselho Regional de Medicina - médicos
     2. CRO – Conselho Regional de Odontologia -  dentistas
@@ -40,17 +40,17 @@
     
 ------------------------------------------------------------------------
 
-# 2) CRUD para controle de **Exames de Saúde**
+# 2) CRUD para controle de  Exames de Saúde 
 
    Tipo     -     Atributo
    ---------- -----------------------------
-      - `int`      **id_exame**
-      - `string`   **nome_exame**
-      - `string`   **tipo_exame**
-      - `date`     **data_validade_resultado**
-      - `float`    **custo_exame**
-      - `int`      **tempo_resultado_dias**
-      - `string`    **nome_laboratorio**
+      - `int`       id_exame 
+      - `string`    nome_exame 
+      - `string`    tipo_exame 
+      - `date`      data_validade_resultado 
+      - `float`     custo_exame 
+      - `int`       tempo_resultado_dias 
+      - `string`     nome_laboratorio 
 
 
 ### Restrições
@@ -70,16 +70,16 @@
 
 ------------------------------------------------------------------------
 
-# 3) CRUD para controle de **Linguagem de Programação**
+# 3) CRUD para controle de  Linguagem de Programação 
 
   Tipo     -     Atributo
   ---------- --------------------------
-    `int`      **id_linguagem**
-    `string`   **nome_linguagem**
-    `date`     **ano_criacao**
-    `string`   **paradigma** //pesquise para saber do que se trata
-    `string`   **criador**
-    `int`      **popularidade_indices**
+    `int`       id_linguagem 
+    `string`    nome_linguagem 
+    `date`      ano_criacao 
+    `string`    paradigma  //pesquise para saber do que se trata
+    `string`    criador 
+    `int`       popularidade_indices 
 
 ### Restrições
 
@@ -97,18 +97,18 @@
 
 ------------------------------------------------------------------------
 
-# 4) CRUD para controle de **Material de Construção**
+# 4) CRUD para controle de  Material de Construção 
 
   Tipo     -     Atributo
   ---------- ----------------------------
-    `int`      **id_material_construcao**
-    `string`   **nome_material**
-    `string`   **categoria**
-    `float`    **preco_unitario**
-    `int`      **quantidade_estoque**
-    `string`   **unidade_de_medida**
-    `string`   **fabricante**
-    `date`     **data_validade**
+    `int`       id_material_construcao 
+    `string`    nome_material 
+    `string`    categoria 
+    `float`     preco_unitario 
+    `int`       quantidade_estoque 
+    `string`    unidade_de_medida 
+    `string`    fabricante 
+    `date`      data_validade 
 
 ### Restrições
 
@@ -128,19 +128,19 @@
 
 ------------------------------------------------------------------------
 
-# 5) CRUD para controle de **Trator (Máquinas Agrícolas)**
+# 5) CRUD para controle de  Trator (Máquinas Agrícolas) 
 
   Tipo     -     Atributo
   ---------- ----------------------------
-    `int`      **id_trator**
-    `string`   **modelo**
-    `string`   **marca**
-    `int`      **ano_fabricacao**
-    `float`    **potencia_cv**
-    `string`   **tipo_tracao**
-    `int`      **horas_trabalhadas**
-    `int`      **horas_entre_manutencoes** //quantidade de horas que trabalha antes de ser enviado para manutenção
-    `date`     **data_ultima_manutencao**
+    `int`       id_trator 
+    `string`    modelo 
+    `string`    marca 
+    `int`       ano_fabricacao 
+    `float`     potencia_cv 
+    `string`    tipo_tracao 
+    `int`       horas_trabalhadas 
+    `int`       horas_entre_manutencoes  //quantidade de horas que trabalha antes de ser enviado para manutenção
+    `date`      data_ultima_manutencao 
 
 ### Restrições
 
