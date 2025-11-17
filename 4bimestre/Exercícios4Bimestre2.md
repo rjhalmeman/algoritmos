@@ -13,7 +13,7 @@
   `int`      **tempo_formacao_anos**
 
   `string`   **conselho_regional**
-  
+
 
 ### Restrições
 
@@ -24,8 +24,8 @@
 
 ### Funcionalidades
 
--   Listar todas as especialidades por conselho regional\
--   Procurar especialidade pelo nome\
+-   Listar todas as especialidades por conselho regional
+-   Procurar especialidade pelo nome
 -   Listar especialidades com tempo de formação acima de 5 anos
 
 ------------------------------------------------------------------------
