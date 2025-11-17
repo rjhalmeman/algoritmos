@@ -5,10 +5,15 @@
   Tipo       Atributo
   ---------- -------------------------
   `int`      **id_especialidade**
+
   `string`   **nome_especialidade**
+
   `string`   **area_atuacao**
+
   `int`      **tempo_formacao_anos**
+
   `string`   **conselho_regional**
+  
 
 ### Restrições
 
