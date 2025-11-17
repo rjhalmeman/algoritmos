@@ -12,10 +12,10 @@
 
 ### Restrições
 
--   `id_especialidade`: maior que zero\
--   `nome_especialidade`: mínimo 3 caracteres\
--   `tempo_formacao_anos`: maior ou igual a 2\
--   `conselho_regional`: selecionar via menu suspenso
+  -   `id_especialidade`: maior que zero
+  -   `nome_especialidade`: mínimo 3 caracteres
+  -   `tempo_formacao_anos`: maior ou igual a 2
+  -   `conselho_regional`: selecionar via menu suspenso
 
 ### Funcionalidades
 
