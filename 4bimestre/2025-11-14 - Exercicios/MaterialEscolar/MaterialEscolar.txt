@@ -1,0 +1,6 @@
+int;id_material; 10
+String;nome_material; 50 
+Date;data_de_validade; 10
+int;quantidade_estoque;10 
+float;preco_unitario; 10
+String;categoria;50

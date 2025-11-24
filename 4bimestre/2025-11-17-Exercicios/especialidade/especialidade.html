@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Especialidade Médica</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Especialidades Médicas</h1>
+
+   <label for="inputId">Id</label>
+   <input type="number" name="inputId" id="inputId">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputNome">Nome</label>
+   <input type="text" name="inputNome" id="inputNome">
+   <br>
+
+   <label for="inputArea">Área</label>
+   <input type="text" name="inputArea" id="inputArea">
+   <br>
+
+   <label for="inputTempo">Tempo</label>
+   <input type="number" name="inputTempo" id="inputTempo">
+   <br>
+
+   <label for="inputConselho">Conselho</label>
+   <input type="text" name="inputConselho" id="inputConselho">
+   <br>
+
+   <br><br>
+   <div id="divAviso" style="background-color: rgb(247, 73, 180);"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: rgb(223, 153, 202);">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./especialidadeClass.js"></script>
+   <script src="./especialidadeControle.js"></script>
+</body>
+
+</html>

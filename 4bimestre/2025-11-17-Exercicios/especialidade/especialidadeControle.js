@@ -1,14 +1,14 @@
-let listaImovel = []; //conjunto de dados
+let listaEspecialidade = []; 
 let oQueEstaFazendo = ''; //variável global de controle
-let imovel = null; //variavel global 
+ let especialidade = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaImovel.length; i++) {
-        const imovel = listaImovel[i];
-        if (imovel.numMatricula == chave) {
-            imovel.posicaoNaLista = i;
-            return listaImovel[i];
+    for (let i = 0; i < listaEspecialidade.length; i++) {
+         especialidade = listaEspecialidade[i];
+        if (especialidade.id == chave) {
+            especialidade.posicaoNaLista = i;
+            return listaEspecialidade[i];
         }
     }
     return null;//não achou
@@ -16,22 +16,17 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const numMatricula = 
-          document.getElementById("inputNumMatricula").value;
-    if (isNaN(numMatricula) || !Number.isInteger(Number(numMatricula))) {
+    const id = parseInt(document.getElementById("inputId").value);
+    if (isNaN(id) || !Number.isInteger(Number(id))) {
         mostrarAviso("Precisa ser um número inteiro");
-        document.getElementById("inputNumMatricula").focus();
-        return;
-    } else if (numMatricula <= 0) {
-        mostrarAviso("Precisa ser um número inteiro MAIOR que zero");
-        document.getElementById("inputNumMatricula").focus();
+        document.getElementById("inputId").focus();
         return;
     }
 
-    if (numMatricula) { // se digitou um NumMatricula
-        imovel = procurePorChavePrimaria(numMatricula);
-        if (imovel) { //achou na lista
-            mostrarDadosImovel(imovel);
+    if (id) { // se digitou um Id
+        especialidade = procurePorChavePrimaria(id);
+        if (especialidade) { //achou na lista
+            mostrarDadosEspecialidade(especialidade);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -40,7 +35,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputNumMatricula").focus();
+        document.getElementById("inputId").focus();
         return;
     }
 }
@@ -51,7 +46,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputNumMatricula").focus();
+    document.getElementById("inputId").focus();
 
 }
 
@@ -81,55 +76,38 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    let numMatricula;
-    if (imovel == null) {
-        numMatricula = parseInt(document.getElementById("inputNumMatricula").value);
+    const id = parseInt(document.getElementById("inputId").value);
+    if (especialidade == null) {
+        id = parseInt(document.getElementById("inputId").value);
     } else {
-        numMatricula = imovel.numMatricula;
+        id = especialidade.id;
     }
-
-    const endereco = document.getElementById("inputEndereco").value;
-    const bairro = document.getElementById("inputBairro").value;
-    const tipo = document.getElementById("inputTipo").value;
-    const area = parseInt(document.getElementById("inputArea").value);
-    const comodos = parseInt(document.getElementById("inputComodos").value);
-
-    if (isNaN(area) || area <= 0) {
-        mostrarAviso("Área precisa ser um número maior que zero");
-        document.getElementById("inputArea").focus();
-        return;
-    }
-    
-    if (isNaN(comodos) || comodos <= 0) {           
-        mostrarAviso("Cômodos precisa ser um número maior ou igual a 1");
-        document.getElementById("inputComodos").focus();
-        return;
-    }
-
-    let alugado = document.getElementById("inputAlugado").checked;
-    let alugadoTraduzido = alugado ? "Sim" : "Não";// para armazenar na lista como "Sim" ou "Não"
-    const dataConclusao = document.getElementById("inputDataConclusao").value;
+ 
+    const nome = document.getElementById("inputNome").value;
+    const area = document.getElementById("inputArea").value;
+    const tempo = parseInt(document.getElementById("inputTempo").value);
+    const conselho = document.getElementById("inputconselho").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (numMatricula && endereco && bairro && tipo && area && comodos && dataConclusao) {// se tudo certo 
+    if (id && nome && area && tempo && conselho) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                imovel = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugadoTraduzido, dataConclusao);
-                listaImovel.push(imovel);
+                especialidade = new Especialidade(id, nome, area, tempo, conselho);
+                listaEspecialidade.push(especialidade);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                imovelAlterado = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugadoTraduzido, dataConclusao);
-                listaImovel[imovel.posicaoNaLista] = imovelAlterado;
+                especialidadeAlterado = new Especialidade(id, nome, area, tempo, conselho);
+                listaEspecialidade[especialidade.posicaoNaLista] = especialidadeAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaImovel.length; i++) {
-                    if (imovel.posicaoNaLista != i) {
-                        novaLista.push(listaImovel[i]);
+                for (let i = 0; i < listaEspecialidade.length; i++) {
+                    if (especialidade.posicaoNaLista != i) {
+                        novaLista.push(listaEspecialidade[i]);
                     }
                 }
-                listaImovel = novaLista;
+                listaEspecialidade = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -139,7 +117,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputNumMatricula").focus();
+        document.getElementById("inputId").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -152,21 +130,19 @@ function preparaListagem(vetor) {
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
         texto +=
-            linha.numMatricula + " - " +
-            linha.endereco + " - " +
-            linha.bairro + " - " +
-            linha.tipo + " - " +
+            linha.id + " - " +
+            linha.nome + " - " +
             linha.area + " - " +
-            linha.comodos + " - " +
-            linha.alugado + " - " +
-            linha.dataConclusao + "<br>";
+            linha.tempo + " - " +
+            linha.conselho +
+            "<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaImovel);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaEspecialidade);
 }
 
 function cancelarOperacao() {
@@ -181,18 +157,14 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Imovel nos campos
-function mostrarDadosImovel(imovel) {
-    document.getElementById("inputNumMatricula").value = imovel.numMatricula;
-    document.getElementById("inputEndereco").value = imovel.endereco;
+// Função para mostrar os dados do Especialidade nos campos
+function mostrarDadosEspecialidade(especialidade) {
+    document.getElementById("inputId").value = especialidade.id;
+    document.getElementById("inputNome").value = especialidade.nome;
+    document.getElementById("inputArea").value = especialidade.area;
+    document.getElementById("inputTempo").value = especialidade.tempo;
+    document.getElementById("inputconselho").value = especialidade.conselho;
 
-    //bairro como select, então atribui o valor diretamente
-    document.getElementById("inputBairro").value = imovel.bairro;
-    document.getElementById("inputTipo").value = imovel.tipo;
-    document.getElementById("inputArea").value = imovel.area;
-    document.getElementById("inputComodos").value = imovel.comodos;
-    document.getElementById("inputAlugado").checked = imovel.alugado == "Sim" ? true : false;
-    document.getElementById("inputDataConclusao").value = imovel.dataConclusao;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -200,27 +172,22 @@ function mostrarDadosImovel(imovel) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputEndereco").value = "";
-    document.getElementById("inputBairro").value = "";
-    document.getElementById("inputTipo").value = "";
+    document.getElementById("inputId").value = "";
+    document.getElementById("inputNome").value = "";
     document.getElementById("inputArea").value = "";
-    document.getElementById("inputComodos").value = "";
-    document.getElementById("inputAlugado").checked = false;
-    document.getElementById("inputDataConclusao").value = "";
-
+    document.getElementById("inputTempo").value ="";
+    document.getElementById("inputConselho").value = "";
+    
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputNumMatricula").readOnly = !soLeitura;
-    document.getElementById("inputEndereco").readOnly = soLeitura;
-    document.getElementById("inputBairro").readOnly = soLeitura;
-    document.getElementById("inputTipo").readOnly = soLeitura;
+    document.getElementById("inputId").readOnly = !soLeitura;
+    document.getElementById("inputNome").readOnly = soLeitura;
     document.getElementById("inputArea").readOnly = soLeitura;
-    document.getElementById("inputComodos").readOnly = soLeitura;
-    document.getElementById("inputAlugado").readOnly = soLeitura;
-    document.getElementById("inputDataConclusao").readOnly = soLeitura;
+    document.getElementById("inputTempo").readOnly = soLeitura;
+    document.getElementById("inputConselho").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -235,7 +202,7 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputNumMatricula").focus();
+    document.getElementById("inputId").focus();
 }
 
 function persistirEmLocalPermanente(arquivoDestino, conteudo) {
@@ -275,46 +242,48 @@ function abrirArquivoSalvoEmLocalPermanente() {
     input.click(); //seletor de arquivos exibido automaticamente    
 }
 
+
+
+
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Imovel.csv";  //define o nome do arquivo csv
+    let nomeDoArquivoDestino = "./Especialidade.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaImovel.length; i++) {
-        const linha = listaImovel[i]; //variavel linha contem as informações de cada imovel
-        textoCSV += linha.numMatricula + ";" +
-            linha.endereco + ";" +
-            linha.bairro + ";" +
-            linha.tipo + ";" +
+     let fimDeLinha = "\n";
+    for (let i = 0; i < listaEspecialidade.length; i++) {
+        const linha = listaEspecialidade[i]; //variavel linha contem as informações de cada especialidade
+         if (i == listaEspecialidade.length - 1) {
+            fimDeLinha = "";
+        }
+        textoCSV += linha.id + ";" +
+            linha.nome + ";" +
             linha.area + ";" +
-            linha.comodos + ";" +
-            linha.alugado + ";" +
-            linha.dataConclusao + ";"
+            linha.tempo + ";" +
+            linha.conselho + 
+            fimDeLinha;
     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaImovel
+// Função para processar o arquivo CSV e transferir os dados para a listaEspecialidade
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaImovel = []; // Limpa a lista atual (se necessário)
+        listaEspecialidade = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
-                if (dados.length === 8) { //verifica os seis campos
-                    // Adiciona os dados à listaImovel como um objeto
-                    listaImovel.push({
-                        numMatricula: dados[0],
-                        endereco: dados[1],
-                        bairro: dados[2],
-                        tipo: dados[3],
-                        area: dados[4],
-                        comodos: dados[5],
-                        alugado: dados[6],
-                        dataConclusao: dados[7]
+                if (dados.length === 5) { //verifica os seis campos
+                    // Adiciona os dados à listaEspecialidade como um objeto
+                    listaEspecialidade.push({
+                        id: dados[0],
+                        nome: dados[1],
+                        area: dados[2],
+                        tempo: dados[3],
+                        conselho: dados[4]
                     });
                 }
             }
@@ -323,4 +292,3 @@ function converterDeCSVparaListaObjeto(arquivo) {
     };
     leitor.readAsText(arquivo); // Lê o arquivo como texto
 }
-

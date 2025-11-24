@@ -1,37 +1,37 @@
-let listaImovel = []; //conjunto de dados
+let listaMaterialEscolar = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
-let imovel = null; //variavel global 
+let materialEscolar = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
-    for (let i = 0; i < listaImovel.length; i++) {
-        const imovel = listaImovel[i];
-        if (imovel.numMatricula == chave) {
-            imovel.posicaoNaLista = i;
-            return listaImovel[i];
+    for (let i = 0; i < listaMaterialEscolar.length; i++) {
+        const materialEscolar = listaMaterialEscolar[i];
+        if (materialEscolar.id_material == chave) {
+            materialEscolar.posicaoNaLista = i;
+            return listaMaterialEscolar[i];
         }
     }
     return null;//não achou
 }
 
+function verData(){
+    let aux = document.getElementById("inputData_de_validade").value;
+    alert(aux);
+}
+
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const numMatricula = 
-          document.getElementById("inputNumMatricula").value;
-    if (isNaN(numMatricula) || !Number.isInteger(Number(numMatricula))) {
+    const id_material = document.getElementById("inputId_material").value;
+    if (isNaN(id_material) || !Number.isInteger(Number(id_material))) {
         mostrarAviso("Precisa ser um número inteiro");
-        document.getElementById("inputNumMatricula").focus();
-        return;
-    } else if (numMatricula <= 0) {
-        mostrarAviso("Precisa ser um número inteiro MAIOR que zero");
-        document.getElementById("inputNumMatricula").focus();
+        document.getElementById("inputId_material").focus();
         return;
     }
 
-    if (numMatricula) { // se digitou um NumMatricula
-        imovel = procurePorChavePrimaria(numMatricula);
-        if (imovel) { //achou na lista
-            mostrarDadosImovel(imovel);
+    if (id_material) { // se digitou um Id_material
+        materialEscolar = procurePorChavePrimaria(id_material);
+        if (materialEscolar) { //achou na lista
+            mostrarDadosMaterialEscolar(materialEscolar);
             visibilidadeDosBotoes('inline', 'none', 'inline', 'inline', 'none'); // Habilita botões de alterar e excluir
             mostrarAviso("Achou na lista, pode alterar ou excluir");
         } else { //não achou na lista
@@ -40,7 +40,7 @@ function procure() {
             mostrarAviso("Não achou na lista, pode inserir");
         }
     } else {
-        document.getElementById("inputNumMatricula").focus();
+        document.getElementById("inputId_material").focus();
         return;
     }
 }
@@ -51,7 +51,7 @@ function inserir() {
     visibilidadeDosBotoes('none', 'none', 'none', 'none', 'inline'); //visibilidadeDosBotoes(procure,inserir,alterar,excluir,salvar)
     oQueEstaFazendo = 'inserindo';
     mostrarAviso("INSERINDO - Digite os atributos e clic o botão salvar");
-    document.getElementById("inputNumMatricula").focus();
+    document.getElementById("inputId_material").focus();
 
 }
 
@@ -81,55 +81,39 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    let numMatricula;
-    if (imovel == null) {
-        numMatricula = parseInt(document.getElementById("inputNumMatricula").value);
+    let id_material;
+    if (materialEscolar == null) {
+        id_material = parseInt(document.getElementById("inputId_material").value);
     } else {
-        numMatricula = imovel.numMatricula;
+        id_material = materialEscolar.id_material;
     }
 
-    const endereco = document.getElementById("inputEndereco").value;
-    const bairro = document.getElementById("inputBairro").value;
-    const tipo = document.getElementById("inputTipo").value;
-    const area = parseInt(document.getElementById("inputArea").value);
-    const comodos = parseInt(document.getElementById("inputComodos").value);
-
-    if (isNaN(area) || area <= 0) {
-        mostrarAviso("Área precisa ser um número maior que zero");
-        document.getElementById("inputArea").focus();
-        return;
-    }
-    
-    if (isNaN(comodos) || comodos <= 0) {           
-        mostrarAviso("Cômodos precisa ser um número maior ou igual a 1");
-        document.getElementById("inputComodos").focus();
-        return;
-    }
-
-    let alugado = document.getElementById("inputAlugado").checked;
-    let alugadoTraduzido = alugado ? "Sim" : "Não";// para armazenar na lista como "Sim" ou "Não"
-    const dataConclusao = document.getElementById("inputDataConclusao").value;
+    const nome_material = document.getElementById("inputNome_material").value;
+    const data_de_validade = document.getElementById("inputData_de_validade").value;
+    const quantidade_estoque = parseInt(document.getElementById("inputQuantidade_estoque").value);
+    const preco_unitario = parseFloat(document.getElementById("inputPreco_unitario").value);
+    const categoria = document.getElementById("inputCategoria").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (numMatricula && endereco && bairro && tipo && area && comodos && dataConclusao) {// se tudo certo 
+    if (id_material && nome_material && data_de_validade && quantidade_estoque && preco_unitario && categoria) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                imovel = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugadoTraduzido, dataConclusao);
-                listaImovel.push(imovel);
+                materialEscolar = new MaterialEscolar(id_material, nome_material, data_de_validade, quantidade_estoque, preco_unitario, categoria);
+                listaMaterialEscolar.push(materialEscolar);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                imovelAlterado = new Imovel(numMatricula, endereco, bairro, tipo, area, comodos, alugadoTraduzido, dataConclusao);
-                listaImovel[imovel.posicaoNaLista] = imovelAlterado;
+                materialEscolarAlterado = new MaterialEscolar(id_material, nome_material, data_de_validade, quantidade_estoque, preco_unitario, categoria);
+                listaMaterialEscolar[materialEscolar.posicaoNaLista] = materialEscolarAlterado;
                 mostrarAviso("Alterado");
                 break;
             case 'excluindo':
                 let novaLista = [];
-                for (let i = 0; i < listaImovel.length; i++) {
-                    if (imovel.posicaoNaLista != i) {
-                        novaLista.push(listaImovel[i]);
+                for (let i = 0; i < listaMaterialEscolar.length; i++) {
+                    if (materialEscolar.posicaoNaLista != i) {
+                        novaLista.push(listaMaterialEscolar[i]);
                     }
                 }
-                listaImovel = novaLista;
+                listaMaterialEscolar = novaLista;
                 mostrarAviso("EXCLUIDO");
                 break;
             default:
@@ -139,7 +123,7 @@ function salvar() {
         visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
         limparAtributos();
         listar();
-        document.getElementById("inputNumMatricula").focus();
+        document.getElementById("inputId_material").focus();
     } else {
         alert("Erro nos dados digitados");
         return;
@@ -152,21 +136,19 @@ function preparaListagem(vetor) {
     for (let i = 0; i < vetor.length; i++) {
         const linha = vetor[i];
         texto +=
-            linha.numMatricula + " - " +
-            linha.endereco + " - " +
-            linha.bairro + " - " +
-            linha.tipo + " - " +
-            linha.area + " - " +
-            linha.comodos + " - " +
-            linha.alugado + " - " +
-            linha.dataConclusao + "<br>";
+            linha.id_material + " - " +
+            linha.nome_material + " - " +
+            linha.data_de_validade + " - " +
+            linha.quantidade_estoque + " - " +
+            linha.preco_unitario + " - " +
+            linha.categoria + "<br>";
     }
     return texto;
 }
 
 //backend->frontend (interage com html)
 function listar() {
-    document.getElementById("outputSaida").innerHTML = preparaListagem(listaImovel);
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaMaterialEscolar);
 }
 
 function cancelarOperacao() {
@@ -181,18 +163,14 @@ function mostrarAviso(mensagem) {
     document.getElementById("divAviso").innerHTML = mensagem;
 }
 
-// Função para mostrar os dados do Imovel nos campos
-function mostrarDadosImovel(imovel) {
-    document.getElementById("inputNumMatricula").value = imovel.numMatricula;
-    document.getElementById("inputEndereco").value = imovel.endereco;
-
-    //bairro como select, então atribui o valor diretamente
-    document.getElementById("inputBairro").value = imovel.bairro;
-    document.getElementById("inputTipo").value = imovel.tipo;
-    document.getElementById("inputArea").value = imovel.area;
-    document.getElementById("inputComodos").value = imovel.comodos;
-    document.getElementById("inputAlugado").checked = imovel.alugado == "Sim" ? true : false;
-    document.getElementById("inputDataConclusao").value = imovel.dataConclusao;
+// Função para mostrar os dados do MaterialEscolar nos campos
+function mostrarDadosMaterialEscolar(materialEscolar) {
+    document.getElementById("inputId_material").value = materialEscolar.id_material;
+    document.getElementById("inputNome_material").value = materialEscolar.nome_material;
+    document.getElementById("inputData_de_validade").value = materialEscolar.data_de_validade;
+    document.getElementById("inputQuantidade_estoque").value = materialEscolar.quantidade_estoque;
+    document.getElementById("inputPreco_unitario").value = materialEscolar.preco_unitario;
+    document.getElementById("inputCategoria").value = materialEscolar.categoria;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -200,27 +178,23 @@ function mostrarDadosImovel(imovel) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputEndereco").value = "";
-    document.getElementById("inputBairro").value = "";
-    document.getElementById("inputTipo").value = "";
-    document.getElementById("inputArea").value = "";
-    document.getElementById("inputComodos").value = "";
-    document.getElementById("inputAlugado").checked = false;
-    document.getElementById("inputDataConclusao").value = "";
+    document.getElementById("inputNome_material").value = "";
+    document.getElementById("inputData_de_validade").value = "";
+    document.getElementById("inputQuantidade_estoque").value = "";
+    document.getElementById("inputPreco_unitario").value = "";
+    document.getElementById("inputCategoria").value = "";
 
     bloquearAtributos(true);
 }
 
 function bloquearAtributos(soLeitura) {
     //quando a chave primaria possibilita edicao, tranca (readonly) os outros e vice-versa
-    document.getElementById("inputNumMatricula").readOnly = !soLeitura;
-    document.getElementById("inputEndereco").readOnly = soLeitura;
-    document.getElementById("inputBairro").readOnly = soLeitura;
-    document.getElementById("inputTipo").readOnly = soLeitura;
-    document.getElementById("inputArea").readOnly = soLeitura;
-    document.getElementById("inputComodos").readOnly = soLeitura;
-    document.getElementById("inputAlugado").readOnly = soLeitura;
-    document.getElementById("inputDataConclusao").readOnly = soLeitura;
+    document.getElementById("inputId_material").readOnly = !soLeitura;
+    document.getElementById("inputNome_material").readOnly = soLeitura;
+    document.getElementById("inputData_de_validade").readOnly = soLeitura;
+    document.getElementById("inputQuantidade_estoque").readOnly = soLeitura;
+    document.getElementById("inputPreco_unitario").readOnly = soLeitura;
+    document.getElementById("inputCategoria").readOnly = soLeitura;
 }
 
 // Função para deixar visível ou invisível os botões
@@ -235,7 +209,7 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
     document.getElementById("btExcluir").style.display = btExcluir;
     document.getElementById("btSalvar").style.display = btSalvar;
     document.getElementById("btCancelar").style.display = btSalvar; // o cancelar sempre aparece junto com o salvar
-    document.getElementById("inputNumMatricula").focus();
+    document.getElementById("inputId_material").focus();
 }
 
 function persistirEmLocalPermanente(arquivoDestino, conteudo) {
@@ -276,45 +250,41 @@ function abrirArquivoSalvoEmLocalPermanente() {
 }
 
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
-    let nomeDoArquivoDestino = "./Imovel.csv";  //define o nome do arquivo csv
+    let nomeDoArquivoDestino = "./MaterialEscolar.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-    for (let i = 0; i < listaImovel.length; i++) {
-        const linha = listaImovel[i]; //variavel linha contem as informações de cada imovel
-        textoCSV += linha.numMatricula + ";" +
-            linha.endereco + ";" +
-            linha.bairro + ";" +
-            linha.tipo + ";" +
-            linha.area + ";" +
-            linha.comodos + ";" +
-            linha.alugado + ";" +
-            linha.dataConclusao + ";"
+    for (let i = 0; i < listaMaterialEscolar.length; i++) {
+        const linha = listaMaterialEscolar[i]; //variavel linha contem as informações de cada materialEscolar
+        textoCSV += linha.id_material + ";" +
+            linha.nome_material + ";" +
+            linha.data_de_validade + ";" +
+            linha.quantidade_estoque + ";" +
+            linha.preco_unitario + ";" +
+            linha.categoria + "\n";
     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
 
 
-// Função para processar o arquivo CSV e transferir os dados para a listaImovel
+// Função para processar o arquivo CSV e transferir os dados para a listaMaterialEscolar
 function converterDeCSVparaListaObjeto(arquivo) {
     const leitor = new FileReader();  //objeto que permite ler arquivos locais no navegador 
     leitor.onload = function (e) {
         const conteudo = e.target.result; // Conteúdo do arquivo CSV
         const linhas = conteudo.split('\n'); // Separa o conteúdo por linha
-        listaImovel = []; // Limpa a lista atual (se necessário)
+        listaMaterialEscolar = []; // Limpa a lista atual (se necessário)
         for (let i = 0; i < linhas.length; i++) {
             const linha = linhas[i].trim();  //linhas[i] representa cada linha do arquivo CSV
             if (linha) { //verifica se a linha não está vazia
                 const dados = linha.split(';'); // Separa os dados por ';'
-                if (dados.length === 8) { //verifica os seis campos
-                    // Adiciona os dados à listaImovel como um objeto
-                    listaImovel.push({
-                        numMatricula: dados[0],
-                        endereco: dados[1],
-                        bairro: dados[2],
-                        tipo: dados[3],
-                        area: dados[4],
-                        comodos: dados[5],
-                        alugado: dados[6],
-                        dataConclusao: dados[7]
+                if (dados.length === 6) { //verifica os seis campos
+                    // Adiciona os dados à listaMaterialEscolar como um objeto
+                    listaMaterialEscolar.push({
+                        id_material: dados[0],
+                        nome_material: dados[1],
+                        data_de_validade: dados[2],
+                        quantidade_estoque: dados[3],
+                        preco_unitario: dados[4],
+                        categoria: dados[5]
                     });
                 }
             }
