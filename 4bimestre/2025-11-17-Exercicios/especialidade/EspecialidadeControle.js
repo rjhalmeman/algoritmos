@@ -1,11 +1,11 @@
-let listaEspecialidade = []; 
+let listaEspecialidade = []; //conjunto de dados
 let oQueEstaFazendo = ''; //variável global de controle
- let especialidade = null; //variavel global 
+let especialidade = null; //variavel global 
 bloquearAtributos(true);
 //backend (não interage com o html)
 function procurePorChavePrimaria(chave) {
     for (let i = 0; i < listaEspecialidade.length; i++) {
-         especialidade = listaEspecialidade[i];
+        const especialidade = listaEspecialidade[i];
         if (especialidade.id == chave) {
             especialidade.posicaoNaLista = i;
             return listaEspecialidade[i];
@@ -16,7 +16,7 @@ function procurePorChavePrimaria(chave) {
 
 // Função para procurar um elemento pela chave primária   -------------------------------------------------------------
 function procure() {
-    const id = parseInt(document.getElementById("inputId").value);
+    const id = document.getElementById("inputId").value;
     if (isNaN(id) || !Number.isInteger(Number(id))) {
         mostrarAviso("Precisa ser um número inteiro");
         document.getElementById("inputId").focus();
@@ -76,17 +76,17 @@ function salvar() {
 
     // obter os dados a partir do html
 
-    const id = parseInt(document.getElementById("inputId").value);
+    let id;
     if (especialidade == null) {
         id = parseInt(document.getElementById("inputId").value);
     } else {
         id = especialidade.id;
     }
- 
+
     const nome = document.getElementById("inputNome").value;
     const area = document.getElementById("inputArea").value;
     const tempo = parseInt(document.getElementById("inputTempo").value);
-    const conselho = document.getElementById("inputconselho").value;
+    const conselho = document.getElementById("inputConselho").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
     if (id && nome && area && tempo && conselho) {// se tudo certo 
         switch (oQueEstaFazendo) {
@@ -134,8 +134,7 @@ function preparaListagem(vetor) {
             linha.nome + " - " +
             linha.area + " - " +
             linha.tempo + " - " +
-            linha.conselho +
-            "<br>";
+            linha.conselho + "<br>";
     }
     return texto;
 }
@@ -163,8 +162,7 @@ function mostrarDadosEspecialidade(especialidade) {
     document.getElementById("inputNome").value = especialidade.nome;
     document.getElementById("inputArea").value = especialidade.area;
     document.getElementById("inputTempo").value = especialidade.tempo;
-    document.getElementById("inputconselho").value = especialidade.conselho;
-
+    document.getElementById("inputConselho").value = especialidade.conselho;
 
     // Define os campos como readonly
     bloquearAtributos(true);
@@ -172,12 +170,11 @@ function mostrarDadosEspecialidade(especialidade) {
 
 // Função para limpar os dados dos campos
 function limparAtributos() {
-    document.getElementById("inputId").value = "";
     document.getElementById("inputNome").value = "";
     document.getElementById("inputArea").value = "";
-    document.getElementById("inputTempo").value ="";
+    document.getElementById("inputTempo").value = "";
     document.getElementById("inputConselho").value = "";
-    
+
     bloquearAtributos(true);
 }
 
@@ -242,24 +239,16 @@ function abrirArquivoSalvoEmLocalPermanente() {
     input.click(); //seletor de arquivos exibido automaticamente    
 }
 
-
-
-
 function prepararESalvarCSV() { //gera um arquivo csv com as informações da lista. Vai enviar da memória RAM para dispositivo de armazenamento permanente.
     let nomeDoArquivoDestino = "./Especialidade.csv";  //define o nome do arquivo csv
     let textoCSV = "";
-     let fimDeLinha = "\n";
     for (let i = 0; i < listaEspecialidade.length; i++) {
         const linha = listaEspecialidade[i]; //variavel linha contem as informações de cada especialidade
-         if (i == listaEspecialidade.length - 1) {
-            fimDeLinha = "";
-        }
         textoCSV += linha.id + ";" +
             linha.nome + ";" +
             linha.area + ";" +
             linha.tempo + ";" +
-            linha.conselho + 
-            fimDeLinha;
+            linha.conselho + "\n";
     }
     persistirEmLocalPermanente(nomeDoArquivoDestino, textoCSV);
 }
@@ -292,3 +281,4 @@ function converterDeCSVparaListaObjeto(arquivo) {
     };
     leitor.readAsText(arquivo); // Lê o arquivo como texto
 }
+

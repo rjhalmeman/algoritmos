@@ -1,0 +1,5 @@
+int;id;10
+String;nome;50
+String;area;10
+int;tempo;10
+String;conselho;10
