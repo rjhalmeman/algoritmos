@@ -23,6 +23,12 @@ function procure() {
         return;
     }
 
+    if (id <= 0) {
+        mostrarAviso("Precisa ser maior ou igual a zero");
+        document.getElementById("inputId").focus();
+        return;
+    }
+
     if (id) { // se digitou um Id
         especialidade = procurePorChavePrimaria(id);
         if (especialidade) { //achou na lista
@@ -84,11 +90,26 @@ function salvar() {
     }
 
     const nome = document.getElementById("inputNome").value;
+
+    if (nome.length < 4) {
+        mostrarAviso("A especialidade deve ter no mínimo 3 caracteres");
+        document.getElementById("inputNome").focus();
+        return;
+    }
+
     const area = document.getElementById("inputArea").value;
     const tempo = parseInt(document.getElementById("inputTempo").value);
+
+    if (tempo < 3) {
+        mostrarAviso("O tempo de formação deve ser maior ou igual a dois");
+        document.getElementById("inputTempo").focus();
+        return;
+    }
+
+
     const conselho = document.getElementById("inputConselho").value;
     //verificar se o que foi digitado pelo USUÁRIO está correto
-    if (id && nome && area && tempo && conselho) {// se tudo certo 
+    if (id && nome && area && conselho) {// se tudo certo 
         switch (oQueEstaFazendo) {
             case 'inserindo':
                 especialidade = new Especialidade(id, nome, area, tempo, conselho);
@@ -184,7 +205,7 @@ function bloquearAtributos(soLeitura) {
     document.getElementById("inputNome").readOnly = soLeitura;
     document.getElementById("inputArea").readOnly = soLeitura;
     document.getElementById("inputTempo").readOnly = soLeitura;
-    document.getElementById("inputConselho").readOnly = soLeitura;
+    document.getElementById("inputConselho").disabled = soLeitura; //mudar por que o elemento é diferente de input
 }
 
 // Função para deixar visível ou invisível os botões
@@ -282,3 +303,37 @@ function converterDeCSVparaListaObjeto(arquivo) {
     leitor.readAsText(arquivo); // Lê o arquivo como texto
 }
 
+function listarPorConselho() {
+    const conselhoEscolhido = document.getElementById("inputConselhoListar").value;
+    let listaConselho = [];
+    for (let i = 0; i < listaEspecialidade.length; i++) {
+        const linha = listaEspecialidade[i];       
+        if (linha.conselho == conselhoEscolhido) {
+            listaConselho.push(linha);
+        }
+    }
+    document.getElementById("outputSaida").innerHTML = preparaListagem(listaConselho);
+}
+
+function procurarPorNomeEspecialidade() {
+    const nomeEspecialidade = document.getElementById("inputNomeEspecialidade").value;
+    let encontrados = [];
+    for (let i = 0; i < listaEspecialidade.length; i++) {
+        const linha = listaEspecialidade[i];       
+        if (linha.nome == nomeEspecialidade) {
+            encontrados.push(linha);
+        }
+    }
+    document.getElementById("outputSaida").innerHTML = preparaListagem(encontrados);
+}
+
+function tempoDeFormacaoMaiorQueCincoAnos() {   
+    let encontrados = [];
+    for (let i = 0; i < listaEspecialidade.length; i++) {
+        const linha = listaEspecialidade[i];       
+        if (linha.tempo >=5) {
+            encontrados.push(linha);
+        }
+    }
+    document.getElementById("outputSaida").innerHTML = preparaListagem(encontrados);
+}

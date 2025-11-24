@@ -29,7 +29,20 @@
    <input type="number" name="inputTempo" id="inputTempo">
    <br>
    <label for="inputConselho">Conselho</label>
-   <input type="text" name="inputConselho" id="inputConselho">
+   <select name="inputConselho" id="inputConselho">
+      <option value="">Selecione um conselho</option>
+      <option value="CRM">CRM - Conselho Regional de Medicina (médicos)</option>
+      <option value="CRO">CRO - Conselho Regional de Odontologia (dentistas)</option>
+      <option value="CRP">CRP - Conselho Regional de Psicologia (psicólogos)</option>
+      <option value="COREN">COREN - Conselho Regional de Enfermagem (enfermeiros e técnicos de enfermagem)</option>
+      <option value="CREFITO">CREFITO - Conselho Regional de Fisioterapia e Terapia Ocupacional (fisioterapeutas e
+         terapeutas ocupacionais)</option>
+      <option value="CRF">CRF - Conselho Regional de Farmácia (farmacêuticos)</option>
+      <option value="CRN">CRN - Conselho Regional de Nutricionistas (nutricionistas)</option>
+      <option value="CREF">CREF - Conselho Regional de Educação Física (profissionais de educação física)</option>
+      <option value="CRBM">CRBM - Conselho Regional de Biomedicina (biomédicos)</option>
+      <option value="CRFA">CRFA - Conselho Regional de Fonoaudiologia (fonoaudiólogos)</option>
+   </select>
    <br>
 
    <br><br>
@@ -38,8 +51,32 @@
    <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
    <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
    <br><br>
-   <!-- <input type="button" value="Listar" onclick="listar()">
-    <br><br> -->
+   <input type="button" value="Listar" onclick="listar()">
+   <br><br>
+
+   <label for="inputConselhoListar">Conselho</label>
+   <select name="inputConselhoListar" id="inputConselhoListar">
+      <option value="">Selecione um conselho</option>
+      <option value="CRM">CRM - Conselho Regional de Medicina (médicos)</option>
+      <option value="CRO">CRO - Conselho Regional de Odontologia (dentistas)</option>
+      <option value="CRP">CRP - Conselho Regional de Psicologia (psicólogos)</option>
+      <option value="COREN">COREN - Conselho Regional de Enfermagem (enfermeiros e técnicos de enfermagem)</option>
+      <option value="CREFITO">CREFITO - Conselho Regional de Fisioterapia e Terapia Ocupacional (fisioterapeutas e
+         terapeutas ocupacionais)</option>
+      <option value="CRF">CRF - Conselho Regional de Farmácia (farmacêuticos)</option>
+      <option value="CRN">CRN - Conselho Regional de Nutricionistas (nutricionistas)</option>
+      <option value="CREF">CREF - Conselho Regional de Educação Física (profissionais de educação física)</option>
+      <option value="CRBM">CRBM - Conselho Regional de Biomedicina (biomédicos)</option>
+      <option value="CRFA">CRFA - Conselho Regional de Fonoaudiologia (fonoaudiólogos)</option>
+   </select>
+   <input type="button" value="Listar por conselho" onclick="listarPorConselho()">
+   <br>
+   <br>
+   <label for="inputNomeEspecialidade">Nome da Especialidade</label>
+   <input type="text" id="inputNomeEspecialidade">
+   <input type="button" value="Procurar por nome de especialidade" onclick="procurarPorNomeEspecialidade()">
+   <input type="button" value="Mais do que cinco anos de formação" onclick="tempoDeFormacaoMaiorQueCincoAnos()">
+   <br>
 
    <div id="outputSaida" style="background-color: aqua;">...</div>
 
