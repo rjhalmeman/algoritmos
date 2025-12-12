@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Radio - Seleção de Matéria Escolar</title>
+</head>
+<body>
+
+    <p>Por favor, selecione sua **matéria escolar** favorita:</p>
+
+    <input type="radio" id="matematica" name="fav_materia" value="Matemática">
+    <label for="matematica">Matemática</label><br>
+
+    <input type="radio" id="portugues" name="fav_materia" value="Português">
+    <label for="portugues">Português</label><br>
+
+    <input type="radio" id="historia" name="fav_materia" value="História">
+    <label for="historia">História</label><br>
+    
+    <input type="radio" id="ciencias" name="fav_materia" value="Ciências">
+    <label for="ciencias">Ciências</label><br><br>
+
+    <input type="button" value="Mostrar Minha Escolha" onclick="mostrarEscolha()">
+
+    <span id="resultado"></span>
+
+    <script>
+        // Função que será executada ao clicar no botão
+        function mostrarEscolha() {
+            // Pega referências dos elementos (o nome do grupo de radio buttons mudou para 'fav_materia')
+            const radioButtons = document.getElementsByName('fav_materia');
+            const resultadoSpan = document.getElementById('resultado');
+            let escolha = '';
+
+            // 1. Itera sobre os radio buttons para encontrar o que está marcado
+            for (let i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked) {
+                    // 2. Pega o valor (value) do radio button marcado
+                    escolha = radioButtons[i].value;
+                    break; // Para o loop assim que encontrar
+                }
+            }
+
+            // 3. Exibe o resultado no span
+            if (escolha) {
+                // Se um radio button foi selecionado
+                resultadoSpan.textContent = 'Sua matéria escolar favorita é: ' + escolha;
+                resultadoSpan.style.color = 'darkgreen'; // Cor de sucesso
+            } else {
+                // Se nenhum radio button foi selecionado
+                resultadoSpan.textContent = 'Por favor, selecione uma matéria antes de continuar.';
+                resultadoSpan.style.color = 'red'; // Cor de erro
+            }
+        }
+    </script>
+
+</body>
+</html>

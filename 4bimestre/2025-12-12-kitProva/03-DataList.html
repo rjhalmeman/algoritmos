@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - DataList - Sugestão de Matéria (Datalist)</title>   
+</head>
+
+<body>
+
+    <p>Digite ou selecione sua matéria do curso:</p>
+
+    <input list="materias" id="inputMateria" name="materia_curso" placeholder="Ex: Algoritmos">
+
+    <datalist id="materias">
+        <option value="Algoritmos e Estruturas de Dados">
+        <option value="Banco de Dados">
+        <option value="Redes de Computadores">
+        <option value="Engenharia de Software">
+        <option value="Inteligência Artificial">
+        <option value="Cálculo Diferencial e Integral">
+    </datalist>
+
+    <br><br>
+
+    <input type="button" value="Mostrar escolha" onclick="mostrarEscolhaDatalist()">
+
+    <span id="resultado"></span>
+
+    <script>
+
+        function mostrarEscolhaDatalist() {
+            // Pega referências dos elementos
+            const inputElement = document.getElementById('inputMateria');
+            const resultadoSpan = document.getElementById('resultado');
+
+
+            const escolha = inputElement.value.trim(); // Usa trim() para remover espaços
+
+
+            if (escolha !== "") {
+                // Se o campo não estiver vazio
+                resultadoSpan.textContent = 'Sua matéria escolhida/digitada é: ' + escolha;
+                resultadoSpan.style.color = 'darkgreen'; // Cor de sucesso
+            } else {
+                // Se o campo estiver vazio
+                resultadoSpan.textContent = 'Por favor, digite ou selecione uma matéria.';
+                resultadoSpan.style.color = 'red'; // Cor de erro
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Menu Suspenso - Seleção de Matéria</title>
+</head>
+
+<body>
+
+    <p>Por favor, selecione sua matéria favorita:</p>
+
+    <select id="materiaFavorita">
+        <option value="">-- Selecione uma opção --</option>
+        <option value="matematica">Matemática</option>
+        <option value="portugues">Português</option>
+        <option value="historia">História</option>
+        <option value="ciencias">Ciências</option>
+        <option value="ingles">Inglês</option>
+    </select>
+
+    <br><br>
+
+    <input type="button" value="Mostrar Minha Escolha" id="mostrarEscolhaBtn" onclick="mostrarEscolhaMateria()">
+
+    <span id="resultadoSpan"></span>
+
+    <script>
+        // Função que será executada ao clicar no botão
+        function mostrarEscolhaMateria() {
+            // 1. Pega uma referência ao elemento <select> usando seu ID
+            const selectElement = document.getElementById('materiaFavorita');
+
+            // 2. O valor selecionado em um <select> é acessado via a propriedade 'value'
+            const escolha = selectElement.value;
+
+            // O texto da opção selecionada (mais amigável) é acessado via selectedOptions[0].text
+            const textoEscolhido = selectElement.options[selectElement.selectedIndex].text;
+
+            // 3. Exibe a escolha em um   span
+            let oSpan = document.getElementById('resultadoSpan');
+            if (escolha && escolha !== "") {
+                // Usamos o texto para uma mensagem mais amigável
+                oSpan.innerHTML = 'Sua matéria favorita é: ' + textoEscolhido;
+            } else {
+                oSpan.innerHTML = 'Por favor, selecione uma matéria da lista.';
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

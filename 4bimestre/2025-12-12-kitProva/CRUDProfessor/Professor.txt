@@ -1,0 +1,7 @@
+int;id_prof;10
+String;nome;50
+String;disciplina;100
+int;tempo_experiencia;10
+String;titulacao;50
+String;aposentado;5
+Date;data_contratacao;10

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Professor</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Professor</h1>
+
+   <label for="inputId_prof">Id_prof</label>
+   <input type="number" name="inputId_prof" id="inputId_prof">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputNome">Nome</label>
+   <input type="text" name="inputNome" id="inputNome">
+   <br>
+   <label for="inputDisciplina">Disciplina</label>
+   <select id="inputDisciplina">
+      <option value="Matematica">Matematica</option>
+      <option value="Portugues">Portugues</option>
+      <option value="Química">Química</option>
+      <option value="Algoritmos">Algoritmos</option>
+      <option value="Historia">Historia</option>
+      <option value="Geografia">Geografia</option>
+      <option value="Inglês">Inglês</option>
+   </select>
+   <br>
+   <label for="inputTempo_experiencia">Tempo_experiencia</label>
+   <input type="number" name="inputTempo_experiencia" id="inputTempo_experiencia">
+   <br>
+   <label for="inputTitulacao">Titulacao</label>
+   <select id="inputTitulacao">
+      <option value="Graduado">Graduado</option>
+      <option value="Mestre">Mestre</option>
+      <option value="Doutor">Doutor</option>
+   </select>
+   <br>
+   <label for="inputAposentado">Aposentado</label>
+   <input type="checkbox" name="inputAposentado" id="inputAposentado">
+   <br>
+   <label for="inputData_contratacao">Data_contratacao</label>
+   <input type="date" name="inputData_contratacao" id="inputData_contratacao">
+   <br>
+
+   <br><br>
+   <div id="divAviso" style="background-color: antiquewhite;"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <input type="button" value="Listar" onclick="listar()">
+   <br><br>
+
+
+   <div id="outputSaida" style="background-color: aqua;">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+
+   <br><br>
+   <label for="inputTitulacaoPesquisa">Titulacao</label>
+   <select id="inputTitulacaoPesquisa">
+      <option value="Graduado">Graduado</option>
+      <option value="Mestre">Mestre</option>
+      <option value="Doutor">Doutor</option>
+   </select>
+   <input type="button" value="Pesquisar por Titulacao" id="btPesquisarPorTitulacao" onclick="pesquisarPorTitulacao()">
+   <br>
+   <br>
+   <label for="inputDisciplinaPesquisa">Disciplina</label>
+   <select id="inputDisciplinaPesquisa">
+      <option value="Matematica">Matematica</option>
+      <option value="Portugues">Portugues</option>
+      <option value="Química">Química</option>
+      <option value="Algoritmos">Algoritmos</option>
+      <option value="Historia">Historia</option>
+      <option value="Geografia">Geografia</option>
+      <option value="Inglês">Inglês</option>
+   </select>
+   <input type="button" value="Pesquisar por Disciplina" id="btPesquisarPorDisciplina"
+      onclick="pesquisarPorDisciplina()">
+   <br>
+
+   <br>
+   <input type="button" value="Mais de 5 anos de  tempo de experiencia" onclick="pesquisarPorTempo_experiencia()">
+   <br>
+   <br>
+   <input type="button" value="Último nome começado com S" onclick="pesquisarUltimoNomeComS()">
+
+   <script src="./Professor.js"></script>
+   <script src="./ProfessorControle.js"></script>
+</body>
+
+</html>

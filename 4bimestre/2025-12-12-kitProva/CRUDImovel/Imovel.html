@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CRUD Imovel</title>
+</head>
+
+<body>
+
+   <h1>Cadastro de Imovel</h1>
+
+   <label for="inputNumeroContrato">NumeroContrato</label>
+   <input type="text" name="inputNumeroContrato" id="inputNumeroContrato">
+   <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+   <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+   <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+   <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+   <br><br>
+
+   <label for="inputNomeProprietario">NomeProprietario</label>
+   <input type="text" name="inputNomeProprietario" id="inputNomeProprietario">
+   <br>
+   <label for="inputNomeInquilino">NomeInquilino</label>
+   <input type="text" name="inputNomeInquilino" id="inputNomeInquilino">
+   <br>
+   <label for="inputValorAluguel">ValorAluguel</label>
+   <input type="number" name="inputValorAluguel" id="inputValorAluguel">
+   <br>
+   <label for="inputPrazoDoContratoEmMeses">PrazoDoContratoEmMeses</label>
+   <input type="number" name="inputPrazoDoContratoEmMeses" id="inputPrazoDoContratoEmMeses">
+   <br>
+   <label for="inputEstaAlugado">EstaAlugado</label>
+   <input type="checkbox" name="inputEstaAlugado" id="inputEstaAlugado">
+   <br>
+   <label for="inputDataDeInicioDoContrato">DataDeInicioDoContrato</label>
+   <input type="date" name="inputDataDeInicioDoContrato" id="inputDataDeInicioDoContrato">
+   <br>
+   <label for="inputCepImovel">CepImovel</label>
+   <input type="text" name="inputCepImovel" id="inputCepImovel">
+   <br>
+   <label for="inputEnderecoImovel">EnderecoImovel</label>
+   <input type="text" name="inputEnderecoImovel" id="inputEnderecoImovel">
+   <br>
+   <label for="inputBairro">Bairro</label>
+   <input type="text" name="inputBairro" id="inputBairro">
+   <br>
+   <label for="inputCidade">Cidade</label>
+   <input type="text" name="inputCidade" id="inputCidade">
+   <br>
+
+   <br><br>
+   <div id="divAviso" style="background-color: antiquewhite;"></div>
+   <br>
+   <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+   <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+   <br><br>
+   <!-- <input type="button" value="Listar" onclick="listar()">
+    <br><br> -->
+
+   <div id="outputSaida" style="background-color: aqua;">...</div>
+
+   <input type="button" value="Persistir" id="btPersisitir" onclick="prepararESalvarCSV()">
+   <input type="button" value="Recuperar" id="btRecuperar" onclick="abrirArquivoSalvoEmLocalPermanente()">
+   <script src="./Imovel.js"></script>
+   <script src="./ImovelControle.js"></script>
+</body>
+
+</html>
